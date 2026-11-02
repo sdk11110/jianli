@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T09:52:49.491Z",
+  "title": "一点好奇心 · AI 创作与交付展厅",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "暖纸白",
+        "canonical": "#fff9ef"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "墨黑",
+        "canonical": "#171713"
+      },
+      "cobalt": {
+        "role": "primary",
+        "displayName": "钴蓝",
+        "canonical": "#1649f2"
+      },
+      "orange": {
+        "role": "secondary",
+        "displayName": "展台橙",
+        "canonical": "#ff792c"
+      },
+      "outcome": {
+        "role": "secondary",
+        "displayName": "成果橙",
+        "canonical": "#df5814"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "辅助文字",
+        "canonical": "#626158"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "首屏标题",
+        "purpose": "粗黑标题，AI为可重播动画的原生按钮。"
+      },
+      "body": {
+        "displayName": "正文",
+        "purpose": "本地 Noto Sans SC 子集，展示案例事实与说明。"
+      },
+      "comic": {
+        "displayName": "漫画手写",
+        "purpose": "手写仅用于漫画与少量旁批。"
+      }
+    },
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.23,1,.32,1)",
+        "purpose": "普通界面反馈与展台入场。"
+      },
+      {
+        "name": "type-ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "首屏活字组装与落印的快速收束。"
+      },
+      {
+        "name": "stage-enter",
+        "value": "650ms / 1 iteration",
+        "purpose": "展台入场一次，无自动循环。"
+      },
+      {
+        "name": "headline-sequence",
+        "value": "1000ms / 1 iteration",
+        "purpose": "活字组装→成果落印→句号收尾；字体就绪后播放，点击AI、Enter或空格可重播。"
+      },
+      {
+        "name": "ai-block",
+        "value": "620ms / 45ms delay",
+        "purpose": "AI字块立体翻转归位。"
+      },
+      {
+        "name": "result-stamp",
+        "value": "420ms / 60ms stagger",
+        "purpose": "成果两字错开落印。"
+      },
+      {
+        "name": "ink-stroke",
+        "value": "390ms / 530ms delay",
+        "purpose": "下划线从左至右绘出。"
+      },
+      {
+        "name": "ai-hover",
+        "value": "340ms",
+        "purpose": "仅鼠标轻摆AI字块，整段标题不因悬停重播。"
+      },
+      {
+        "name": "stage-pointer",
+        "value": "maximum 1.1deg",
+        "purpose": "精细指针视差；事件触发rAF，无空转循环。"
+      },
+      {
+        "name": "motion-cancellation",
+        "value": "immediate static final state",
+        "purpose": "减少动态、标题离屏、文档隐藏时取消；连续触发替换上一段，不排队。"
+      },
+      {
+        "name": "footer-grip",
+        "value": "820–1050ms / maximum 8px / 0.56deg",
+        "purpose": "角色锚定分隔线抓握点；首次进入、悬停、点击触发有限回弹；减少动态、隐藏和角色离屏立即归位。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "viewport-374",
+        "value": "374px"
+      },
+      {
+        "name": "viewport-700",
+        "value": "700px"
+      },
+      {
+        "name": "viewport-850",
+        "value": "850px"
+      },
+      {
+        "name": "viewport-1100",
+        "value": "1100px"
+      },
+      {
+        "name": "viewport-1500",
+        "value": "1500px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "主按钮",
+      "kind": "button",
+      "description": "钴蓝成果入口，胶囊外形。",
+      "html": "<button class=\"ds-button ds-blue\">看精选项目</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:26px;min-height:52px;padding:12px 28px;border:0;border-radius:100px;font:600 17px/1.7 sans-serif;cursor:pointer;transition:transform 160ms cubic-bezier(.23,1,.32,1)}.ds-button:hover{transform:translateY(-2px)}.ds-button:active{transform:scale(.98)}.ds-button:focus-visible{outline:2px solid #1649f2;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}.ds-button:hover,.ds-button:active{transform:none}}.ds-blue{background:#1649f2;color:white}.ds-blue:hover{background:#0736c3}"
+    },
+    {
+      "name": "联系按钮",
+      "kind": "button",
+      "description": "联系区域使用墨黑结束按钮。",
+      "html": "<button class=\"ds-button ds-black\">联系我</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:26px;min-height:52px;padding:12px 28px;border:0;border-radius:100px;font:600 17px/1.7 sans-serif;cursor:pointer;transition:transform 160ms cubic-bezier(.23,1,.32,1)}.ds-button:hover{transform:translateY(-2px)}.ds-button:active{transform:scale(.98)}.ds-button:focus-visible{outline:2px solid #1649f2;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}.ds-button:hover,.ds-button:active{transform:none}}.ds-black{background:#171713;color:#fff9ef}"
+    },
+    {
+      "name": "文字链接",
+      "kind": "custom",
+      "description": "细下划线和箭头明确指向项目入口。",
+      "html": "<a class=\"ds-link\" href=\"#work\">看完整案例<svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:14px;min-height:44px;padding-block:5px;border-bottom:1px solid currentColor;color:#171713;text-decoration:none;font:550 16px/1.5 sans-serif}.ds-link svg{transition:transform 180ms cubic-bezier(.23,1,.32,1)}.ds-link:hover svg{transform:translate(3px,-2px)}.ds-link:focus-visible{outline:2px solid #1649f2;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-link svg{transition:none}.ds-link:hover svg{transform:none}}"
+    },
+    {
+      "name": "主导航",
+      "kind": "nav",
+      "description": "低干扰文字导航，保留清晰的悬停和键盘焦点。",
+      "html": "<nav class=\"ds-nav\" aria-label=\"主要导航\"><a href=\"#work\">精选项目</a><a href=\"#method\">AI 工作方法</a><a href=\"#notes\">现场手记</a></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:32px;color:#171713;font:550 14px/1.7 sans-serif}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ds-nav a:hover{text-decoration:underline;text-underline-offset:6px}.ds-nav a:focus-visible{outline:2px solid #1649f2;outline-offset:5px}"
+    },
+    {
+      "name": "AI标题字块",
+      "kind": "button",
+      "description": "首页标题的重播入口；完整编排由hero-type.mjs实现。",
+      "html": "<button class=\"ds-ai\" aria-label=\"重播标题动画\">AI<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M10 2v16M2 10h16\"/></svg></button>",
+      "css": ".ds-ai{position:relative;min-width:44px;min-height:44px;padding:0;background:none;border:0;color:#1649f2;font:900 80px/1.2 sans-serif;letter-spacing:-.04em;cursor:pointer;transition:transform 180ms cubic-bezier(.16,1,.3,1)}.ds-ai svg{position:absolute;right:-.11em;top:.05em;width:.17em;height:.17em;fill:none;stroke:#df5814;stroke-width:2.5}.ds-ai:hover{transform:perspective(500px) rotateY(-8deg)}.ds-ai:active{transform:scale(.98)}.ds-ai:focus-visible{outline:2px solid #1649f2;outline-offset:5px;border-radius:3px}@media(prefers-reduced-motion:reduce){.ds-ai{transition:none}.ds-ai:hover,.ds-ai:active{transform:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "立体展台与编辑式成果展示",
+    "overview": "首屏：暖纸白、粗黑标题、立体橙框与钴蓝背板。3D结构是独立透明栅格素材，屏幕内容、成果、按钮与角色分别实现。图中屏幕平面使用四点几何裁切对应实际边框。首屏角色按批准图稿重新生成竖向站立的独立透明贴纸：双眼睁开、一手伸向观众、另一手举笔，保留白卷发、羊角、蓝毛衣与橙围巾的平面画风。双脚落在展台右侧台面，不使用横向飞跃素材；不遮挡成果数字与播放入口。灯具、倒角、遮挡与接触阴影来自已生成素材，不用代码拼凑仿真插画。",
+    "keyCharacteristics": [
+      "主按钮为钴蓝、结束按钮为墨黑；导航细线、链接清晰；主框直角，按钮胶囊，媒体控制尽量原生。",
+      "作品封面来自实际本地运行页面；所有示意和贡献归属可见。"
+    ],
+    "rules": [],
+    "dos": [
+      "所有舞台、小字和动态内容必须保持 DOM。"
+    ],
+    "donts": [
+      "不得把批准整页图稿当背景替换网页。"
+    ]
+  }
+}
