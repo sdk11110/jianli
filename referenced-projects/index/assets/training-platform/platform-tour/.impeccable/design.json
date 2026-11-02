@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-05T00:00:00+08:00",
+  "title": "Design System: 内容培训平台 · 交互式项目展厅",
+  "extensions": {
+    "colorMeta": {
+      "primary": {"role":"primary","displayName":"工作台蓝","canonical":"#183c59","tonalRamp":["#0c1f2e","#102e46","#183c59","#285573","#52738d","#829bae","#bdcad2","#eef2f3"]},
+      "paper": {"role":"neutral","displayName":"米白纸面","canonical":"#f5f1e8","tonalRamp":["#29261f","#4d493f","#716c60","#989185","#beb7aa","#ddd7cc","#eee9df","#f9f6f0"]},
+      "accent": {"role":"secondary","displayName":"朱砂提示","canonical":"#b54c2c","tonalRamp":["#32130b","#572014","#7b2e1c","#9e3e25","#b54c2c","#cf7659","#e3aa95","#f6e4dc"]}
+    },
+    "typographyMeta": {
+      "display": {"displayName":"纸本叙事标题","purpose":"首屏和章节命题。"},
+      "body": {"displayName":"工作台正文","purpose":"界面操作与说明。"}
+    },
+    "shadows": [{"name":"workspace-lift","value":"0 24px 55px rgba(7,29,43,.27)","purpose":"只用于深蓝展墙上的浅色工作台。"}],
+    "motion": [{"name":"native-scroll","value":"smooth; reduced-motion => auto","purpose":"章节锚点导航，尊重减少动态偏好。"}],
+    "breakpoints": [{"name":"mobile","value":"760px"}]
+  },
+  "components": [
+    {
+      "name":"Primary Button","kind":"button","refersTo":"button-primary","description":"主要进入动作。",
+      "html":"<a class='ds-primary'>进入平台展厅</a>",
+      "css":".ds-primary{display:inline-flex;min-height:44px;align-items:center;background:#183c59;color:#fcfaf5;padding:15px 24px;border-radius:3px;text-decoration:none}.ds-primary:hover{background:#285573}.ds-primary:focus-visible{outline:3px solid #d87947;outline-offset:5px}"
+    },
+    {
+      "name":"Selected Filter","kind":"chip","description":"本地筛选当前态。",
+      "html":"<button class='ds-filter' aria-pressed='true'>数据处理</button>",
+      "css":".ds-filter{min-height:40px;padding:7px 14px;border:0;border-radius:3px;background:#183c59;color:#fff}.ds-filter:focus-visible{outline:3px solid #d87947;outline-offset:5px}"
+    },
+    {
+      "name":"Workspace","kind":"custom","refersTo":"workspace","description":"深蓝展厅中的主要操作表面。",
+      "html":"<section class='ds-workspace'><strong>AI 工作台</strong><p>本地交互示例</p></section>",
+      "css":".ds-workspace{background:#fcfaf5;color:#193851;border-radius:6px;padding:32px;box-shadow:0 24px 55px rgba(7,29,43,.27)}"
+    }
+  ],
+  "narrative": {
+    "northStar":"装帧里的工作台",
+    "overview":"纸张、档案与流程图的材料感进入可操作内部平台。插画负责主题，工作台负责功能。",
+    "keyCharacteristics":["插画作背景","深蓝展厅与浅色工作台","橙色只做状态提示","示例边界明确"],
+    "rules":[
+      {"name":"Large-Field Rule","body":"主色以整段展厅或完整工作面出现。","section":"colors"},
+      {"name":"Two-Voice Rule","body":"衬线负责叙事标题，无衬线负责操作与正文。","section":"typography"},
+      {"name":"One-Lift Rule","body":"同一视区只允许工作台作为主要浮起表面。","section":"elevation"}
+    ],
+    "dos":["Do 用项目插画作背景并为文字留清晰色域。","Do 明确标注本地演示与未核验内容。","Do 保留键盘与无 JavaScript 入口。"],
+    "donts":["Don't 把大图做成正文海报。","Don't 使用虚构成绩或账号数据。","Don't 接入真实平台操作。"]
+  }
+}

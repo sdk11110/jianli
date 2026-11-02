@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T00:00:00+08:00",
+  "title": "Design System: 把交付串起来",
+  "extensions": {
+    "colorMeta": {
+      "gold": {"role": "primary", "displayName": "浅金"},
+      "teal": {"role": "secondary", "displayName": "浅青"},
+      "night": {"role": "neutral", "displayName": "深夜蓝"},
+      "paper": {"role": "neutral", "displayName": "奶油纸色"},
+      "ink": {"role": "neutral", "displayName": "象牙白"},
+      "muted": {"role": "neutral", "displayName": "灰青说明文字"},
+      "line": {"role": "neutral", "displayName": "半透明分隔线"}
+    },
+    "motion": [
+      {"name": "ease", "value": "cubic-bezier(.23,1,.32,1)", "purpose": "标题、路径、图注与背景淡化。"},
+      {"name": "hero-enter", "value": "1.2s; emphasis delay .16s", "purpose": "标题上移 35px 并揭示裁切。"},
+      {"name": "caption-enter", "value": ".5s", "purpose": "当前章节图注上移 8px 并淡入。"},
+      {"name": "map-progress", "value": ".85s", "purpose": "SVG 路径描边进度。"},
+      {"name": "canvas-opacity", "value": "1s", "purpose": "离开首屏时背景带淡化。"}
+    ],
+    "breakpoints": [
+      {"name": "mobile-max", "value": "760px"},
+      {"name": "compact-max", "value": "1000px"},
+      {"name": "wide-min", "value": "1600px"}
+    ]
+  },
+  "components": [
+    {
+      "name": "规则选择",
+      "kind": "button",
+      "refersTo": "quality-option",
+      "description": "未选中规则；原生按钮支持键盘焦点。",
+      "html": "<button class=\"ds-quality\" type=\"button\" aria-pressed=\"false\">图片语境不符</button>",
+      "css": ".ds-quality{background:transparent;border:1px solid #78949870;font:12px/1.6 var(--sans, sans-serif);padding:10px 12px;min-height:44px;color:#bed0d2;cursor:pointer;transition:color .2s,border-color .2s,background .2s}.ds-quality:hover{border-color:var(--gold,#dbbe90)}.ds-quality:focus-visible{outline:2px solid var(--gold,#dbbe90);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-quality{transition:none}}"
+    },
+    {
+      "name": "已选规则",
+      "kind": "button",
+      "refersTo": "quality-option-selected",
+      "description": "金底深字和 aria-pressed 同时传达选择。",
+      "html": "<button class=\"ds-quality-selected\" type=\"button\" aria-pressed=\"true\">图片语境不符</button>",
+      "css": ".ds-quality-selected{background:var(--gold,#dbbe90);border:1px solid var(--gold,#dbbe90);font:12px/1.6 var(--sans,sans-serif);padding:10px 12px;min-height:44px;color:var(--night,#0b161c);cursor:pointer}.ds-quality-selected:hover{border-color:var(--gold,#dbbe90)}.ds-quality-selected:focus-visible{outline:2px solid var(--gold,#dbbe90);outline-offset:6px}"
+    },
+    {
+      "name": "动效开关",
+      "kind": "button",
+      "refersTo": "motion-button",
+      "description": "文字按钮；正式页面由 app.js 同步暂停与系统减少动态效果状态。",
+      "html": "<button class=\"ds-motion\" type=\"button\" aria-pressed=\"false\">暂停动效</button>",
+      "css": ".ds-motion{padding:10px 0;background:none;border:0;color:var(--muted,#a6b8bd);font:12px var(--sans,sans-serif);cursor:pointer}.ds-motion:hover{color:var(--gold,#dbbe90)}.ds-motion:focus-visible{outline:2px solid var(--gold,#dbbe90);outline-offset:6px}@media(max-width:760px){.ds-motion{min-height:44px}}"
+    },
+    {
+      "name": "叙事入口链接",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "细下划线与下行箭头引导继续阅读。",
+      "html": "<a class=\"ds-link\" href=\"#journey\">走进这条交付链<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3v17m-6-6 6 6 6-6\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;gap:36px;align-items:center;font:13px var(--sans,sans-serif);padding:14px 0;border-bottom:1px solid #dbbe9080;min-height:46px;color:var(--ink,#f0eee7);text-decoration:none}.ds-link svg{width:21px;height:21px;fill:none;stroke:var(--gold,#dbbe90);stroke-width:1.4;transition:transform .3s cubic-bezier(.23,1,.32,1)}.ds-link:hover{color:var(--gold,#dbbe90)}.ds-link:hover svg{transform:translateY(4px)}.ds-link:focus-visible{outline:2px solid var(--gold,#dbbe90);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-link svg{transition:none}}"
+    },
+    {
+      "name": "章节导航项",
+      "kind": "nav",
+      "description": "六阶段导航的当前项；移动端编号位于文字上方。",
+      "html": "<nav class=\"ds-nav\" aria-label=\"章节示例\"><a href=\"#phase-1\" aria-current=\"step\"><span>01</span>评估</a><a href=\"#phase-2\"><span>02</span>建设</a></nav>",
+      "css": ".ds-nav{display:flex;background:#0b161cf5;border-top:1px solid var(--line,#607b8045);border-bottom:1px solid var(--line,#607b8045)}.ds-nav a{font:13px var(--sans,sans-serif);padding:26px 12px;color:var(--muted,#a6b8bd);text-decoration:none;transition:color .25s cubic-bezier(.23,1,.32,1)}.ds-nav a span{font-size:10px;margin-right:14px;font-variant-numeric:tabular-nums}.ds-nav a[aria-current]{color:var(--gold,#dbbe90)}.ds-nav a:focus-visible{outline:2px solid var(--gold,#dbbe90);outline-offset:6px}@media(max-width:760px){.ds-nav a{padding:20px 6px;font-size:11px}.ds-nav a span{display:block;font-size:9px;margin:0 0 5px;opacity:.7}}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
+    },
+    {
+      "name": "重复失败复选框",
+      "kind": "input",
+      "description": "仅图片语境规则启用；原生复选框以金色强调。",
+      "html": "<label class=\"ds-retry\"><input type=\"checkbox\">模拟连续两次自审不合格</label>",
+      "css": ".ds-retry{display:flex;align-items:center;gap:9px;font:12px var(--sans,sans-serif);color:var(--muted,#a6b8bd);min-height:32px}.ds-retry input{accent-color:var(--gold,#dbbe90);width:17px;height:17px;margin:0}.ds-retry input:focus-visible{outline:2px solid var(--gold,#dbbe90);outline-offset:6px}.ds-retry:has(input:disabled){opacity:.45}"
+    },
+    {
+      "name": "进度记录行",
+      "kind": "custom",
+      "refersTo": "record",
+      "description": "纸色底上的日期、状态与记录内容；本示例为计划状态。",
+      "html": "<div class=\"ds-record\"><time datetime=\"10-15\">10.15</time><div><span class=\"ds-state\">计划</span><h3>按交付节点持续跟踪</h3></div></div>",
+      "css": ".ds-record{display:grid;grid-template-columns:25% 1fr;gap:40px;padding:34px 0;border-top:1px solid #24394033;background:var(--paper,#eee9df);color:#243940}.ds-record time{font:400 clamp(38px,5vw,70px)/1.15 var(--serif,serif);color:#74837f;letter-spacing:-.03em;font-variant-numeric:tabular-nums}.ds-record h3{font:500 21px var(--sans,sans-serif);margin:14px 0 12px}.ds-state{font:11px var(--sans,sans-serif);color:#59686b;display:inline-flex;align-items:center;gap:8px}.ds-state:before{content:'';width:5px;height:5px;background:currentColor;border-radius:50%}@media(max-width:760px){.ds-record{grid-template-columns:70px 1fr;gap:18px;padding:28px 0}.ds-record time{font-size:30px}.ds-record h3{font-size:17px;line-height:1.6}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "把交付串起来",
+    "overview": "现有作品集的暗色摄影、衬线标题和浅金强调延续到项目经历。金青纤维带与六阶段路径呼应工作环节，正文保留事实，奶油色进度记录承担阅读转场。",
+    "keyCharacteristics": ["摄影与渐变营造深度", "细线与留白组织叙事", "六阶段滚动联动", "移动端单栏", "暂停与系统减少动态效果支持"],
+    "rules": [],
+    "dos": ["Do 保留键盘焦点和可读状态标签。", "Do 以角色称谓呈现面试版经历。", "Do 区分计划、制作完成与实际已上线。"],
+    "donts": ["Don't 将规则演示解释为生产任务实时状态。", "Don't 仅依赖背景图形或颜色传达必要信息。"]
+  }
+}

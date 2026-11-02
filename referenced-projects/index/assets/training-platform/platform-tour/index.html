@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="通过 AI 培训与平台建设推动团队工具共建：验收表拆分、教材核对与图片批处理的实际案例及登记耗时。">
+<title>内容培训平台 · 作品展厅</title><link rel="stylesheet" href="tour.css?20261030-training">
+<link rel="stylesheet" href="tour-refinements.css?20261030-training"></head>
+<body>
+<!-- Portfolio case study: interactive exhibition for content training platform. -->
+<a class="skip" href="#platform">跳到平台体验</a>
+<header class="topbar">
+<a class="brand" href="../../../index.html#projects"><span class="brand-symbol" aria-hidden="true"></span>一点好奇心 <span>/ 内容培训平台</span></a>
+<nav aria-label="展厅导航"><a href="#outcomes">落地成果</a><a href="#platform">平台体验</a><a href="#making">我的贡献</a><a href="#delivery">发布机制</a></nav>
+<a class="header-link" href="../ai-h5/index.html">开始实操 ↗</a>
+</header>
+<main>
+<section id="overview" class="hero">
+<div class="hero-copy"><h1>让培训走进工作，<br>让工具留在<span>团队。</span></h1><p>我负责 AI 培训、平台产品定义与搭建。<br>同事把业务里的重复操作做成工具，平台让这些成果被找到、学会并继续使用。</p><a class="primary-button" href="#outcomes">查看团队工具成果 ↗</a></div>
+<div class="hero-foot"><span>内容培训平台 / 个人作品</span><p>我的工作：培训赋能 · 产品定义 · 平台搭建</p><a href="#platform">向下探索 ↓</a></div>
+</section>
+<section class="ownership section-wrap" aria-labelledby="ownership-title"><h2 id="ownership-title">我的贡献，是让共创发生。</h2><div class="ownership-grid"><p>培训把 AI 方法带到实际任务里；平台把同事做出的工具接住，形成从问题、学习到复用的路径。</p><dl><dt>我负责</dt><dd>AI 培训、平台产品定义、信息架构与搭建</dd><dt>同事贡献</dt><dd>验收表拆分、教材核对、图片批处理等工具</dd><dt>这里可看</dt><dd>三项已核对案例、六个模块演示、两条发布流程</dd></dl></div></section>
+<section id="outcomes" class="team-outcomes section-wrap" aria-labelledby="outcomes-title">
+<div class="section-intro"><h2 id="outcomes-title">从重复操作，<br>到可以复用的工具。</h2><p>这三项工具由同事贡献。<br>按输入、输出和登记耗时阅读，<br>看培训如何连接到具体业务任务。</p></div>
+<div class="outcome-ledger">
+<article><div><h3>验收表拆分</h3><p>月底核对工作量时，原先需要从总表中手工拆分供应商、物料数据并换算时长。工具输入总 Excel 表，自动拆分并汇总为各供应商的工作量表。</p></div><p class="outcome-time"><span>平台登记耗时</span><strong>1 小时 → 30 秒</strong></p></article>
+<article><div><h3>教材内容核对</h3><p>新旧教材内容需要逐项比较。工具输入教材图片文件夹，输出对比报告，把人工核对整理转为通过工具辅助检查差异。</p></div><p class="outcome-time"><span>平台登记耗时</span><strong>2 小时 → 15 分钟</strong></p></article>
+<article><div><h3>单词图片转三套规格</h3><p>原先要为三套尺寸分别重复处理图片。工具输入原始图片路径，一次输出大图、标准图与小图；平台对比任务为处理 100 张图片。</p></div><p class="outcome-time"><span>100 张图片 · 平台登记耗时</span><strong>10 分钟 → 2.5 分钟</strong></p></article>
+</div>
+<p class="outcome-note">案例来源：2026-10-11 核对正式平台工具库与详情页。耗时为平台登记值，未独立复测；用于说明具体任务，不推算团队总体收益。</p>
+</section>
+<section id="platform" class="exhibition">
+<div class="section-intro"><h2>顺着一件事，<br>走进平台。</h2><p>选择模块，查看工作如何从“发现问题”走到“分享工具”。<br>以下为本地交互样例，评分与发布操作只在当前页演示。</p></div>
+<div class="exhibit-layout"><div class="exhibit-guide">
+<div class="module-tabs interactive-only" role="tablist" aria-label="平台功能模块" aria-orientation="vertical">
+<button id="tab-library" role="tab" data-module="library" aria-controls="module-screen" aria-selected="true" tabindex="0"><span>工具库</span><small>发现与复用</small><span class="tab-arrow" aria-hidden="true">↗</span></button><button id="tab-requirements" role="tab" data-module="requirements" aria-controls="module-screen" aria-selected="false" tabindex="-1"><span>需求池</span><small>问题与方案</small><span class="tab-arrow" aria-hidden="true">↗</span></button><button id="tab-training" role="tab" data-module="training" aria-controls="module-screen" aria-selected="false" tabindex="-1"><span>培训中心</span><small>学习与实操</small><span class="tab-arrow" aria-hidden="true">↗</span></button><button id="tab-space" role="tab" data-module="space" aria-controls="module-screen" aria-selected="false" tabindex="-1"><span>我的空间</span><small>记录与沉淀</small><span class="tab-arrow" aria-hidden="true">↗</span></button><button id="tab-cockpit" role="tab" data-module="cockpit" aria-controls="module-screen" aria-selected="false" tabindex="-1"><span>贡献看板</span><small>建设与使用</small><span class="tab-arrow" aria-hidden="true">↗</span></button><button id="tab-admin" role="tab" data-module="admin" aria-controls="module-screen" aria-selected="false" tabindex="-1"><span>管理后台</span><small>维护与权限</small><span class="tab-arrow" aria-hidden="true">↗</span></button>
+</div>
+<div class="guide-copy"><h3 id="module-thesis">找到能力，也找到使用方法。</h3><p id="module-description">按业务分类定位工具，读懂场景、输入和输出，再进入详情试用与反馈。</p></div>
+<a class="guide-reference" href="#references">查看完整功能说明 ↗</a>
+</div>
+<div class="workspace"><div class="workspace-bar"><span><i aria-hidden="true"></i>AI 工作台</span><span>本地交互示例 · 非线上截图</span></div>
+<div id="module-screen" class="module-screen" role="tabpanel" tabindex="0" aria-labelledby="tab-library"><div class="screen-heading"><h3>AI 能力库</h3></div><p>按内容生产、数据处理等业务场景找到工具，查看输入输出，在详情页体验与反馈。</p><noscript><p>浏览器未启用 JavaScript。你仍可阅读完整功能说明，或打开本地培训 H5。</p></noscript><a href="#references">阅读完整功能说明</a></div>
+<div class="workspace-footer"><span>工具 → 使用 → 反馈 → 迭代</span><span>演示数据仅保留在当前页面</span></div></div>
+</div>
+<div class="exhibition-note"><span>为什么把它们放在一起？</span><p>工具库承接已有能力，需求池承接下一轮问题；培训把使用方法传递出去，个人空间和看板帮助回看使用情况。</p></div>
+</section>
+<section id="delivery" class="delivery section-wrap">
+<div class="section-intro"><h2>把分享之后的事，<br>也做进平台。</h2><p>工具站点与培训课程有不同的发布路径。<br>平台接住存档、发布和状态反馈，让贡献者专注于工具本身。</p></div>
+<div class="pipeline-switch interactive-only" aria-label="选择发布流程"><button data-pipeline-type="tool" aria-pressed="true">工具站点发布</button><button data-pipeline-type="training" aria-pressed="false">培训课程发布</button></div>
+<div class="pipeline-layout"><div id="pipeline-steps" class="pipeline-steps interactive-only" aria-label="发布步骤"></div>
+<div class="step-panel" aria-live="polite" aria-atomic="true"><div class="step-top"><span>交付路径</span><span id="step-count">1 / 5</span></div><h3 id="step-title">准备完整站点</h3><p id="step-description">保持入口、样式、脚本和素材的相对路径，完整打包交付。</p><div class="step-artifact"><span id="step-label">入口</span><code id="step-value">index.html + 相对资源</code></div><div class="step-controls interactive-only"><button id="step-prev" aria-label="上一步" disabled>← 上一步</button><button id="step-next" aria-label="下一步">下一步 →</button></div></div></div>
+<p class="delivery-note">展厅只讲解流程，不发起真实上传。工具站点与培训课程走不同发布路径，互不混用。</p>
+</section>
+<section id="making" class="making section-wrap">
+<div class="section-intro"><h2>我如何把培训，<br>接成一套产品。</h2><p>从“让同事会用 AI”，走到“让团队留住成果”。<br>我把这个目标拆成信息、学习与维护三项设计。</p></div>
+<div class="making-layout"><div class="making-statement"><p>让做出来的工具，<br>有被找到、被学会、<br><em>被继续使用</em>的路径。</p><a href="../ai-h5/index.html">体验一次培训实操 ↗</a></div><div class="making-ledger">
+<article><h3>先定义信息，再画界面</h3><p>围绕“场景、输入、输出”组织工具；围绕“角色、痛点、方案”组织需求。让使用者先判断是否适合自己的任务。</p><span>信息架构 / 业务字段 / 使用路径</span></article>
+<article><h3>把培训接到实际任务</h3><p>学习路径承接方法，实操承接自己的业务问题。课程与工具同处一个入口，让培训结束后仍能回看和继续尝试。</p><span>学习路径 / 任务练习 / 方法复用</span></article>
+<article><h3>给共创留下维护机制</h3><p>用评分和讨论承接反馈，用发布状态区分“已提交”和“可访问”。看板分别观察建设、使用与反馈，避免只看工具数量。</p><span>反馈口径 / 发布状态 / 贡献记录</span></article>
+</div></div>
+<div class="source-note"><strong>说明</strong><p>上方「落地成果」整理自正式平台的已核对记录。交互展厅使用本地示例讲解功能与流程，不连接真实账号或生产数据，也不展示线上实时统计。</p></div>
+</section>
+<section class="reference-section section-wrap" aria-label="完整参考"><details id="references" class="reference-book"><summary><span><strong>完整功能说明</strong><small>按需查阅 · 模块规则与发布边界</small></span><span class="summary-action">展开 / 收起</span></summary><div class="reference-content">      <section id="library">
+        <h2>工具库：先说明场景，再让人使用</h2>
+        <p>入口是能力库。按内容生产、数据处理、设计生成、办公自动化等场景筛选。每张卡优先展示解决什么问题、输入什么、输出什么，而不是堆工具说明书。</p>
+        <figure class="ui-frame">
+          <div class="ui-top"><b>内容工作台</b><span class="selected">工具库</span><span>需求池</span><span>培训中心</span><span>我的空间</span></div>
+          <div class="ui-body"><h3>能力库</h3><p>找场景、看清输入输出、立刻试用</p><div class="filters"><span class="selected">全部</span><span>内容生产</span><span>数据处理</span><span>设计生成</span></div>
+            <article class="capability"><div><small>数据处理 · 示例内容</small><h4>单元目录构建工具</h4><dl><dt>解决</dt><dd>教材目录整理与重复录入</dd><dt>输入</dt><dd>教材映射表</dd><dt>输出</dt><dd>结构化单元目录</dd></dl></div><a class="button" href="#detail">了解详情页怎么使用</a></article>
+          </div><figcaption>示例结构示意；未填写效率数字，避免把演示值当成真实收益。</figcaption>
+        </figure>
+        <div id="detail" class="story"><h3>详情页把“看懂”和“试用”放在同一屏</h3><p>背景说明、封面和可选前后对比解释工具价值；下载、点赞、四维评分与讨论收集反馈。页面可在线预览，也可下载普通文件。发布信息展示可访问地址与状态。</p></div>
+        <table><caption>评分不是只有一个星级</caption><thead><tr><th>维度</th><th>权重</th><th>评价内容</th></tr></thead><tbody><tr><td>实用性</td><td>30%</td><td>能不能解决实际问题</td></tr><tr><td>易用性</td><td>25%</td><td>是否容易上手</td></tr><tr><td>稳定性</td><td>25%</td><td>运行是否可靠</td></tr><tr><td>说明完整</td><td>20%</td><td>场景与使用方法是否清楚</td></tr></tbody></table>
+        <p>各维度为 1–5 分，按权重求和并保留一位小数。一个用户对一个工具保存一份可修改的评分，下载记录单独统计。</p>
+        <details><summary>现场怎么讲这一页</summary><p>“先按业务场景找到能力，再看输入和输出是否适合自己的任务。点进详情，不用先下载就能体验 H5；用过之后，把问题留在评分与讨论里，让作者继续完善。”</p></details>
+      </section>
+
+      <section id="upload">
+        <h2>上传：提交一次，平台接住后续</h2>
+        <p>上传页不只接收压缩包。它同时支持整站文件夹、单文件 / ZIP、可读共享路径，以及已有在线链接。名称和一句话介绍帮助他人发现工具；截图、输入输出与背景说明补足使用上下文。</p>
+        <figure class="ui-frame"><div class="ui-body"><h3>上传能力</h3><p>静态站点走自动发布；其他工具按分类存档并写说明。</p><div class="upload-options"><div><b>选择文件夹</b><p>完整站点，包含 CSS、JS、图片和视频。</p></div><div><b>单文件 / ZIP</b><p>HTML、脚本或打包工具。</p></div><div><b>共享盘路径</b><p>由服务器读取可访问的目录。</p></div><div><b>已有链接</b><p>直接登记，不重复部署。</p></div></div></div><figcaption>四种入口示意；本展厅不接收文件、不发起上传。</figcaption></figure>
+        <ol class="steps"><li><b>识别交付类型</b><p>识别静态站点与普通工具；链接登记走已有地址路径，不重复部署。</p></li><li><b>保存完整资源</b><p>站点放入工具目录存档，普通文件保存在对应目录。相对资源与入口必须配套。</p></li><li><b>自动发布</b><p>静态站点推送到可访问地址，生成可追踪路径。</p></li><li><b>回写并检查状态</b><p>详情页显示地址和状态。部署可能仍在进行，可检查、重发，不必反复创建新工具。</p></li></ol>
+        <p class="note">“提交即可发现”不等于已经部署成功，也不表示任意后端服务都能变成静态站点。</p>
+      </section>
+
+      <section id="requirements">
+        <h2>需求池：让未解决的问题有结构地留下来</h2>
+        <p>每位登录用户都可以新增需求，写清角色、工作阶段、任务、交付物、耗时、痛点和改进方案。需求池用状态与主题筛选，支持打开需求详情，管理员可以调整处理状态。</p>
+        <figure class="ui-frame"><div class="ui-body"><h3>需求池</h3><div class="filters"><span class="selected">全部</span><span>待处理</span><span>已处理</span></div><div class="bubble-key"><div class="bubble pending">待处理<br><small>虚线浅填</small></div><div class="bubble done">已处理<br><small>实心关联工具</small></div><p>大小 → 紧迫程度<br>颜色 → 需求主题<br>虚实 → 落地状态</p></div></div><figcaption>依据 requirements.html 的图例做语义示意，不是线上需求数量与比例。</figcaption></figure>
+        <p>真实页面还提供画布缩放、复位、放大画布和侧边详情。已经落地并有关联工具的需求可以进入对应工具，方便从问题回到解决方案。</p>
+        <details><summary>这一模块的制作思路</summary><p>将原始需求整理成结构化字段，再把主题、紧急度和处理状态分别映射到颜色、面积、虚实；文字详情保留完整业务信息。可视化用于帮助判断优先级，不替代需求正文。</p></details>
+      </section>
+
+      <section id="training">
+        <h2>培训中心：从认识 AI，到交付自己的工具</h2>
+        <p>培训以学习路径组织，不是简单的课程下载列表。学习入口和业务实操分层，独立 H5 可以承载完整操作过程。</p>
+        <figure class="ui-frame"><div class="ui-body"><h3>培训中心</h3><ol class="learning-path"><li><b>AI 入门</b><span>平台与上手路径</span></li><li><b>Prompt 基础</b><span>提问公式与案例</span></li><li><b>AI 工具应用</b><span>分支：生 H5 / 怎么使用豆包</span></li><li><b>自动化工作流</b><span>脚本批处理与挖需求</span></li><li class="muted"><b>AI 专家</b><span>进阶路径预留</span></li></ol><a class="button" href="../ai-h5/index.html">体验「生 H5」培训</a></div><figcaption>学习路径示意；培训素材已随作品打包，可直接打开体验。</figcaption></figure>
+        <div class="columns"><div><h3>业务实操</h3><p>H5 实操区分“演示链路”和“汇报结论”；工具实操以可复用脚本、桌面工具和上架交付为重点，连接平台内的案例。</p></div><div><h3>进度与有效时长</h3><p>课程进度、学习等级和团队学习情况帮助了解培训覆盖。页面可见且最近有操作时才发送有效时长，不能把挂着页面的全部时间算成学习。</p></div></div>
+        <p class="note">完成标记和有效学习时长是两种记录，不代表自动评测掌握程度，也不是考试成绩。</p>
+      </section>
+
+      <section id="space">
+        <h2>我的空间：把使用过的能力留下来</h2>
+        <div class="columns"><div><h3>我的工具</h3><p>聚合用户点赞或下载过的工具，帮助再次找到常用能力；不是把所有上传工具都算成自己的使用记录。</p><h3>我的收益</h3><p>对这些去重后的工具，汇总其单次节省时间并换算为小时。该口径是估算，不等于真实累计使用时长或团队财务收益。</p></div><div><h3>我的工作流</h3><p>用固定条目展示「教材 → 视频生产」等场景，帮助理解空间结构，不是可运行的工作流编排系统。</p><h3>我的收藏 Prompt</h3><p>目前为示例收藏列表，用来说明这里还能沉淀个人方法。</p></div></div>
+      </section>
+
+      <section id="cockpit">
+        <h2>贡献看板：把建设、使用和反馈分开看</h2>
+        <p>管理员工作台展示新增工具、有效使用和评分记录，并提供贡献榜、评分榜与活动趋势。本展厅用示例口径讲解结构，不填充实时业绩数字。</p>
+        <table><caption>看板读数的含义</caption><thead><tr><th>看什么</th><th>能回答什么</th><th>不能直接说明什么</th></tr></thead><tbody><tr><td>工具上传</td><td>团队沉淀了多少能力</td><td>不能仅凭数量判断价值</td></tr><tr><td>有效使用与活动</td><td>是否有人真正进入使用</td><td>不自动等于完成了业务任务</td></tr><tr><td>评分与讨论</td><td>使用者反馈如何</td><td>少量评分不代表所有人体验</td></tr></tbody></table>
+        <h3>账号数据总览</h3><p>管理员可按关键词、组别和活跃状态筛选账号，查看贡献明细。这里只讲页面职责，不展示真实姓名或个人行为数据。</p>
+      </section>
+
+      <section id="admin">
+        <h2>后台：让课程和平台可以持续维护</h2>
+        <h3>培训 H5 管理是一条独立的课程发布链路</h3><p>填写标题、分类、简介、排序及初始状态，上传完整 ZIP。包内必须有 index.html；发布前检查危险路径、符号链接、服务端脚本和解压体积。管理员可以预览、编辑、替换 H5 包、发布、下架和删除。</p>
+        <ol class="flow"><li>草稿 / 直接发布</li><li>完整 ZIP 校验</li><li>持久化课程目录</li><li>培训中心展示</li><li>登录保护预览</li></ol>
+        <p class="note">工具站点可自动发布为可访问页面；培训课程在登录保护下运行。两条链路不能混为“所有课程都公开上线”。课程下架后普通用户不可继续访问。</p>
+        <table><caption>按角色说明权限，展厅内不操作真实账号</caption><thead><tr><th>角色</th><th>主要能力</th></tr></thead><tbody><tr><td>普通用户</td><td>登录、查看工具与需求、上传工具、参与反馈、学习课程、查看个人空间</td></tr><tr><td>管理员</td><td>贡献看板、账号数据、用户与工具维护、课程管理、需求状态维护</td></tr><tr><td>超级管理员</td><td>受额外保护的最高权限；普通管理员不能对其降权</td></tr></tbody></table>
+      </section>
+
+      <section id="boundaries">
+        <h2>作品边界</h2>
+        <p>这是一份本地可体验的功能展厅，不是后台系统的离线克隆。导航、折叠说明和培训 H5 可以直接打开；真实上传、评分、账号维护与数据统计仍属于原平台服务。</p>
+        <ul><li>展厅覆盖：工具库、详情、上传入口、需求池、培训路径、我的空间、贡献看板与管理能力。</li><li>明确为示例：个人工作流、收藏 Prompt 等条目用于理解结构，不包装成已完成的全部功能。</li><li>本页不读取真实账号、密码或生产数据库。</li></ul>
+        <a class="button" href="../../../index.html#projects">返回作品集</a>
+      </section>
+</div></details></section>
+</main>
+<footer class="page-footer"><a href="../../../index.html#projects">← 返回作品集</a><span>内容培训平台 · 作品展厅</span><a href="../ai-h5/index.html">打开配套开始实操 ↗</a></footer>
+<script src="tour-model.js?20261030"></script><script src="tour.js?20261030"></script>
+</body></html>
