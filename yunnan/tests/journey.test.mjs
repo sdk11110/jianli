@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+const sandbox={window:{}};
+vm.runInNewContext(fs.readFileSync(new URL('../js/journey-state.js',import.meta.url),'utf8'),sandbox);
+const {chapterAt,filterPhotos}=sandbox.window.JourneyState;
+assert.equal(chapterAt(-1),0);
+assert.equal(chapterAt(0.34),1);
+assert.equal(chapterAt(0.99),2);
+assert.equal(chapterAt(1),2);
+const photos=[{city:'banna'},{city:'dali'},{city:'puer'}];
+assert.equal(filterPhotos(photos,'all').length,3);
+assert.equal(filterPhotos(photos,'dali')[0],photos[1]);
+assert.equal(filterPhotos(photos,'unknown').length,0);
+console.log('journey-state OK');

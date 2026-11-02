@@ -1,0 +1,124 @@
+/* Approved section comps, 2026-10-21. The existing hero is deliberately out of scope. */
+:root{--result-orange:#df5814}
+.skip-link:not(:focus){opacity:0;pointer-events:none}
+.selected-work>.section-heading{align-items:flex-end;justify-content:space-between;gap:28px}
+.selected-work>.section-heading h2{font-size:clamp(40px,4.5vw,68px)}
+.selected-work>.section-heading h2 span,.case h3>span{color:var(--result-orange)}
+.selected-work>.section-heading>div>p{margin-top:18px;font-size:16px;color:var(--muted);max-width:65ch}
+.case{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:34px;align-items:start}
+.case-media{position:relative}
+.project-guide{position:absolute;z-index:3;height:220px;width:auto;left:-28px;bottom:-15px}
+.case-copy{padding-top:24px}
+.case-copy h3{font-size:clamp(30px,3.55vw,52px);line-height:1.18}
+.case-copy .case-intro{font-size:15px;max-width:42ch;margin-top:20px}
+.case-facts{font-size:14px;margin-top:24px}
+.case-facts>div{padding-block:13px;grid-template-columns:74px 1fr;gap:10px}
+.case-facts dt{font-weight:650;color:var(--ink)}
+.case-tabs{gap:6px;border:0;margin-bottom:0}
+.case-tabs>button{padding:8px 20px;border:1px solid var(--line);border-radius:4px 4px 0 0;font-weight:550;min-height:42px}
+.case-tabs>button[aria-selected=true]{background:#163e54;color:var(--paper);border-color:#163e54}
+.case-tabs>button[aria-selected=true]::after{display:none}
+.case-tabs>span{font-size:12px}
+.interface-surface{border:1px solid #17171375;aspect-ratio:1.45;border-radius:3px}
+.interface-surface img{object-fit:contain;background:#eef2e9}
+.surface-label{font-size:12px;max-width:calc(100% - 28px)}
+.result-detail{margin-top:23px;gap:10px}
+.result-detail strong{font-size:clamp(18px,2vw,29px);line-height:1.5;white-space:normal}
+.result-detail strong b{font-size:1.25em;font-weight:850;color:var(--blue)}
+.case-copy>.text-link{font-size:16px;margin-top:24px}
+.case-training{margin-top:55px;padding-top:36px}
+.case-training .case-copy{padding-top:14px}
+.case-training h3{font-size:clamp(28px,3vw,43px);line-height:1.3}
+.training-image{aspect-ratio:1.4;border:1px solid #17171375;border-radius:3px}
+.training-image>img{object-fit:contain;background:#f9faf3}
+.training-results>div{padding-block:16px}.training-results dd{color:var(--blue);font-weight:750;font-size:24px}
+.more-projects{margin-top:42px;padding-top:26px;border-top:1px solid var(--line);gap:28px}
+.more-projects .tile-image{border-radius:3px;margin-bottom:14px;aspect-ratio:1.7}
+.more-projects .tile-image>img{object-fit:cover}
+.more-projects h3{font-size:clamp(22px,2vw,29px);margin-top:5px}
+/* One live inspection panel; the host hooks over its upper right edge. */
+.method-heading{gap:38px;align-items:flex-start}
+.method{padding-block:64px}
+.method-heading h2{font-size:clamp(36px,5.5vw,82px);line-height:1.3;flex:1;min-width:0}
+.method-heading>.method-aside-copy{font:500 16px/1.8 Exhibition,sans-serif;transform:none;max-width:280px;text-align:right;margin-top:15px}
+.method-tabs{margin:44px clamp(180px,21vw,290px) 0 0}
+.method-tabs button{padding:14px 12px 15px 0;font-size:14px;min-height:64px;color:#e6ecff;gap:10px}
+.method-tabs button span{font-size:22px}
+.method-panel-frame{position:relative;margin-top:62px}
+.method-peek{position:absolute;z-index:3;right:2.4%;bottom:calc(100% - 13px);width:clamp(170px,18vw,270px);filter:drop-shadow(1px 4px 3px #071d7233)}
+.method-panel{grid-template-columns:minmax(0,2.15fr) minmax(0,1fr);gap:34px;padding:30px;min-height:0;border-radius:6px;align-items:center}
+.quality-canvas{background:transparent}
+.method-media-label{font-size:15px;font-weight:650;margin-bottom:15px;border-left:4px solid var(--result-orange);padding-left:12px;line-height:1.4}
+.quality-image{aspect-ratio:1.72}
+.quality-image>video{width:100%;height:100%;object-fit:cover;object-position:50% 45%;background:var(--ink);transition:filter 240ms var(--ease)}
+.quality-safe,.quality-focus,.constraint-notes,.delivery-example{pointer-events:none}
+.quality-safe span,.quality-focus span{font-size:12px}
+.quality-status{background:transparent;color:var(--muted);padding:10px 0 0;font-size:12px}
+.quality-status>span:last-child{color:var(--muted)}
+.quality-canvas[data-quality-step="3"] video{filter:brightness(.7)}
+.method-copy h3{font-size:clamp(27px,3.15vw,45px);line-height:1.25;margin-top:15px;max-width:10ch}
+.method-copy>p{font-size:16px;line-height:1.8;margin-top:22px}
+.method-copy ul{list-style:none;padding:0;margin-top:24px}
+.method-copy li{position:relative;padding:14px 0 14px 31px;border-top:1px solid var(--line);font-size:14px}
+.method-copy li::before{content:'';position:absolute;left:3px;top:20px;width:13px;height:7px;border-left:2px solid var(--result-orange);border-bottom:2px solid var(--result-orange);transform:rotate(-45deg)}
+.method-copy .method-boundary{font-size:12px;line-height:1.8;margin-top:22px}
+.notes .section-heading{gap:28px}.notes .section-heading h2{padding:0}
+/* The photo's own frame is the character's prop. */
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:34px;padding-block:82px 94px;align-items:center}
+.about h2{font-size:clamp(32px,3.7vw,58px);font-weight:850;line-height:1.3}
+.about p{font-size:16px;color:var(--ink);line-height:1.9;margin-top:30px;max-width:52ch}
+.about .text-link{font-size:19px;font-weight:650;margin-top:30px;gap:16px}
+.about-scene{position:relative;display:flex;justify-content:flex-end;min-width:0;min-height:460px;padding-left:115px}
+.photo-object{position:relative;width:min(100%,390px);align-self:center;flex:none}
+.photo-object .life-photo{display:block;width:100%;padding:14px 14px 10px;margin:0;transform:rotate(3deg)}
+.photo-object .life-photo img{aspect-ratio:.9;width:100%;height:auto;object-fit:cover;object-position:50% 48%}
+.photo-object .life-photo span{font-size:21px;line-height:1.6;margin-top:9px}
+.about-host{position:absolute;z-index:2;right:calc(100% - 16px);bottom:0;height:84%;width:auto;max-width:none;pointer-events:none;filter:drop-shadow(2px 5px 3px #17171316)}
+/* Live divider, foreground hand, anchored grip; contact copy stays live HTML. */
+.contact{overflow:hidden}
+.contact-inner{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:34px;padding-block:clamp(75px,7.1vw,118px) 130px;min-height:clamp(510px,36.6vw,640px)}
+.contact h2{font-size:clamp(42px,5.05vw,80px);line-height:1.27;white-space:nowrap;letter-spacing:-.035em}
+.contact-email{font-size:clamp(18px,1.7vw,28px);margin-top:58px;gap:18px;position:relative;z-index:4}
+.contact-email .icon{width:27px;height:27px}
+.contact-actions{position:relative;z-index:4;padding-left:20px;min-height:170px}
+.contact-actions .button{min-width:190px;font-size:20px;min-height:62px;gap:34px}
+.contact-actions .copy-email{font-size:16px;margin-top:16px}
+.contact-actions .copy-status{font-size:13px;max-width:220px}
+.footer-scene{position:relative;height:0;z-index:3;isolation:isolate}
+.footer-boundary{position:absolute;left:50%;top:-32px;width:100vw;height:64px;transform:translateX(-50%);overflow:visible;pointer-events:none}
+.footer-boundary path{fill:none;stroke:var(--ink);stroke-width:2;vector-effect:non-scaling-stroke}
+.footer-actor{position:absolute;right:0;bottom:0;width:min(61vw,960px);padding:0;border:0;background:transparent;translate:0 28%;touch-action:manipulation;line-height:0;z-index:2}
+.footer-actor:focus-visible{outline:2px dashed var(--ink);outline-offset:10px;border-radius:10px}
+.footer-actor-art{display:block;transform-origin:14% 72%;width:100%;pointer-events:none}
+.footer-actor-art>img{display:block;width:100%;height:auto;max-width:none;filter:drop-shadow(1px 3px 2px #68350922)}
+.contact .site-footer{border-top:0;align-items:flex-start;min-height:180px;padding-block:30px 35px;z-index:5;pointer-events:none}
+.contact .site-footer a{pointer-events:auto}
+.contact .site-footer>a:last-child{margin-top:5px}
+@media(max-width:1100px) and (min-width:701px){
+ .case{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px}.case-copy h3{font-size:35px}.case-copy h3 br{display:initial}.case-copy .case-intro{font-size:14px}.case-facts{font-size:13px}.case-facts>div{grid-template-columns:65px 1fr}.project-guide{height:170px;left:-22px}
+ .method-heading>.method-aside-copy{display:none}.method-tabs{margin-right:175px}.method-tabs button{font-size:12px;gap:6px}.method-tabs button span{font-size:18px}.method-panel{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;padding:25px}.method-copy h3{font-size:31px}.method-copy>p{font-size:14px}.method-copy li{font-size:13px}
+ .about{gap:24px}.about h2{font-size:34px}.about p{font-size:14px}.about-scene{padding-left:80px;min-height:350px}.photo-object{width:min(100%,290px)}.photo-object .life-photo span{font-size:17px}.about-host{right:calc(100% - 12px)}
+ .contact h2{font-size:4.9vw}.contact-inner{min-height:490px;padding-bottom:140px}.contact-actions{padding-left:10px}.contact-actions .button{font-size:17px;min-width:170px}.footer-actor{width:61vw}.contact .site-footer{min-height:155px}
+}
+@media(max-width:700px){
+ .selected-work>.section-heading{display:block;margin-bottom:38px}.selected-work>.section-heading h2{font-size:39px;line-height:1.25}.selected-work>.section-heading>div>p{font-size:14px;margin-top:17px;max-width:32ch}.selected-work>.section-heading>.text-link{margin-top:12px}
+ .case{grid-template-columns:minmax(0,1fr);gap:24px}.case-media{margin-top:18px}.project-guide{height:135px;left:auto;right:-3px;top:-57px;bottom:auto;transform:scaleX(-1);clip-path:inset(0 0 43% 0)}
+ .case-tabs{gap:6px}.case-tabs>button{font-size:13px;padding:8px 17px}.case-tabs>span{display:none}.interface-surface{aspect-ratio:1.42}.surface-label{font-size:12px}
+ .case-copy{padding-top:0}.case-copy h3{font-size:36px;line-height:1.25}.case-copy h3 br{display:initial}.case-copy .project-index{font-size:12px}.case-copy .case-intro{font-size:14px;margin-top:17px}.case-facts{font-size:13px;margin-top:18px}.result-detail{margin-top:19px}.result-detail strong{font-size:20px}.result-detail strong b{font-size:1.2em}.case-copy>.text-link{font-size:15px;margin-top:19px}
+ .case-training{margin-top:38px;padding-top:29px}.case-training .case-copy{padding-top:0}.case-training h3{font-size:30px}.training-image{aspect-ratio:1.35}.training-results dd{font-size:20px}.training-results>div{padding-block:13px}.more-projects{grid-template-columns:1fr;gap:30px;margin-top:36px;padding-top:22px}.more-projects h3{font-size:23px}
+ .method-heading{display:block}.method-heading h2{font-size:33px;line-height:1.35}.method-heading>.method-aside-copy{display:none}.method-tabs{margin:25px 0 0;grid-template-columns:1fr 1fr;gap:0 14px}.method-tabs button{font-size:13px;min-height:58px;padding-block:13px;gap:8px}.method-tabs button span{font-size:21px}
+ .method-panel-frame{margin-top:72px}.method-peek{width:102px;right:10px;bottom:calc(100% - 6px)}.method-panel{grid-template-columns:minmax(0,1fr);padding:15px;gap:22px;border-radius:5px}.method-media-label{font-size:14px;margin-bottom:13px;padding-left:10px}.quality-image{aspect-ratio:1.45}.quality-status{font-size:12px}.quality-status>span:first-child{max-width:21ch}.method-copy{padding:0}.method-copy h3{font-size:31px;max-width:12ch}.method-copy>p{font-size:15px;margin-top:15px}.method-copy ul{margin-top:16px}.method-copy li{font-size:14px;padding-block:13px}.method-copy .method-boundary{font-size:12px}
+ .notes .section-heading h2{font-size:37px;padding:0}.notes .section-heading>p{padding:0;font-size:14px}.notes .section-heading>.text-link{font-size:14px}
+ .about{display:block;padding-block:42px 58px}.about h2{font-size:32px}.about p{font-size:15px;margin-top:22px}.about p br{display:none}.about .text-link{font-size:17px;margin-top:22px}.about-scene{min-height:0;padding:0;margin-top:32px}.photo-object{width:232px;margin-right:6px}.photo-object .life-photo{width:100%;padding:10px 10px 7px}.photo-object .life-photo span{font-size:17px;line-height:1.7;margin-top:8px}.about-host{right:calc(100% - 10px);height:84%;bottom:0}
+ .contact-inner{display:flex;flex-direction:column;gap:0;min-height:0;padding-block:51px 172px}.contact-copy{display:contents}.contact h2{order:1;font-size:clamp(35px,10.2vw,43px);line-height:1.32;white-space:normal;max-width:none;width:100%}.contact-actions{order:2;padding:0;margin-top:26px;min-height:0;align-self:flex-start}.contact-actions .button{font-size:17px;min-height:54px;min-width:180px;gap:35px}.contact-actions .copy-email{font-size:14px;margin-top:13px}.contact-actions .copy-status{min-height:0;margin:0;font-size:12px}.contact-actions .copy-status:not(:empty){margin-top:8px;max-width:30ch}.contact-email{order:3;font-size:17px;gap:12px;margin-top:24px;align-self:flex-start}.contact-email .icon{width:22px;height:22px}
+ .footer-actor{width:calc(100vw - 26px);max-width:420px;right:-7px;translate:0 28%}.footer-boundary path{stroke-width:1.3}.contact .site-footer{min-height:143px;align-items:flex-start;padding-top:94px;gap:10px;flex-wrap:wrap;font-size:12px}.contact .site-footer .footer-brand{font-size:21px}.contact .site-footer>span{font-size:12px;padding-top:4px}.contact .site-footer>a:last-child{font-size:12px;margin-top:5px;margin-left:auto}
+}
+@media(max-width:374px){.selected-work>.section-heading h2{font-size:36px}.case-copy h3{font-size:33px}.method-heading h2{font-size:30px}.about h2{font-size:29px}.photo-object{width:218px}.contact h2{font-size:35px}.contact .site-footer{column-gap:8px}.contact .site-footer .footer-brand{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.quality-image>video{transition:none}}
+
+/* Delivery is a direct reading entry, alongside the four artifact-led cases. */
+.delivery-entry{display:flex;justify-content:space-between;align-items:center;gap:32px;border-top:1px solid var(--line);padding-top:28px;margin-top:38px}.delivery-entry>div{min-width:0;max-width:70ch}.delivery-entry h3{font-size:22px;line-height:1.5;letter-spacing:-.02em;margin:0}.delivery-entry p{font-size:14px;line-height:1.9;color:var(--muted);margin-top:8px}.delivery-entry .text-link{min-height:44px;flex-shrink:0;gap:10px;font-size:14px;color:var(--blue)}
+@media(max-width:700px){.delivery-entry{align-items:flex-start;flex-direction:column;gap:12px;margin-top:28px;padding-top:24px}.delivery-entry h3{font-size:21px}.delivery-entry p{font-size:13px}.delivery-entry .text-link{font-size:14px}}
+
+/* Short case summaries keep an even line shape beside artifact covers. */
+.more-projects .work-tile>p{text-wrap:balance}

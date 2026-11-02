@@ -1,0 +1,35 @@
+@font-face{font-family:Workshop;src:url('../fonts/exhibition-sans.woff') format('woff');font-weight:100 900;font-display:swap}
+body{font-family:Workshop,'Segoe UI','Microsoft YaHei',sans-serif}.hero h1{font-size:clamp(40px,4.1vw,64px);max-width:14ch}.hero h1 span{display:inline}.hero-copy>p{max-width:37ch}.hero-foot p{font-size:12px}.ownership{padding-top:48px;padding-bottom:52px;background:#e8e8df}.ownership h2{font-size:clamp(25px,2.4vw,35px);margin-bottom:26px}.ownership-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.ownership-grid>p{font-size:16px;max-width:40ch}.ownership-grid dl{margin:0;font-size:14px;gap:12px 24px}.ownership-grid dt{color:var(--orange)}.ownership-grid dd{max-width:45ch}.workspace-bar,.workspace-footer{font-size:12px}.workspace-bar>span:last-child{font-size:11px}.screen-count,.role-mark{font-size:12px}.screen-heading p{font-size:13px}.tag{font-size:12px}.tool-info>p{font-size:13px}.module-screen .segmented button,.module-screen .text-button,.module-screen .small-button{min-height:44px;font-size:13px}.tool-mark{font-size:16px}.tool-entry .text-button{min-height:44px}.screen-note{font-size:13px}.tool-detail:focus{outline:2px solid var(--orange);outline-offset:12px}.tool-detail dl{padding:17px 0;margin-bottom:17px}.tool-detail .contribution-note{color:var(--orange);font-size:12px}.tool-detail>p{font-size:13px}.tool-detail h4{font-size:22px}.module-screen .need-item,.module-screen .lesson-list button{min-height:88px}.making-statement p{font-size:clamp(25px,2.4vw,37px)}.making-statement a{display:inline-flex;align-items:center;min-height:44px}.source-note{font-size:13px}.summary-action{font-size:13px}.delivery-note,.team-outcomes .outcome-note{font-size:13px}.step-panel h3{font-size:27px}.section-intro{align-items:start}.section-intro h2{max-width:16ch}.section-intro>p{padding-top:8px}.module-tabs button,.primary-button,.small-button,.text-button,.segmented button{transition:background-color 180ms ease,color 180ms ease}.primary-button:active,.small-button:active{transform:translateY(1px)}
+@media(max-width:1100px){.ownership-grid{gap:40px}.topbar nav{gap:18px}.hero-copy{max-width:65%}}
+@media(max-width:760px){.brand{font-size:15px}.brand>span:last-child{font-size:11px}.header-link{min-height:44px;display:inline-flex;align-items:center}.hero{min-height:780px;padding-top:45px}.hero-copy{max-width:100%}.hero h1{font-size:clamp(36px,8.8vw,51px)}.hero-copy>p{font-size:14px;max-width:35ch}.ownership{padding:38px 24px}.ownership h2{font-size:27px}.ownership-grid{grid-template-columns:1fr;gap:22px}.ownership-grid>p{font-size:14px;max-width:none}.ownership-grid dl{font-size:13px;gap:10px 16px}.module-screen{min-height:0}.screen-heading{margin-bottom:18px}.screen-count{font-size:11px}.screen-heading p{font-size:12px}.workspace-bar{display:grid;gap:3px;padding:14px 18px}.workspace-bar>span:last-child{font-size:11px}.workspace-footer{font-size:11px}.module-screen .segmented button{font-size:12px;padding:8px}.tool-entry{grid-template-columns:33px minmax(0,1fr)}.tool-entry .text-button{grid-column:2;min-height:44px;font-size:13px}.tool-info>p{font-size:12px}.tag{font-size:11px}.tool-detail .contribution-note{font-size:12px}.module-screen .lesson-list small,.need-status{font-size:12px}.step-panel{min-height:360px}.pipeline-steps button{font-size:12px;min-height:104px}.pipeline-steps button span{font-size:13px}.section-intro>p{padding-top:0;font-size:14px}.guide-copy p,.guide-reference{font-size:13px}.exhibition-note,.delivery-note,.source-note,.team-outcomes .outcome-note{font-size:13px}.making-ledger p{font-size:14px}.reference-book>summary small,.summary-action{font-size:12px}.reference-content .ui-top{gap:10px}.reference-content .ui-top span{font-size:11px}.page-footer{font-size:12px}.metric-ledger{grid-template-columns:1fr;gap:18px}.metric-ledger>div{padding-top:12px}.metric-ledger strong{margin:6px 0}.metric-ledger p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Keep the two authored title lines intact on the narrowest phone width. */
+@media(max-width:359px){.hero h1{max-width:none;font-size:32px}}
+
+/* The library reads as a working tool directory: purpose beside input/output. */
+#tool-list .tool-entry{padding-block:26px;gap:22px}
+#tool-list .tool-info{min-width:0}
+#tool-list .tool-info h4{font-size:20px;line-height:1.45;margin:6px 0 9px}
+#tool-list .tool-info>p{font-size:14px;line-height:1.8}
+#tool-list .tool-entry dl{font-size:14px;line-height:1.8;gap:7px 14px}
+#tool-list .tool-entry dd{color:var(--ink)}
+.screen-count{white-space:nowrap;flex-shrink:0}
+@media(min-width:1101px){
+  #tool-list .tool-entry{grid-template-columns:48px minmax(0,1fr) auto;gap:24px;align-items:center}
+  #tool-list .tool-info{display:grid;grid-template-columns:minmax(180px,1.1fr) minmax(190px,1fr);column-gap:28px;align-items:start}
+  #tool-list .tool-info>.tag{grid-column:1;grid-row:1}
+  #tool-list .tool-info h4{grid-column:1;grid-row:2}
+  #tool-list .tool-info>p{grid-column:1;grid-row:3}
+  #tool-list .tool-info dl{grid-column:2;grid-row:1 / span 3;align-self:center;margin:0;padding-left:28px;border-left:1px solid var(--line)}
+  #tool-list .tool-entry .text-button{margin-left:6px}
+}
+@media(max-width:760px){
+  .screen-heading{flex-wrap:wrap;gap:9px 15px}
+  .screen-count{flex-basis:100%;max-width:none;text-align:left;font-size:12px;line-height:1.75}
+  #tool-list .tool-entry{gap:11px 12px;padding-block:24px}
+  #tool-list .tool-info h4{font-size:18px;line-height:1.5;margin:5px 0 9px}
+  #tool-list .tool-info>p{font-size:13px;line-height:1.85}
+  #tool-list .tool-entry dl{font-size:13px;line-height:1.85;gap:6px 12px;margin-top:14px}
+  #tool-list .tool-entry .text-button{padding-block:7px;min-height:44px}
+}

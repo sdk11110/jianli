@@ -1,0 +1,355 @@
+/* UI / interaction polish — tasteful micro-feedback */
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-press: cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+/* —— Header —— */
+.site-header {
+  transition:
+    background 280ms var(--ease-out),
+    box-shadow 280ms var(--ease-out),
+    backdrop-filter 280ms var(--ease-out);
+  backdrop-filter: blur(0px);
+}
+
+.site-header.scrolled {
+  background: rgba(255, 250, 240, 0.88) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(40, 50, 30, 0.08);
+}
+
+#site-nav a {
+  position: relative;
+  transition: color 160ms ease, opacity 160ms ease;
+  opacity: 0.78;
+}
+
+#site-nav a:hover,
+#site-nav a:focus-visible {
+  opacity: 1;
+}
+
+#site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms var(--ease-out);
+  opacity: 0.45;
+}
+
+#site-nav a:hover::after,
+#site-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.sound-switch {
+  transition:
+    transform 140ms var(--ease-press),
+    background 180ms ease,
+    box-shadow 180ms ease !important;
+}
+
+.sound-switch:hover {
+  transform: translateY(-1px);
+}
+
+.sound-switch:active {
+  transform: scale(0.96);
+}
+
+.sound-switch[aria-pressed="true"] .sound-bars i {
+  animation: sound-pulse 0.9s ease-in-out infinite alternate;
+}
+
+.sound-switch[aria-pressed="true"] .sound-bars i:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.sound-switch[aria-pressed="true"] .sound-bars i:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes sound-pulse {
+  from {
+    transform: scaleY(0.55);
+    opacity: 0.65;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* —— Buttons —— */
+.primary-button {
+  transition:
+    transform 140ms var(--ease-press),
+    box-shadow 140ms var(--ease-press),
+    filter 160ms ease !important;
+  will-change: transform;
+}
+
+.primary-button:hover {
+  filter: brightness(1.04);
+}
+
+.primary-button:active {
+  transform: translateY(2px) scale(0.97) !important;
+}
+
+.text-link {
+  transition: color 160ms ease, letter-spacing 180ms var(--ease-out), opacity 160ms ease;
+}
+
+.text-link:hover {
+  letter-spacing: 0.02em;
+}
+
+.text-link:active {
+  transform: scale(0.98);
+}
+
+.turntable-controls button,
+.gallery-filters button,
+.dialog-controls button,
+.dialog-close,
+.menu-toggle {
+  transition:
+    transform 130ms var(--ease-press),
+    background 160ms ease,
+    box-shadow 160ms ease,
+    color 160ms ease !important;
+}
+
+.turntable-controls button:active:not(:disabled),
+.gallery-filters button:active,
+.dialog-controls button:active,
+.dialog-close:active,
+.menu-toggle:active {
+  transform: scale(0.96);
+}
+
+.gallery-filters button[aria-pressed="true"] {
+  transform: translateY(-1px);
+}
+
+/* —— Hero / map —— */
+.scroll-cue {
+  animation: cue-bob 2.4s var(--ease-out-soft) infinite;
+  transition: opacity 200ms ease, transform 200ms var(--ease-out);
+}
+
+@keyframes cue-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+.map-object {
+  transition:
+    transform 280ms var(--ease-out-soft),
+    filter 280ms var(--ease-out-soft) !important;
+}
+
+.map-object:active {
+  transform: scale(0.96) rotate(0deg) !important;
+}
+
+.map-object .object-label {
+  transition: opacity 180ms ease, transform 220ms var(--ease-out);
+}
+
+/* —— Turntable —— */
+.loose-record {
+  transition:
+    transform 240ms var(--ease-out-soft),
+    opacity 200ms ease !important;
+}
+
+.loose-record:hover {
+  transform: translateY(-8px) rotate(6deg) scale(1.03);
+}
+
+.loose-record:focus-visible {
+  outline: 3px solid #ab3626;
+  outline-offset: 6px;
+}
+
+.drag-over .drop-zone {
+  background: radial-gradient(circle, rgba(255, 248, 180, 0.32), transparent 72%) !important;
+  transition: background 160ms ease;
+}
+
+.vinyl-spin {
+  animation-duration: 3.2s !important;
+}
+
+.has-record .tonearm {
+  transition:
+    transform 640ms var(--ease-out-soft),
+    opacity 220ms ease !important;
+}
+
+.record-scene > .hand-note {
+  transition: opacity 280ms ease, transform 320ms var(--ease-out-soft);
+}
+
+/* —— Journey postcards —— */
+.postcard {
+  transition:
+    opacity 420ms var(--ease-out-soft),
+    transform 560ms var(--ease-out-soft),
+    visibility 420ms ease !important;
+}
+
+.chapter-controls a {
+  transition:
+    transform 160ms var(--ease-press),
+    color 160ms ease,
+    box-shadow 160ms ease !important;
+}
+
+.chapter-controls a:hover {
+  transform: translateY(-2px);
+}
+
+.chapter-controls a:active {
+  transform: scale(0.97);
+}
+
+.chapter-photo {
+  transition: box-shadow 280ms ease;
+}
+
+/* —— Desk camera —— */
+.desk-camera-unit .camera-eject {
+  transition: transform 220ms var(--ease-out-soft), filter 180ms ease !important;
+}
+
+.desk-camera-unit .camera-eject:hover {
+  transform: rotate(1deg) scale(1.02);
+}
+
+.desk-camera-unit .camera-eject:active,
+.desk-camera-unit .camera-eject.is-shutter {
+  transform: rotate(0deg) scale(0.97) !important;
+  filter: brightness(1.12);
+}
+
+#polaroid-stage .instant-photo {
+  transition: transform 720ms var(--ease-out-soft) !important;
+}
+
+#polaroid-stage .instant-photo .photo-inner {
+  transition: transform 560ms var(--ease-out-soft) !important;
+}
+
+#polaroid-stage .empty-photo {
+  transition: opacity 280ms ease, transform 320ms var(--ease-out-soft);
+}
+
+.camera-desk:has(.instant-photo.is-out) .empty-photo {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* —— Gallery —— */
+.gallery-photo {
+  transition:
+    transform 280ms var(--ease-out-soft),
+    box-shadow 280ms ease !important;
+}
+
+.gallery-photo:active {
+  transform: scale(0.98) !important;
+}
+
+/* —— FAQ —— */
+.faq-list details {
+  transition: box-shadow 200ms ease, transform 200ms var(--ease-out);
+}
+
+.faq-list details[open] {
+  transform: translateY(-2px);
+}
+
+.faq-list summary {
+  transition: color 160ms ease;
+}
+
+.faq-list summary:hover {
+  color: #7a2a22;
+}
+
+/* —— Dialog —— */
+#photo-dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: min(920px, 92vw);
+}
+
+#photo-dialog::backdrop {
+  background: rgba(28, 36, 30, 0.55);
+  backdrop-filter: blur(4px);
+  transition: opacity 200ms ease;
+}
+
+#photo-dialog[open] {
+  animation: dialog-in 220ms var(--ease-out);
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.dialog-close:hover {
+  transform: scale(1.06);
+}
+
+/* —— Wave edges: slightly softer silhouette —— */
+.wave-edge {
+  filter: drop-shadow(0 -1px 0 rgba(255, 248, 220, 0.18));
+}
+
+/* —— Reduced motion —— */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue,
+  .sound-switch[aria-pressed="true"] .sound-bars i,
+  #photo-dialog[open] {
+    animation: none !important;
+  }
+
+  .primary-button,
+  .map-object,
+  .loose-record,
+  .gallery-photo,
+  .postcard,
+  .chapter-controls a,
+  .site-header {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,55 @@
+/* Only travel photos (拍立得/展厅) use placeholders — illustrations stay loaded */
+
+.photo-slot {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  box-sizing: border-box;
+  padding: 16px;
+  border: 2px dashed rgba(90, 70, 40, 0.35);
+  border-radius: 4px;
+  background:
+    linear-gradient(145deg, #f4ead0 0%, #e6d5b0 55%, #dcc69a 100%);
+  color: rgba(70, 50, 28, 0.72);
+  text-align: center;
+}
+
+.photo-slot__mark {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  opacity: 0.55;
+}
+
+.photo-slot__caption {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+  max-width: 14em;
+}
+
+.photo-slot[data-city="banna"] {
+  background: linear-gradient(145deg, #d8ebe2, #b9d8c9);
+}
+
+.photo-slot[data-city="puer"] {
+  background: linear-gradient(145deg, #ebe0d2, #d8c4a8);
+}
+
+.photo-slot[data-city="dali"] {
+  background: linear-gradient(145deg, #d7e4ef, #b7cbe0);
+}
+
+.photo-slot--dialog {
+  min-height: 220px;
+  margin-bottom: 16px;
+}
+
+.chapter-photo .photo-slot,
+.instant-photo .photo-slot,
+.gallery-photo .photo-slot {
+  width: 100%;
+}

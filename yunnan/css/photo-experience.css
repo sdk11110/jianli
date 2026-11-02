@@ -1,0 +1,102 @@
+/* Actual travel artwork, a paper frame, and one continuous instant-camera gesture. */
+.travel-photo { display:block; position:relative; width:100%; overflow:hidden; background:#e9e4cc; isolation:isolate; }
+.travel-photo img { display:block; width:100%; height:100%; object-fit:cover; }
+.travel-photo.is-film img { filter:saturate(.78) contrast(.94); }
+.travel-photo .photo-error { display:none; padding:24px 12px; font-size:13px; }
+.travel-photo.is-unavailable .photo-error { display:block; }
+.travel-photo.is-unavailable img { display:none; }
+.chapter-photo .travel-photo { aspect-ratio:4/3; margin:0; }
+.chapter-photo .travel-photo img { height:100%; }
+.gallery-photo .travel-photo { aspect-ratio:4/3; margin:0; }
+.gallery-photo:has(.is-painted) { background:#fff9e6; }
+.gallery-photo > .travel-photo { font-size:0; }
+.gallery-photo img { aspect-ratio:auto; }
+.gallery-wall { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.photo-slot--dialog { aspect-ratio:auto; margin:0 0 20px; }
+.photo-slot--dialog img { max-height:62svh; height:auto; object-fit:contain; }
+#photo-dialog { width:min(920px,92vw); padding:28px; max-height:92svh; overflow:auto; }
+#dialog-content .photo-download { display:inline-flex; min-height:44px; align-items:center; font-size:13px; }
+.dialog-close { z-index:5; min-width:44px; min-height:44px; background:#fff9e6; box-shadow:0 2px 8px #273f3620; }
+
+.camera-desk { display:grid !important; grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; width:100%; max-width:880px !important; gap:60px; margin:28px auto 0 !important; align-items:center; text-align:left; }
+.desk-camera-unit { --camera-size:320px; width:var(--camera-size); height:570px; padding:0; order:2; }
+.desk-camera-unit .camera-eject { width:100% !important; transform:none; z-index:4; -webkit-tap-highlight-color:transparent; }
+.desk-camera-unit .camera-eject .art { aspect-ratio:1; }
+.desk-camera-unit .camera-eject:hover { transform:none; }
+.desk-camera-unit .camera-eject[aria-disabled=true] { cursor:progress; }
+.desk-camera-unit .camera-eject.is-shutter { transform:translateY(3px) scale(.985) !important; filter:brightness(1.08); }
+.desk-slot-mask { top:calc(var(--camera-size) * .68); left:9%; right:9%; height:340px; overflow:hidden; z-index:2; pointer-events:none; }
+.camera-desk[data-state=ready] .desk-slot-mask,
+.camera-desk[data-state=error] .desk-slot-mask { overflow:visible; pointer-events:auto; }
+#polaroid-stage { height:100%; }
+#polaroid-stage .instant-photo { top:calc(var(--camera-size) * .25); left:50%; width:96%; padding:0; border:0; background:none; box-shadow:none; transform:translate3d(-50%,0,0) rotate(2deg); transform-origin:50% 0; transition:none !important; perspective:1100px; }
+#polaroid-stage .instant-photo .photo-inner { aspect-ratio:.97; transition:transform 480ms cubic-bezier(.22,1,.36,1) !important; }
+#polaroid-stage .instant-photo .photo-front,
+#polaroid-stage .instant-photo .photo-back { padding:12px 12px 15px; border-radius:2px; background:#fff9e9; box-shadow:0 1px 0 #fff,2px 3px 0 #e4ddc5,4px 10px 22px #244d3e2e; -webkit-backface-visibility:hidden; backface-visibility:hidden; }
+#polaroid-stage .instant-photo .travel-photo { width:100%; aspect-ratio:4/3; margin:0; }
+#polaroid-stage .instant-photo .travel-photo img { width:100%; height:100%; object-fit:cover; }
+#polaroid-stage .instant-photo .instant-caption { font:17px/1.5 KaiTi,'Noto Serif SC',serif; margin:14px 0 7px; display:block; }
+#polaroid-stage .instant-photo small { display:flex; justify-content:space-between; gap:6px; font-size:8px; letter-spacing:.08em; opacity:.65; }
+#polaroid-stage .instant-photo small span { font-size:9px; letter-spacing:0; }
+#polaroid-stage .instant-photo .photo-back { padding:24px; text-align:left; gap:14px; background:#f7efd8; }
+#polaroid-stage .instant-photo .photo-back > span { font:18px/1.85 KaiTi,'Noto Serif SC',serif; }
+#polaroid-stage .empty-photo { top:calc(var(--camera-size) * .31); width:92%; padding:24px 8px; min-height:138px !important; border:none; background:transparent; opacity:.65; }
+#polaroid-stage .empty-photo > span { font-size:30px; line-height:1; }
+#polaroid-stage .empty-photo p { margin:14px 0 8px; font-size:18px; }
+#polaroid-stage .empty-photo small { font-size:12px; }
+.camera-desk[data-state=ejecting] .instant-photo .travel-photo { opacity:.08; }
+.camera-controls { order:1; align-items:flex-start; margin:0; z-index:5; }
+.camera-controls .camera-kicker { font-size:10px; font-weight:800; letter-spacing:.17em; opacity:.65; margin:0 0 18px; }
+.camera-controls h3 { font:700 clamp(25px,2.4vw,34px)/1.5 'Noto Serif SC',serif; margin:0 0 24px; color:#235c50; }
+.camera-contact-sheet { display:flex; gap:10px; margin:0 0 18px; }
+.camera-contact-sheet > span { width:85px; padding:5px 5px 13px; background:#fff9e8; box-shadow:1px 3px 6px #284d3226; transform:rotate(-5deg); }
+.camera-contact-sheet > span:nth-child(2) { transform:translateY(5px) rotate(3deg); }
+.camera-contact-sheet > span:nth-child(3) { transform:rotate(-2deg); }
+.camera-contact-sheet img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+.camera-controls .camera-film-label { font-size:12px; line-height:1.7; margin:0 0 24px; opacity:.8; }
+.camera-controls .film-counter { font:600 12px/1.5 monospace; font-variant-numeric:tabular-nums; letter-spacing:.12em; margin:0 0 12px; opacity:.8; }
+.camera-controls .primary-button { min-width:204px; min-height:48px; justify-content:space-between; }
+.camera-controls .primary-button[aria-disabled=true] { cursor:progress; background:#526f54; border-color:#42604b; box-shadow:0 3px 0 #324b3b; }
+#camera-status { font-size:12px; line-height:1.8; margin:16px 0 6px; min-height:44px; max-width:290px; opacity:.85; }
+.camera-secondary { display:flex; gap:24px; }
+.camera-secondary .text-link { min-height:44px; margin:0; display:inline-flex; align-items:center; font-size:12px; }
+.camera-secondary button:disabled { opacity:.35; cursor:default; }
+.camera-desk button:focus-visible { outline:3px solid #9c382c; outline-offset:6px; }
+
+@media (hover:hover) and (pointer:fine) {
+  .camera-eject:not([aria-disabled=true]):hover { transform:translateY(-2px); }
+  .gallery-photo:hover { transform:translateY(-7px) rotate(0); }
+}
+@media (max-width:1000px) {
+  .camera-desk { gap:28px; }
+  .desk-camera-unit { --camera-size:285px; height:525px; }
+  #polaroid-stage .instant-photo .photo-back { padding:20px; }
+  #polaroid-stage .instant-photo .photo-back > span { font-size:16px; line-height:1.75; }
+}
+@media (max-width:700px) {
+  .desk { padding-top:65px; padding-bottom:95px; }
+  .camera-desk { display:flex !important; gap:4px; margin-top:18px !important; }
+  .desk-camera-unit { --camera-size:min(290px,78vw); height:510px; order:1; }
+  .camera-controls { order:2; align-items:center; text-align:center; width:100%; max-width:340px; }
+  .camera-controls h3,.camera-kicker,.camera-contact-sheet,.camera-film-label { display:none; }
+  .camera-controls .primary-button { width:230px; }
+  #camera-status { min-height:24px; margin-top:15px; }
+  .camera-secondary { gap:30px; }
+  .desk-slot-mask { height:310px; }
+  #polaroid-stage .instant-photo .instant-caption { font-size:15px; margin-top:12px; }
+  #polaroid-stage .instant-photo .photo-back { padding:18px; }
+  #polaroid-stage .instant-photo .photo-back > span { font-size:16px; line-height:1.7; }
+  #photo-dialog { width:94vw; padding:18px; }
+  .photo-slot--dialog { margin-top:26px; }
+  .gallery-photo > span:not(.photo-tape):not(.travel-photo) { font-size:12px; }
+  .gallery-wall { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:360px) {
+  .desk-camera-unit { height:450px; }
+  #polaroid-stage .instant-photo .photo-back > span { font-size:14px; }
+  #polaroid-stage .instant-photo .instant-caption { font-size:13px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #polaroid-stage .instant-photo .photo-inner { transition:none !important; }
+  .desk-camera-unit .camera-eject { transition:none !important; transform:none !important; }
+}

@@ -1,0 +1,72 @@
+/* Generated artwork, 2026-09-09: retain the site's existing layout and interactions. */
+.wood-scene {
+  background-image: linear-gradient(#fff2c547,#fff2c547),url('../assets/illustrations/wood-painted.png') !important;
+  background-size: auto, 100% auto !important;
+  background-repeat: repeat-y !important;
+  background-position:center top;
+  background-color:#dc9348;
+}
+.faq.wood-scene,.outro.wood-scene {
+  background-image:linear-gradient(#fff4d04d,#fff4d04d),url('../assets/illustrations/wood-painted.png') !important;
+  background-size:auto,100% auto !important;
+}
+.postcard,.letter-paper {
+  isolation:isolate;
+  background:transparent;
+  box-shadow:none;
+  border-radius:0;
+}
+.postcard::before,.letter-paper::before {
+  content:'';
+  position:absolute;
+  inset:-5%;
+  z-index:-1;
+  background:url('../assets/illustrations/deckled-paper.png') center / 100% 100% no-repeat;
+  filter:drop-shadow(4px 9px 6px #32421940);
+  pointer-events:none;
+}
+.story-detail {
+  position:absolute;
+  display:block;
+  width:140px;
+  aspect-ratio:1;
+  background-image:url('../assets/illustrations/story-details.png');
+  background-size:300% 200%;
+  background-repeat:no-repeat;
+  clip-path:inset(2%);
+  pointer-events:none;
+  z-index:3;
+}
+.detail-fish{background-position:0 0}
+.detail-bubbles{background-position:50% 0}
+.detail-reeds{background-position:100% 0}
+.detail-flag{background-position:0 100%}
+.detail-stone{background-position:50% 100%}
+.detail-stamps{background-position:100% 100%}
+.hero-flag{right:8%;bottom:10%;width:12vw;max-width:180px;transform:rotate(7deg);z-index:5}
+.postcard-stone{width:100px;left:30%;top:-45px;transform:rotate(-8deg)}
+.postcard .stamp{background:none;border:0;outline:0;aspect-ratio:1;width:105px;max-width:100%;transform:rotate(-9deg)}
+.stamp .detail-stamps{position:relative;width:100%}
+.water-fish-one{right:5%;top:44%;width:105px;animation:fish-wander 8s ease-in-out infinite alternate}
+.water-fish-two{left:3%;top:64%;width:65px;animation:fish-wander 11s ease-in-out infinite alternate-reverse}
+.water-bubbles{right:3%;top:18%;width:130px;animation:bubbles-rise 10s ease-in-out infinite}
+.water-reeds-left{left:-2%;bottom:0;width:210px;transform-origin:bottom;animation:reed-sway 7s ease-in-out infinite alternate}
+.water-reeds-right{right:-2%;bottom:0;width:190px;transform:scaleX(-1);transform-origin:bottom;animation:reed-sway-right 9s ease-in-out infinite alternate}
+.letter-stamps{right:-48px;bottom:35px;width:160px;transform:rotate(13deg)}
+.letter-stone{left:-90px;top:28px;width:150px;transform:rotate(-15deg)}
+@keyframes fish-wander{from{transform:translate3d(12px,0,0) rotate(-4deg)}to{transform:translate3d(-50px,18px,0) rotate(5deg)}}
+@keyframes bubbles-rise{0%{transform:translateY(30px);opacity:0}20%,70%{opacity:.65}100%{transform:translateY(-100px);opacity:0}}
+@keyframes reed-sway{to{transform:rotate(4deg)}}
+@keyframes reed-sway-right{to{transform:scaleX(-1) rotate(4deg)}}
+@media(max-width:700px){
+  .wood-scene,.faq.wood-scene,.outro.wood-scene{background-size:auto,900px auto !important}
+  .hero-flag{right:1%;bottom:7%;width:75px}
+  .postcard-stone{width:75px;top:-43px;left:16%}
+  .water-fish-one{width:65px;right:-2%}
+  .water-fish-two{width:44px;left:-3%}
+  .water-bubbles{width:75px;right:-2%}
+  .water-reeds-left,.water-reeds-right{width:105px;opacity:.7}
+  .letter-stamps{width:85px;right:-20px;bottom:25px}
+  .letter-stone{width:85px;left:-28px;top:-50px}
+}
+@media(prefers-reduced-motion:reduce){.story-detail{animation:none!important}.water-bubbles{opacity:.5}}

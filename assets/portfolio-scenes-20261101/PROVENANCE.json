@@ -1,0 +1,50 @@
+[
+  {
+    "path": "watch-scene.webp",
+    "source": "D:\\ai\\tep1\\8.23\\output\\experience-v3-20261031\\approved-build\\assets\\watch-scene.webp",
+    "sha256": "071d6218045922c0219b8b26e919aff49de19e3a7462241f3abe9f5c949b2c94",
+    "operation": "unchanged copy of approved asset"
+  },
+  {
+    "path": "delivery-scene.webp",
+    "source": "D:\\ai\\tep1\\8.23\\output\\experience-v3-20261031\\approved-build\\assets\\delivery-scene.webp",
+    "sha256": "ff6b486f0220aa042c12874226bca6fb44571e89731f13c56475eac6297a238c",
+    "operation": "unchanged copy of approved asset"
+  },
+  {
+    "path": "yunnan-scene.webp",
+    "source": "D:\\ai\\tep1\\8.23\\output\\experience-v3-20261031\\approved-build\\assets\\yunnan-scene.webp",
+    "sha256": "23cad89471a05b977430501aca69b4dfaf2767399c72e0c2aeded9d26a5827d9",
+    "operation": "unchanged copy of approved asset"
+  },
+  {
+    "path": "math-empty-scene.webp",
+    "source": "D:\\ai\\tep1\\8.23\\output\\experience-v3-20261031\\approved-build\\assets\\math-live\\math-empty-scene.webp",
+    "sha256": "9088ea4506139a14340d791473aa0b49d1e71c1b02e37f1f018d6ad91f52fa6d",
+    "operation": "unchanged copy of approved asset"
+  },
+  {
+    "path": "cream-ring.png",
+    "source": "D:\\ai\\tep1\\8.23\\output\\experience-v3-20261031\\approved-build\\assets\\math-live\\cream-ring.png",
+    "sha256": "20413c8ee8018aa165c70f8c0a40bfd8437a9f89e8eb7a63f2153794a4d06f99",
+    "operation": "unchanged copy of approved asset"
+  },
+  {
+    "path": "coral-triangle.png",
+    "source": "D:\\ai\\tep1\\8.23\\output\\experience-v3-20261031\\approved-build\\assets\\math-live\\coral-triangle.png",
+    "sha256": "f25beaa543b94f4c4426a3b5dd7a367432e593c9aafdd1ebeb5522daeaa083ff",
+    "operation": "unchanged copy of approved asset"
+  },
+  {
+    "path": "approved-sans.woff2",
+    "source": "D:\\ai\\tep1\\8.23\\output\\experience-v3-20261031\\approved-build\\fonts\\approved-sans.woff2",
+    "sha256": "a25e1001e6e77e121dea319dfc2ad7f2b849971c51c6d1e080db7261d7d89665",
+    "operation": "unchanged copy of approved asset"
+  },
+  {
+    "path": "approved-serif.woff2",
+    "source": "D:\\ai\\tep1\\8.23\\output\\experience-v3-20261031\\approved-build\\fonts\\approved-serif.woff2",
+    "sha256": "dd3f8cf16773b270dc22969e56475f335afa56c2068027c32e0ee97e90fbfd89",
+    "operation": "unchanged copy of approved asset"
+  }
+]

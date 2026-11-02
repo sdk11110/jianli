@@ -1,0 +1,28 @@
+/* Small narrative accents share one identity and yield space to content. */
+.character-accent{display:block;object-fit:contain;height:auto;pointer-events:none;user-select:none;filter:drop-shadow(2px 5px 4px #17171316)}
+.method-aside{display:flex;align-items:center;gap:20px;max-width:430px;flex:none}
+.method-aside>p{font:400 20px/1.7 ComicHand,Exhibition,sans-serif;max-width:260px;text-align:right;transform:rotate(-3deg)}
+.method-aside>p span{font:400 12px/1.7 Exhibition,sans-serif}
+.method-aside>.character-accent{width:110px;flex:none;filter:drop-shadow(2px 5px 4px #071f7b35)}
+.section-companion{display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin-left:auto;flex:none}
+.section-companion>.character-accent{width:96px}
+.section-companion>.text-link{font-size:15px}
+.life-scene{position:relative;flex:none;width:340px;min-height:260px}
+.life-scene .life-photo{display:block;width:240px;margin:0 0 0 auto}
+.life-scene>.character-accent{position:absolute;left:0;bottom:-8px;width:110px;transform:rotate(-6deg)}
+.contact-side>.character-contact{width:142px;right:24px;bottom:-18px;transform:rotate(-3deg);filter:drop-shadow(2px 5px 4px #17171320)}
+@media(max-width:1100px) and (min-width:701px){.method-aside>p{display:none}.method-aside>.character-accent{width:96px}.section-companion>.character-accent{width:80px}.life-scene{width:280px;min-height:235px}.life-scene .life-photo{width:205px}.life-scene>.character-accent{width:100px}}
+@media(max-width:700px){
+ .method-aside{margin-top:20px;max-width:none;justify-content:space-between;gap:18px}
+ .method-aside>p{display:block;font:400 15px/1.85 Exhibition,sans-serif;max-width:245px;text-align:left;transform:none}
+ .method-aside>.character-accent{width:74px}
+ .notes .section-heading{position:relative}
+ .notes .section-heading h2,.notes .section-heading>p{padding-right:90px}
+ .section-companion{display:block;margin:14px 0 0}
+ .section-companion>.character-accent{position:absolute;right:0;top:0;width:84px}
+ .section-companion>.text-link{font-size:14px}
+ .life-scene{width:250px;min-height:210px;margin:28px 0 0 auto}
+ .life-scene .life-photo{width:170px;margin:0 5px 0 auto}
+ .life-scene>.character-accent{width:92px;left:-14px;bottom:-3px}
+ .contact-side>.character-contact{width:116px;right:4px;bottom:-12px}
+}

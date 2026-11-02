@@ -1,0 +1,540 @@
+/* Scroll FX: camera eject + irregular wave section edges */
+
+:root {
+  --ease-silk: cubic-bezier(0.16, 1, 0.3, 1);
+  --camera-eject: 0;
+  --tide-progress: 0;
+}
+
+/* ——— Journey: Polaroid slides out of camera on scroll ——— */
+.chapter-camera {
+  position: relative !important;
+  padding-bottom: 48px !important;
+  height: auto !important;
+  align-self: stretch;
+  display: block !important;
+}
+
+.camera-eject-stage {
+  position: relative;
+  width: min(100%, 280px);
+  margin: -28px auto 0;
+  isolation: isolate;
+}
+
+.camera-body {
+  position: relative;
+  z-index: 4;
+  display: block;
+  width: 100%;
+  transform: rotate(6deg);
+  pointer-events: none;
+  filter: drop-shadow(4px 10px 12px rgba(40, 60, 15, 0.22));
+}
+
+.camera-body .art {
+  aspect-ratio: 1;
+  display: block;
+}
+
+.camera-slot-mask {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 52%;
+  bottom: -55%;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.chapter-photo {
+  position: absolute !important;
+  left: 8% !important;
+  right: 8% !important;
+  top: 0 !important;
+  bottom: auto !important;
+  width: auto !important;
+  background: #fffdf6;
+  padding: 10px 10px 28px !important;
+  border-radius: 2px;
+  box-shadow:
+    0 1px 0 #fff,
+    4px 14px 22px rgba(30, 50, 15, 0.28);
+  transform: translate3d(0, calc(-108% + var(--camera-eject) * 118%), 0) rotate(7deg) !important;
+  transform-origin: 50% 0;
+  will-change: transform;
+  z-index: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.chapter-photo img {
+  width: 100%;
+  height: clamp(190px, 24vh, 260px);
+  object-fit: cover;
+  display: block;
+  border-radius: 1px;
+}
+
+.chapter-photo span {
+  display: block;
+  font: 13px "KaiTi", "STKaiti", serif;
+  text-align: center;
+  margin-top: 10px;
+  color: #2a3d22;
+}
+
+.chapter-camera .hand-note {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 16px;
+  white-space: normal;
+  position: static;
+  transform: rotate(-3deg);
+}
+
+.camera-deep-link {
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+/* ——— Kill hard rectangular transition bars ——— */
+.tide-seam,
+.hero::after,
+.about::before,
+.about::after,
+.journey::before,
+.journey::after,
+.desk::before,
+.desk::after,
+.gallery::after,
+.faq::before,
+.tide-curtain__blend {
+  content: none !important;
+  display: none !important;
+}
+
+/* Irregular / sea-wave lips (SVG) */
+.wave-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 7;
+  line-height: 0;
+  pointer-events: none;
+  height: clamp(56px, 10vw, 110px);
+}
+
+.wave-edge svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-edge--top {
+  top: 0;
+  transform: translateY(-88%);
+}
+
+.about {
+  margin-top: -2vh !important;
+  padding-top: calc(7rem + 2vh) !important;
+  padding-bottom: 7rem !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  background-color: #d7a164 !important;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 92px,
+      rgba(110, 55, 20, 0.06) 92px 94px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 150px,
+      rgba(146, 85, 35, 0.18) 151px,
+      #f3c287 158px,
+      transparent 162px
+    ) !important;
+}
+
+.record-row {
+  position: relative !important;
+  z-index: 8 !important;
+  transform: translateY(10%) !important;
+  margin-top: 36px !important;
+  margin-bottom: -1rem !important;
+  isolation: isolate;
+}
+
+.vinyl-disc {
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+.journey {
+  position: relative;
+  margin-top: -2vh !important;
+  box-shadow: none !important;
+  background: #8fa527 !important;
+  overflow: visible !important;
+}
+
+.journey-sticky {
+  box-shadow: none !important;
+  background: #8fa527 url("../assets/illustrations/forest.png") center / cover no-repeat !important;
+}
+
+.tide-curtain {
+  position: relative;
+  height: 140vh;
+  margin-top: -12vh;
+  z-index: 6;
+  pointer-events: none;
+  background: #a1eddf;
+  overflow: visible !important;
+}
+
+.tide-curtain__pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tide-curtain__svg {
+  position: absolute;
+  inset: -2% 0 -8%;
+  width: 100%;
+  height: 118%;
+  transform: translate3d(0, calc(-6% + var(--tide-progress) * 30%), 0);
+  will-change: transform;
+  z-index: 1;
+}
+
+.tide-foam-band,
+.tide-foam-soft,
+.tide-water {
+  mix-blend-mode: normal;
+}
+
+.tide-foam-stroke,
+.tide-layer--back,
+.tide-layer--mid,
+.tide-layer--front {
+  display: none !important;
+}
+
+.desk {
+  border-radius: 0 !important;
+  margin-top: -6vh !important;
+  padding-top: 6.5rem !important;
+  position: relative;
+  z-index: 5;
+  box-shadow: none !important;
+  overflow: visible !important;
+  background: #a1eddf url("../assets/illustrations/underwater.png") center / cover no-repeat !important;
+}
+
+.desk > .section-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.gallery {
+  margin-top: -3vh;
+  padding-top: 5rem;
+  position: relative;
+  overflow: visible !important;
+  box-shadow: none !important;
+  background:
+    radial-gradient(ellipse at 50% 18%, #f0e2b8 0%, transparent 42%),
+    linear-gradient(180deg, #e5d6a8 0%, #d5e8df 45%, #7de4e2 100%) !important;
+}
+
+.gallery-tide-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -4%;
+  height: 50%;
+  pointer-events: none;
+  z-index: 3;
+  opacity: calc(0.65 - var(--tide-progress) * 0.25);
+  transform: translate3d(0, calc(var(--tide-progress) * 12%), 0);
+}
+
+.gallery > .section-wrap {
+  position: relative;
+  z-index: 4;
+}
+
+.faq {
+  margin-top: -3vh;
+  padding-top: 6rem !important;
+  position: relative;
+  overflow: visible !important;
+  box-shadow: none !important;
+  background: #d6bc8b !important;
+}
+
+.outro {
+  position: relative;
+  background: #d6bc8b !important;
+}
+
+/* Desk camera: Polaroid from film slot */
+.camera-desk {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 420px !important;
+  margin: 28px auto 0 !important;
+  min-height: 0 !important;
+  grid-template-columns: none !important;
+}
+
+.desk-camera-unit {
+  position: relative;
+  width: min(340px, 78vw);
+  margin: 0 auto;
+  isolation: isolate;
+  padding-bottom: 210px;
+}
+
+.desk-camera-unit .camera-eject {
+  position: relative;
+  z-index: 4;
+  width: 100% !important;
+  padding: 0;
+  background: none;
+  display: block;
+  transform: rotate(-2deg);
+  transition: transform 280ms var(--ease-silk);
+}
+
+.desk-camera-unit .camera-eject:hover {
+  transform: rotate(2deg);
+}
+
+.desk-camera-unit .camera-eject .art {
+  aspect-ratio: 1;
+  display: block;
+  width: 100%;
+}
+
+.desk-slot-mask {
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  top: 61%;
+  height: 280px;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.desk-slot-mask:has(.instant-photo.is-out) {
+  pointer-events: auto;
+}
+
+#polaroid-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0 !important;
+}
+
+#polaroid-stage .empty-photo {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, 0);
+  width: 88%;
+  min-height: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 18px 12px;
+  opacity: 0.72;
+  font-size: 13px;
+  background: rgba(255, 249, 222, 0.45);
+  border: 1.5px dashed rgba(30, 90, 80, 0.28);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+#polaroid-stage .instant-photo {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 92%;
+  max-width: none !important;
+  margin: 0;
+  padding: 9px 9px 26px;
+  background: #fffdf6;
+  border-radius: 2px;
+  box-shadow:
+    0 1px 0 #fff,
+    3px 12px 18px rgba(20, 70, 65, 0.22);
+  transform: translate3d(-50%, -96%, 0) rotate(1deg);
+  transform-origin: 50% 0;
+  transition: transform 820ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+  cursor: pointer;
+}
+
+#polaroid-stage .instant-photo.is-ejecting {
+  transform: translate3d(-50%, -96%, 0) rotate(-2deg);
+  transition: none;
+}
+
+#polaroid-stage .instant-photo.is-out {
+  transform: translate3d(-50%, 18%, 0) rotate(3deg);
+}
+
+.camera-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -12px;
+  position: relative;
+  z-index: 5;
+}
+
+.camera-controls .primary-button {
+  margin-top: 0 !important;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+@media (max-width: 1000px) {
+  .chapter-photo img {
+    height: clamp(160px, 22vh, 210px);
+  }
+}
+
+@media (max-width: 700px) {
+  .desk-camera-unit {
+    width: min(280px, 84vw);
+    padding-bottom: 180px;
+  }
+
+  .desk-slot-mask {
+    height: 230px;
+    left: 14%;
+    right: 14%;
+    top: 60%;
+  }
+
+  .camera-eject-stage {
+    width: 160px;
+    margin: 0;
+  }
+
+  .chapter-camera {
+    height: auto;
+    padding: 0;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chapter-photo {
+    padding: 7px 7px 18px;
+  }
+
+  .chapter-photo img {
+    height: 100px;
+  }
+
+  .chapter-photo span {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+
+  .chapter-camera .hand-note {
+    font-size: 12px;
+  }
+
+  .tide-curtain {
+    height: 100vh;
+  }
+
+  .wave-edge {
+    height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .map-object,
+  .primary-button,
+  .text-link,
+  .gallery-photo,
+  .postcard,
+  .vinyl-disc,
+  .instant-photo .photo-inner,
+  .chapter-controls a,
+  .gallery-filters button,
+  .sound-switch,
+  .menu-toggle,
+  .loose-record,
+  .turntable-controls button {
+    transition-timing-function: var(--ease-silk) !important;
+  }
+
+  .postcard {
+    transition:
+      opacity 560ms var(--ease-silk),
+      transform 780ms var(--ease-silk),
+      visibility 560ms ease !important;
+  }
+
+  .primary-button {
+    transition:
+      transform 260ms var(--ease-silk),
+      box-shadow 260ms var(--ease-silk) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapter-photo,
+  .tide-curtain__svg,
+  .gallery-tide-overlay {
+    transform: none !important;
+  }
+
+  #polaroid-stage .instant-photo {
+    transition: none;
+    transform: translate3d(-50%, 18%, 0) rotate(2deg);
+  }
+
+  .tide-curtain {
+    height: 40vh;
+  }
+
+  .chapter-photo {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 12px auto 0;
+  }
+
+  .camera-slot-mask {
+    position: relative;
+    inset: auto;
+    overflow: visible;
+  }
+}

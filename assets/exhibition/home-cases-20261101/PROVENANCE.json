@@ -1,0 +1,38 @@
+[
+  {
+    "case": "watch",
+    "origin": "Actual desktop browser screenshot of the current local case page, 1440x900 CSS viewport",
+    "file": "watch.png",
+    "sha256": "655eba9fe735f01c347afb574e891bf9849eef6ad7dbc9451b6ccf27ac2dd1c8"
+  },
+  {
+    "case": "training",
+    "origin": "Actual desktop browser screenshot of the current local case page, 1440x900 CSS viewport",
+    "file": "training.png",
+    "sha256": "cda2da0548c25af11a460d8a81accdf0debcbf3141536ea3b3691c83612d8983"
+  },
+  {
+    "case": "math",
+    "origin": "Actual desktop browser screenshot of the current local case page, 1440x900 CSS viewport",
+    "file": "math.png",
+    "sha256": "6afab3c0ac7cdb19cf1c467219f0750fba39bfa0b2430bd04913acde4934cf07"
+  },
+  {
+    "case": "textbook",
+    "origin": "Actual desktop browser screenshot of the current local case page, 1440x900 CSS viewport",
+    "file": "textbook.png",
+    "sha256": "1d052c384795b4664dab3d85b626781f6f977d08d358ff0ff554a71bc7f84301"
+  },
+  {
+    "case": "delivery",
+    "origin": "Actual desktop browser screenshot of the current local case page, 1440x900 CSS viewport",
+    "file": "delivery.png",
+    "sha256": "6c552e64ca04a662c2d08f789cf3b19e75ce5edc1b89d2f05d47f35387046e2c"
+  },
+  {
+    "case": "yunnan",
+    "origin": "Actual desktop browser screenshot of the current local case page, 1440x900 CSS viewport",
+    "file": "yunnan.png",
+    "sha256": "e45f4ef548b6ffeb6cedd11b216e25ffb03d7109c8c5fcd9ee85fca7829b8a5f"
+  }
+]

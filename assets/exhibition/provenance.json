@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-21",
+  "mode": "built-in image_gen",
+  "approvedReference": "output/home-redesign-20261021/04-desktop-hero-3d.png",
+  "assets": [
+    {
+      "files": [
+        "stage-3d.webp",
+        "stage-3d-900.webp"
+      ],
+      "nativePixels": [
+        1478,
+        1064
+      ],
+      "prompt": "Use case: precise-object-edit / production website asset.\nInput is the approved desktop homepage visual reference. Extract and faithfully rebuild ONLY the dimensional orange-and-cobalt exhibition screen structure on the right, as a standalone isolated 3D website compositing asset.\nTRANSPARENT BACKGROUND outside the object. No webpage, no words, no captions, no buttons, no text, no numbers, no branding, no cartoon host/girl. No film content inside the screen.\nThe result is the physical display theatre from the reference: thick bevelled orange frame, dark recessed inner screen bezel, thick cobalt rear architectural panel with clearly visible right-side depth, THREE mounted black cylindrical spotlights casting warm light, the orange thick solid plinth/base and its side return, small film reels and a paper stack at lower left, and the physical blank ivory results plaque across the lower front. Leave this plaque completely blank and easily overlaid with live HTML numbers, with simple straight usable edges.\nThe central screen aperture must be a completely featureless flat very dark charcoal rectangle/polygon (#151719), not an illustrated scene; real HTML video will be composited above it. Make the screen large and clean, four corners clearly readable, near-frontal with a gentle upward right slope on the top edge and nearly level lower edge. Do not add reflections or objects crossing the inner screen. The inner aperture should take about68% of total object width and45% of total object height.\nThe overall orange solid frame, cobalt panel, spotlight arrangement, grounded perspective, warm studio lighting, matte lacquer, bevel highlights, contact shadows and premium tangible 3D volume must closely match the reference. No new scenery. The left reels are real matte metal, the small paper stack shows subtle paper layers. The small sketch-frame prop may be a blank ivory frame, no drawing or person. Strong consistent front/middle/back ordering.\nComposition: object fully visible with a small transparent margin, centered on a landscape canvas around1600x1150. Base resting along bottom, no cropping of lights, reels, panel or plinth. Preserve the reference's camera angle and saturated orange/cobalt palette. Add no background room, wall, floor or border; only subtle transparent cast shadow immediately beneath object. High-quality production-ready isolated 3D structure suitable to combine with separate DOM screen, DOM stats plaque, and independent character cutout. No baked UI.",
+      "processing": "FFmpeg WebP encoding; 900px version downsampled, alpha preserved."
+    },
+    {
+      "file": "training-interface.webp",
+      "source": "Local content-training platform-tour .workspace runtime screenshot. Demonstration data, not production system."
+    },
+    {
+      "file": "watch-live.webp",
+      "source": "Local watch-link runtime screenshot."
+    },
+    {
+      "file": "math-live.webp",
+      "source": "Local math-project/interactive-h5 runtime screenshot."
+    },
+    {
+      "file": "textbook-live.webp",
+      "source": "Local interactive-textbook/gitlab-pages-deploy runtime screenshot."
+    },
+    {
+      "file": "sheep-host-standing-v2.webp",
+      "nativePixels": [
+        1024,
+        1536
+      ],
+      "mode": "built-in image_gen",
+      "source": "Approved 04-desktop-hero-3d.png for pose; original hero-character-1100.webp for character identity only",
+      "prompt": "Use case: identity-preserve / production website character sticker.\nGenerate ONE standalone transparent-background illustrated sheep-girl host cutout for an existing website. Image 1 is the APPROVED HOMEPAGE COMPOSITION and is the authoritative reference for the character's POSE, BODY ORIENTATION, EXPRESSION, illustrated style and proportions: reproduce the flat illustrated sheep girl standing at the extreme right edge of the orange theatre. Image 2 is supporting identity/detail reference only; its horizontal flying pose is explicitly WRONG for the requested asset and MUST NOT be copied.\n\nCritical request: recreate the character from the right-hand side of Image 1 as a high-resolution independent image, not a website screenshot. She is a TALL UPRIGHT or SLIGHTLY LEFT-LEANING welcoming host, standing with her feet down on the stage, peeking out from beside the screen. Her body is vertical, NOT flying, NOT swimming, NOT kicking out horizontally. Her left arm extends toward the viewer and slightly left, with a welcoming open palm and clear foreshortening; five naturally drawn fingers. Her other arm bends up behind/above the head, holding a black drawing pencil. This must feel like the lively, welcoming standing pose from Image 1. Head and torso occupy the upper two thirds. Lower legs remain short and vertical. Include the complete figure, black pleated skirt, bare knees, simple blue-and-white sneakers. Keep all hands, pencil, scarf ends, horns, and feet inside the canvas with a little transparent breathing room.\n\nIdentity: exactly the same charming girl mascot: fluffy WHITE curly sheep hair, two small ivory curved horns, pointed sheep ears with pink interiors, warm light peach skin, large amber-brown expressive eyes BOTH OPEN as in Image 1, little freckles, a joyful open-mouth smile, vivid cobalt oversized chunky sweater with the small existing white pixel-outline emblem, warm ORANGE knitted scarf with small fringes hanging near her torso. Preserve clean confident black comic outlines and delicate colored pencil/ink texture. Keep the orange scarf compact, draping down/right behind her, not a giant horizontal flying tail. The reaching hand is expressive but must not dominate or obscure her face. Character family must match Image 1, not become a new 3D doll.\n\nStyle: polished 2D hand-drawn full-color editorial manga illustration, flat colored fills with modest illustrated shading. Thin warm ivory die-cut edge around the silhouette, approximately 3px at final display size, with a subtle dark outer cut edge only. The WHITE hair must be visibly ivory-white, not transparent. Real alpha transparency around the figure, including between fingers and arms. No opaque checkerboard, no solid background.\n\nComposition: portrait cutout roughly 2:3 aspect ratio, upright full figure, largest usable resolution. Figure fills most of the canvas. Designed to sit to the RIGHT of a solid orange and cobalt 3D screen, with palm overlapping that screen's lower right corner. Do NOT include the screen, theatre, orange base, scenery, numeric plaque, illustration frame, typography, logos other than the original tiny sweater emblem, reaction marks, sparkles, extra props or extra characters. Do not bake a floor or cast shadow into the transparency; the web page will provide placement and shadow. Return only the ONE finished transparent character asset.\n",
+      "processing": "PNG encoded to WebP quality 92, alpha retained; no background extraction or geometry redraw",
+      "originalPNG": "output/home-exhibition/character-v2/sheep-host-standing-v2.png"
+    },
+    {
+      "file": "characters/sheep-presenter-v1.webp",
+      "mode": "built-in image_gen",
+      "reference": "output/home-exhibition/character-v2/sheep-host-standing-v2.png",
+      "prompt": "Use case: identity-preserve / production transparent website mascot sticker. Generate ONE independent character asset, not a sheet. The input reference is the exact established sheep-girl character identity and drawing style. Maintain her white fluffy curly sheep hair, small ivory curled horns, sheep ears with peach pink interiors, freckles, amber-brown eyes, charming youthful girl face, cobalt oversized knitted sweater with the original small white pixel-outline emblem, orange knitted scarf, black pleated skirt, and blue-and-white sneakers. Same bold clean black comic outlines, flat colored fills, subtle paper/ink drawing texture and modest illustrated shading. Premium playful editorial 2D illustration; NOT a 3D doll, not photorealistic, not a new character. Keep consistent facial features and proportions across this series, cheerful but natural expressions. A narrow clean ivory die-cut edge (about 3px at final display) only. True RGBA transparency outside the silhouette and between limbs/props; no solid background, checkerboard, glow, floor, cast shadow, scene, backdrop, typography, speech bubble or decorative confetti. No text on any prop. Fully visible complete figure and any held prop with a small transparent margin; no clipped hands, ears, horns, hair, shoes or scarf. One character only. Character must remain legible as a small 100–180px website accent. Portrait composition around 2:3, highest usable resolution. Do not copy the reference's reaching-hand/raised-pencil pose; use the specified NEW pose below. NEW POSE: a confident standing project presenter, body in a slight three-quarter turn toward the LEFT. Her left arm extends naturally to the left with one clearly formed index finger pointing to a project alongside her; the other hand rests on her hip. Friendly slightly open smile, eyes look LEFT in the pointing direction. No pencil, clipboard or other prop. Both feet grounded, subtle asymmetrical relaxed stance. Not the old reaching-palm pose. Clear directional silhouette for the right edge of a work-section heading.",
+      "nativePixels": [
+        1024,
+        1536
+      ],
+      "webPixels": [
+        600,
+        900
+      ],
+      "placement": "备用：作品讲解 / 操作指引",
+      "processing": "WebP delivery encoding with preserved alpha; original transparent PNG retained in character-set/png"
+    },
+    {
+      "file": "characters/sheep-quality-v1.webp",
+      "mode": "built-in image_gen",
+      "reference": "output/home-exhibition/character-v2/sheep-host-standing-v2.png",
+      "prompt": "Use case: identity-preserve / production transparent website mascot sticker. Generate ONE independent character asset, not a sheet. The input reference is the exact established sheep-girl character identity and drawing style. Maintain her white fluffy curly sheep hair, small ivory curled horns, sheep ears with peach pink interiors, freckles, amber-brown eyes, charming youthful girl face, cobalt oversized knitted sweater with the original small white pixel-outline emblem, orange knitted scarf, black pleated skirt, and blue-and-white sneakers. Same bold clean black comic outlines, flat colored fills, subtle paper/ink drawing texture and modest illustrated shading. Premium playful editorial 2D illustration; NOT a 3D doll, not photorealistic, not a new character. Keep consistent facial features and proportions across this series, cheerful but natural expressions. A narrow clean ivory die-cut edge (about 3px at final display) only. True RGBA transparency outside the silhouette and between limbs/props; no solid background, checkerboard, glow, floor, cast shadow, scene, backdrop, typography, speech bubble or decorative confetti. No text on any prop. Fully visible complete figure and any held prop with a small transparent margin; no clipped hands, ears, horns, hair, shoes or scarf. One character only. Character must remain legible as a small 100–180px website accent. Portrait composition around 2:3, highest usable resolution. Do not copy the reference's reaching-hand/raised-pencil pose; use the specified NEW pose below. NEW POSE: a curious quality reviewer in a compact thoughtful stance. She holds a small simple hand magnifying glass up to one eye, looking through it; the eye behind the lens is subtly enlarged, not grotesque. Her other hand holds a small blank ivory checklist board with only three simple geometric check marks (no words or numbers). Small focused smile, brows curious, slight head tilt, knees lightly bent. Full figure. She is inspecting a creative result, playful and attentive. No extra floating icons. Balanced central composition for a blue AI-method section.",
+      "nativePixels": [
+        1024,
+        1536
+      ],
+      "webPixels": [
+        600,
+        900
+      ],
+      "placement": "AI 工作方法",
+      "processing": "WebP delivery encoding with preserved alpha; original transparent PNG retained in character-set/png"
+    },
+    {
+      "file": "characters/sheep-journal-v1.webp",
+      "mode": "built-in image_gen",
+      "reference": "output/home-exhibition/character-v2/sheep-host-standing-v2.png",
+      "prompt": "Use case: identity-preserve / production transparent website mascot sticker. Generate ONE independent character asset, not a sheet. The input reference is the exact established sheep-girl character identity and drawing style. Maintain her white fluffy curly sheep hair, small ivory curled horns, sheep ears with peach pink interiors, freckles, amber-brown eyes, charming youthful girl face, cobalt oversized knitted sweater with the original small white pixel-outline emblem, orange knitted scarf, black pleated skirt, and blue-and-white sneakers. Same bold clean black comic outlines, flat colored fills, subtle paper/ink drawing texture and modest illustrated shading. Premium playful editorial 2D illustration; NOT a 3D doll, not photorealistic, not a new character. Keep consistent facial features and proportions across this series, cheerful but natural expressions. A narrow clean ivory die-cut edge (about 3px at final display) only. True RGBA transparency outside the silhouette and between limbs/props; no solid background, checkerboard, glow, floor, cast shadow, scene, backdrop, typography, speech bubble or decorative confetti. No text on any prop. Fully visible complete figure and any held prop with a small transparent margin; no clipped hands, ears, horns, hair, shoes or scarf. One character only. Character must remain legible as a small 100–180px website accent. Portrait composition around 2:3, highest usable resolution. Do not copy the reference's reaching-hand/raised-pencil pose; use the specified NEW pose below. NEW POSE: she sits cross-legged on an invisible flat surface, leaning forward slightly, sketching with a black pencil in a small ivory open sketchbook resting on her lap. Head tilted down toward the sketchbook, warm focused smile. The sketchbook is blank except a few simple black sketch strokes, no text. Orange scarf drapes compactly over shoulder and lap. Full seated figure with both shoes and skirt naturally visible, compact near-square silhouette within the canvas. No chair, desk, scenery or floor. Charming quiet work-journal moment.",
+      "nativePixels": [
+        1024,
+        1536
+      ],
+      "webPixels": [
+        600,
+        900
+      ],
+      "placement": "现场手记",
+      "processing": "WebP delivery encoding with preserved alpha; original transparent PNG retained in character-set/png"
+    },
+    {
+      "file": "characters/sheep-travel-v1.webp",
+      "mode": "built-in image_gen",
+      "reference": "output/home-exhibition/character-v2/sheep-host-standing-v2.png",
+      "prompt": "Use case: identity-preserve / production transparent website mascot sticker. Generate ONE independent character asset, not a sheet. The input reference is the exact established sheep-girl character identity and drawing style. Maintain her white fluffy curly sheep hair, small ivory curled horns, sheep ears with peach pink interiors, freckles, amber-brown eyes, charming youthful girl face, cobalt oversized knitted sweater with the original small white pixel-outline emblem, orange knitted scarf, black pleated skirt, and blue-and-white sneakers. Same bold clean black comic outlines, flat colored fills, subtle paper/ink drawing texture and modest illustrated shading. Premium playful editorial 2D illustration; NOT a 3D doll, not photorealistic, not a new character. Keep consistent facial features and proportions across this series, cheerful but natural expressions. A narrow clean ivory die-cut edge (about 3px at final display) only. True RGBA transparency outside the silhouette and between limbs/props; no solid background, checkerboard, glow, floor, cast shadow, scene, backdrop, typography, speech bubble or decorative confetti. No text on any prop. Fully visible complete figure and any held prop with a small transparent margin; no clipped hands, ears, horns, hair, shoes or scarf. One character only. Character must remain legible as a small 100–180px website accent. Portrait composition around 2:3, highest usable resolution. Do not copy the reference's reaching-hand/raised-pencil pose; use the specified NEW pose below. NEW POSE: a lively little explorer walking gently toward the LEFT, wearing a small simple orange day backpack, holding a compact black camera with both hands at chest height. The camera is a plain unbranded rounded rectangular compact camera with a small lens. Curious happy eyes look slightly up and left, small closed smile. One foot makes a small forward step, the other remains grounded. Keep the orange scarf short, no horizontal flying tail. Full figure, no landscape or extra travel props. A compact upright accent beside a travel photo.",
+      "nativePixels": [
+        1024,
+        1536
+      ],
+      "webPixels": [
+        600,
+        900
+      ],
+      "placement": "关于我 / 云南手帐",
+      "processing": "WebP delivery encoding with preserved alpha; original transparent PNG retained in character-set/png"
+    },
+    {
+      "file": "characters/sheep-wave-v1.webp",
+      "mode": "built-in image_gen",
+      "reference": "output/home-exhibition/character-v2/sheep-host-standing-v2.png",
+      "prompt": "Use case: identity-preserve / production transparent website mascot sticker. Generate ONE independent character asset, not a sheet. The input reference is the exact established sheep-girl character identity and drawing style. Maintain her white fluffy curly sheep hair, small ivory curled horns, sheep ears with peach pink interiors, freckles, amber-brown eyes, charming youthful girl face, cobalt oversized knitted sweater with the original small white pixel-outline emblem, orange knitted scarf, black pleated skirt, and blue-and-white sneakers. Same bold clean black comic outlines, flat colored fills, subtle paper/ink drawing texture and modest illustrated shading. Premium playful editorial 2D illustration; NOT a 3D doll, not photorealistic, not a new character. Keep consistent facial features and proportions across this series, cheerful but natural expressions. A narrow clean ivory die-cut edge (about 3px at final display) only. True RGBA transparency outside the silhouette and between limbs/props; no solid background, checkerboard, glow, floor, cast shadow, scene, backdrop, typography, speech bubble or decorative confetti. No text on any prop. Fully visible complete figure and any held prop with a small transparent margin; no clipped hands, ears, horns, hair, shoes or scarf. One character only. Character must remain legible as a small 100–180px website accent. Portrait composition around 2:3, highest usable resolution. Do not copy the reference's reaching-hand/raised-pencil pose; use the specified NEW pose below. NEW POSE: a warm welcoming standing pose with both feet planted close together, one arm bent beside her head and an OPEN PALM waving hello, five natural clearly separated fingers. The other arm is relaxed near the hip, hand lightly holding the loose end of her orange scarf. Face front toward viewer, joyful open smile, both eyes open. No pencil, no huge foreshortened reaching hand. Full figure, clean compact vertical silhouette for a contact-section invitation. Keep arms and scarf comfortably inside the portrait frame.",
+      "nativePixels": [
+        1024,
+        1536
+      ],
+      "webPixels": [
+        600,
+        900
+      ],
+      "placement": "联系交流",
+      "processing": "WebP delivery encoding with preserved alpha; original transparent PNG retained in character-set/png"
+    },
+    {
+      "file": "characters/sheep-celebrate-v1.webp",
+      "mode": "built-in image_gen",
+      "reference": "output/home-exhibition/character-v2/sheep-host-standing-v2.png",
+      "prompt": "Use case: identity-preserve / production transparent website mascot sticker. Generate ONE independent character asset, not a sheet. The input reference is the exact established sheep-girl character identity and drawing style. Maintain her white fluffy curly sheep hair, small ivory curled horns, sheep ears with peach pink interiors, freckles, amber-brown eyes, charming youthful girl face, cobalt oversized knitted sweater with the original small white pixel-outline emblem, orange knitted scarf, black pleated skirt, and blue-and-white sneakers. Same bold clean black comic outlines, flat colored fills, subtle paper/ink drawing texture and modest illustrated shading. Premium playful editorial 2D illustration; NOT a 3D doll, not photorealistic, not a new character. Keep consistent facial features and proportions across this series, cheerful but natural expressions. A narrow clean ivory die-cut edge (about 3px at final display) only. True RGBA transparency outside the silhouette and between limbs/props; no solid background, checkerboard, glow, floor, cast shadow, scene, backdrop, typography, speech bubble or decorative confetti. No text on any prop. Fully visible complete figure and any held prop with a small transparent margin; no clipped hands, ears, horns, hair, shoes or scarf. One character only. Character must remain legible as a small 100–180px website accent. Portrait composition around 2:3, highest usable resolution. Do not copy the reference's reaching-hand/raised-pencil pose; use the specified NEW pose below. NEW POSE: a joyful small celebratory hop, both knees softly bent and both feet lifted just a little, one arm raised with a clear thumbs-up gesture, the other hand clenched in a small happy fist by her shoulder. A delighted smile with gently closed crescent eyes. Her sweater and scarf follow the upward motion subtly. Full figure, compact vertical silhouette, no flying-horizontal pose, no confetti, no stars, no text. This is a reusable completion-success sticker.",
+      "nativePixels": [
+        1024,
+        1536
+      ],
+      "webPixels": [
+        600,
+        900
+      ],
+      "placement": "备用：完成反馈 / 交付成功",
+      "processing": "WebP delivery encoding with preserved alpha; original transparent PNG retained in character-set/png"
+    },
+    {
+      "file": "approved/project-guide-v1.webp",
+      "mode": "built-in image_gen transparent extraction",
+      "reference": "output/home-design-confirmation-20261021/02-projects.png",
+      "prompt": "Use case: background-extraction / precise-object-edit. Extract ONLY the very small FULL slim sheep girl at the lower LEFT edge of the supplied approved project-page comp. Preserve EXACT approved proportions, pose, face, linework, clothes, orange scarf and blue sweater, and the upward pointing gesture, both sneakers and full slim legs. Do NOT redesign, fatten, enlarge the head, widen sweater sleeves, or make a chibi mascot. This is the approved slim long figure and must match the reference. Isolate the girl as a standalone transparent PNG, portrait native full figure, with 3% transparent margin. Remove ALL website, screenshot, text, lines, tabs and background. No rule/ledge, no floor, no glow, no baked shadow. Preserve original pixels' visual appearance as closely as possible. True RGBA alpha between hands, hair, limbs and scarf. Do not create any new props.",
+      "webPixels": [
+        420,
+        1091
+      ],
+      "originalPNG": "output/home-design-confirmation-20261021/character-originals/project-guide.png",
+      "processing": "Native transparent image generation; alpha-bounds trim with 3px margin, proportional resize and WebP quality93 encoding only. No artwork redraw in code."
+    },
+    {
+      "file": "approved/method-peek-v1.webp",
+      "mode": "built-in image_gen transparent extraction",
+      "reference": "output/home-design-confirmation-20261021/03-method.png",
+      "prompt": "Use case: background-extraction / precise-object-edit. Extract ONLY the flat illustrated sheep-girl at the TOP RIGHT of the supplied approved blue AI-method page. EXACTLY preserve her narrow upper torso, head, amber eyes, white curls and ivory horns, expression, orange scarf, BLUE sweater, left-hand magnifying glass and RIGHT-hand curled gripping fingers. She is peeking over an ivory panel: right fingers drape in front of its top edge; her upper torso extends behind the edge. Return her as ONE independent transparent character cutout, including her entire head, magnifying glass, compact narrow torso down to the horizontal reference panel top, and all gripping fingers below that edge. Retain the EXACT same approved pose and SLIM proportions, not round or fat, not a new doll. Remove the blue field, ivory panel, orange exclamation marks, all text, dividers, media and UI. No drawn ledge or line. Preserve the reference occlusion cut of her lower torso as a straight transparent boundary suitable to hide behind live HTML panel. Keep gripping hand lower than that boundary. Small transparent margin, no glow or cast shadow. True alpha background including magnifier glass transparency. No new props, no full standing body, no extra arm.",
+      "webPixels": [
+        800,
+        588
+      ],
+      "originalPNG": "output/home-design-confirmation-20261021/character-originals/method-peek.png",
+      "processing": "Native transparent image generation; alpha-bounds trim with 3px margin, proportional resize and WebP quality93 encoding only. No artwork redraw in code."
+    },
+    {
+      "file": "approved/about-grip-v1.webp",
+      "mode": "built-in image_gen transparent extraction",
+      "reference": "output/home-design-confirmation-20261021/05-about.png",
+      "prompt": "Use case: background-extraction / precise-object-edit. Extract ONLY the FULL SLIM standing sheep girl immediately LEFT of the large photo in the supplied approved about-section comp. Preserve EXACT pose and very slim long proportions, white curls, ivory horns, amber eyes, cheerful face, blue knitted sweater, orange scarf, black skirt, long slim legs, blue-and-white sneakers, orange backpack and little black camera. One hand holds the camera at chest, the other hand grips the photo's left vertical edge: fingers pointing/curling to her RIGHT. The head and body must remain as narrow and elongated as the reference, not chubby, not puffy or a new chibi character. Return ONE standalone transparent full-body cutout. Remove the WHOLE photo, white frame, background, text, horizontal line and all other UI; no opaque strips on the right hand. Preserve complete gripping fingers even where they lay on photo edge. Small 3% transparent margin, no solid background, no floor, no glow or shadow. Match the approved reference drawing as closely as possible, not a variation.",
+      "webPixels": [
+        497,
+        1450
+      ],
+      "originalPNG": "output/home-design-confirmation-20261021/character-originals/about-grip.png",
+      "processing": "Native transparent image generation; alpha-bounds trim with 3px margin, proportional resize and WebP quality93 encoding only. No artwork redraw in code."
+    },
+    {
+      "file": "approved/footer-breakout-v1.webp",
+      "mode": "built-in image_gen transparent extraction",
+      "reference": "output/home-design-confirmation-20261021/07-footer-approved.png",
+      "prompt": "Use case: background-extraction / precise-object-edit. Extract ONLY the entire horizontal PRONE sheep girl from the supplied APPROVED orange footer comp, including the near hand reaching DOWN and toward the viewer, the other curled hand gripping the horizontal UI line, white curls/horns, head at LEFT, blue sweater, orange scarf, black skirt, torso along RIGHT and two bent legs with shoes raised at far RIGHT. Match this exact approved character silhouette, anatomy, face, expression, body/head proportions, garment folds and camera perspective. Do not invent another lounging pose, do not fatten or slim the approved figure and do not revert to both hands under chin. Remove ALL orange background, ALL text, buttons and footer logo, and REMOVE THE BLACK HORIZONTAL DIVIDER from between/behind her curled fingers. A live SVG line will be placed in that gap on the webpage. Preserve the gripping fingers and the reaching palm as separate visible foreground forms but keep them in this single correctly registered whole-character PNG. Return ONE true transparent RGBA standalone character, landscape canvas with small transparent margin, complete body and all fingers/feet visible. No glow, border rectangle, floor, line, platform, shadow, new props or extra gestures. The reaching forearm and hand extend below the body baseline, as in the exact reference. Very thin ivory die-cut edge same as source. Highest-quality edge and all transparent gaps.",
+      "webPixels": [
+        1600,
+        803
+      ],
+      "originalPNG": "output/home-design-confirmation-20261021/character-originals/footer-breakout.png",
+      "processing": "Native transparent image generation; alpha-bounds trim with 3px margin, proportional resize and WebP quality93 encoding only. No artwork redraw in code."
+    }
+  ],
+  "retainedAssets": {
+    "character": "Current upright hero unchanged. Approved slim project guide, method edge-grip, about photo-grip and prone boundary-breaking footer are separate transparent cutouts. Old six-pose set retained unused as library assets.",
+    "film": "User-supplied existing project-reels files. Labelled project explanation.",
+    "comics": "Existing anonymous work-story panels and DOM copy."
+  },
+  "approvedFollowupReference": "output/home-design-confirmation-20261021/approved-manifest.json"
+}

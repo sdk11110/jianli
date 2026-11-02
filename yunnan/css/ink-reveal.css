@@ -1,0 +1,166 @@
+/* Ink-wash develop: parchment + soft diagonal bleed reveal (ref video 13) */
+
+.ink-svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.travel-photo.is-ink-plate {
+  background:
+    radial-gradient(120% 80% at 30% 20%, #fffdf6 0%, #f3ead6 55%, #e7dcc4 100%);
+  isolation: isolate;
+}
+
+.travel-photo.is-ink-plate img {
+  opacity: 0;
+  transform: scale(1.02);
+  filter: saturate(0.88) contrast(0.96);
+  -webkit-mask-image: linear-gradient(
+    122deg,
+    #000 0%,
+    #000 calc(var(--ink, 0) * 92% - 6%),
+    rgba(0, 0, 0, 0.55) calc(var(--ink, 0) * 96%),
+    transparent calc(var(--ink, 0) * 108% + 4%)
+  );
+  mask-image: linear-gradient(
+    122deg,
+    #000 0%,
+    #000 calc(var(--ink, 0) * 92% - 6%),
+    rgba(0, 0, 0, 0.55) calc(var(--ink, 0) * 96%),
+    transparent calc(var(--ink, 0) * 108% + 4%)
+  );
+  -webkit-mask-size: 140% 140%;
+  mask-size: 140% 140%;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  will-change: opacity, filter, -webkit-mask-image, mask-image;
+}
+
+.travel-photo.is-ink-plate.is-ink-live img {
+  opacity: 1;
+}
+
+.travel-photo.is-ink-plate.is-ink-done img {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.travel-photo.is-ink-plate::after {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  pointer-events: none;
+  opacity: calc(0.55 - var(--ink, 0) * 0.55);
+  background:
+    radial-gradient(ellipse 40% 18% at calc(12% + var(--ink, 0) * 70%) calc(78% - var(--ink, 0) * 55%),
+      #1c4a4222 0%, transparent 72%),
+    radial-gradient(ellipse 28% 12% at calc(28% + var(--ink, 0) * 50%) calc(62% - var(--ink, 0) * 40%),
+      #5f8f8620 0%, transparent 70%);
+  mix-blend-mode: multiply;
+  transition: opacity 80ms linear;
+}
+
+#polaroid-stage .instant-photo.is-ejecting {
+  z-index: 5;
+}
+
+#polaroid-stage .instant-photo .photo-front {
+  overflow: hidden;
+}
+
+#polaroid-stage .instant-photo .travel-photo.is-ink-plate {
+  background-image:
+    linear-gradient(#fff9ec, #f4ebda),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+}
+
+.camera-contact-sheet .contact-blank {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background:
+    linear-gradient(135deg, #f7f0de 0%, #e8dfc8 100%);
+  box-shadow: inset 0 0 0 1px #174d4314;
+  position: relative;
+}
+
+.camera-contact-sheet .contact-blank::after {
+  content: "";
+  position: absolute;
+  inset: 18% 22%;
+  border: 1px dashed #174d4330;
+  border-radius: 2px;
+}
+
+.gallery-empty {
+  grid-column: 1 / -1;
+  min-height: 220px;
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 48px 24px;
+  background:
+    radial-gradient(80% 70% at 50% 40%, #fffdf6 0%, #f3ead8 100%);
+  border: 1px dashed #174d4333;
+}
+
+.gallery-empty strong {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.gallery-empty p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 1.8;
+}
+
+.gallery-empty a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.city-image.is-sealed {
+  cursor: default;
+}
+
+.city-image.is-sealed img {
+  filter: grayscale(0.35) saturate(0.4) blur(1px);
+  opacity: 0.35;
+}
+
+.city-image.is-sealed::after {
+  content: "风景还在相机里 · 去显影";
+  opacity: 1;
+  transform: none;
+  background: #fff9e8f0;
+}
+
+.city-image.is-sealed:hover::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .travel-photo.is-ink-plate img {
+    -webkit-mask-image: none;
+    mask-image: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  .travel-photo.is-ink-plate::after {
+    display: none;
+  }
+}

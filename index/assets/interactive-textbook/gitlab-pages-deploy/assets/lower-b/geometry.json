@@ -1,0 +1,463 @@
+{
+  "source_canvas": {
+    "width": 1774,
+    "height": 887,
+    "aspect_ratio": 2
+  },
+  "placements": {
+    "book_inner_page": {
+      "quad_pixels": [
+        [
+          111,
+          239
+        ],
+        [
+          549,
+          278
+        ],
+        [
+          608,
+          766
+        ],
+        [
+          129,
+          768
+        ]
+      ],
+      "quad_normalized": [
+        [
+          0.06257,
+          0.269448
+        ],
+        [
+          0.30947,
+          0.313416
+        ],
+        [
+          0.342728,
+          0.863585
+        ],
+        [
+          0.072717,
+          0.86584
+        ]
+      ],
+      "quad_role": "Exact chosen safe print-insert plane inside the blank physical page; inset from the curved paper silhouette.",
+      "outer_visible_paper_boundary_pixels": [
+        [
+          104,
+          229
+        ],
+        [
+          153,
+          240
+        ],
+        [
+          218,
+          251
+        ],
+        [
+          298,
+          261
+        ],
+        [
+          386,
+          268
+        ],
+        [
+          475,
+          270
+        ],
+        [
+          547,
+          269
+        ],
+        [
+          554,
+          274
+        ],
+        [
+          614,
+          772
+        ],
+        [
+          601,
+          775
+        ],
+        [
+          511,
+          773
+        ],
+        [
+          406,
+          772
+        ],
+        [
+          301,
+          775
+        ],
+        [
+          197,
+          779
+        ],
+        [
+          124,
+          781
+        ]
+      ],
+      "outer_visible_paper_boundary_normalized": [
+        [
+          0.058625,
+          0.258174
+        ],
+        [
+          0.086246,
+          0.270575
+        ],
+        [
+          0.122886,
+          0.282976
+        ],
+        [
+          0.167982,
+          0.29425
+        ],
+        [
+          0.217587,
+          0.302142
+        ],
+        [
+          0.267756,
+          0.304397
+        ],
+        [
+          0.308343,
+          0.303269
+        ],
+        [
+          0.312289,
+          0.308906
+        ],
+        [
+          0.34611,
+          0.870349
+        ],
+        [
+          0.338782,
+          0.873732
+        ],
+        [
+          0.28805,
+          0.871477
+        ],
+        [
+          0.228861,
+          0.870349
+        ],
+        [
+          0.169673,
+          0.873732
+        ],
+        [
+          0.111048,
+          0.878241
+        ],
+        [
+          0.069899,
+          0.880496
+        ]
+      ],
+      "outer_boundary_note": "Visual physical-boundary guide only; gently curved paper edge is represented by a polygon. The inset quad is the intended real-page mapping.",
+      "bounds_xywh_pixels": [
+        111,
+        239,
+        497,
+        529
+      ],
+      "bounds_xywh_normalized": [
+        0.06257,
+        0.269448,
+        0.280158,
+        0.596392
+      ]
+    },
+    "large_frame_inner_image": {
+      "quad_pixels": [
+        [
+          679,
+          290
+        ],
+        [
+          1284,
+          287
+        ],
+        [
+          1284,
+          625
+        ],
+        [
+          679,
+          626
+        ]
+      ],
+      "quad_normalized": [
+        [
+          0.382751,
+          0.326945
+        ],
+        [
+          0.723788,
+          0.323563
+        ],
+        [
+          0.723788,
+          0.704622
+        ],
+        [
+          0.382751,
+          0.70575
+        ]
+      ],
+      "conservative_inset_quad_pixels": [
+        [
+          682,
+          294
+        ],
+        [
+          1281,
+          292
+        ],
+        [
+          1281,
+          622
+        ],
+        [
+          682,
+          623
+        ]
+      ],
+      "conservative_inset_quad_normalized": [
+        [
+          0.384442,
+          0.331454
+        ],
+        [
+          0.722097,
+          0.3292
+        ],
+        [
+          0.722097,
+          0.70124
+        ],
+        [
+          0.384442,
+          0.702368
+        ]
+      ],
+      "native_corner_radius_px": 8,
+      "note": "Nominal straight-corner extensions of the rounded inner plane. The physical orange clip is near x=1244..1284,y=255..291 and should remain visible."
+    },
+    "right_frame_inner_image": {
+      "quad_pixels": [
+        [
+          1343,
+          329
+        ],
+        [
+          1698,
+          322
+        ],
+        [
+          1698,
+          625
+        ],
+        [
+          1343,
+          628
+        ]
+      ],
+      "quad_normalized": [
+        [
+          0.757046,
+          0.370913
+        ],
+        [
+          0.957159,
+          0.363021
+        ],
+        [
+          0.957159,
+          0.704622
+        ],
+        [
+          0.757046,
+          0.708005
+        ]
+      ],
+      "conservative_inset_quad_pixels": [
+        [
+          1346,
+          332
+        ],
+        [
+          1695,
+          325
+        ],
+        [
+          1695,
+          622
+        ],
+        [
+          1346,
+          625
+        ]
+      ],
+      "conservative_inset_quad_normalized": [
+        [
+          0.758737,
+          0.374295
+        ],
+        [
+          0.955468,
+          0.366404
+        ],
+        [
+          0.955468,
+          0.70124
+        ],
+        [
+          0.758737,
+          0.704622
+        ]
+      ],
+      "native_corner_radius_px": 8,
+      "note": "Slight scene perspective: top edge rises toward the right. The lower frosted caption rail is excluded."
+    },
+    "safe_zones": {
+      "top_text_safe": {
+        "xywh_pixels": [
+          60,
+          24,
+          1645,
+          180
+        ],
+        "xywh_normalized": [
+          0.033822,
+          0.027057,
+          0.927283,
+          0.202931
+        ]
+      },
+      "title": {
+        "xywh_pixels": [
+          76,
+          30,
+          1240,
+          106
+        ],
+        "xywh_normalized": [
+          0.042841,
+          0.033822,
+          0.698985,
+          0.119504
+        ]
+      },
+      "current_state": {
+        "xywh_pixels": [
+          1435,
+          38,
+          270,
+          96
+        ],
+        "xywh_normalized": [
+          0.808906,
+          0.042841,
+          0.152198,
+          0.10823
+        ]
+      },
+      "process_nodes": {
+        "xywh_pixels": [
+          130,
+          158,
+          1485,
+          51
+        ],
+        "xywh_normalized": [
+          0.073281,
+          0.178129,
+          0.837091,
+          0.057497
+        ]
+      },
+      "book_caption": {
+        "xywh_pixels": [
+          126,
+          813,
+          430,
+          39
+        ],
+        "xywh_normalized": [
+          0.071026,
+          0.916573,
+          0.24239,
+          0.043968
+        ]
+      },
+      "large_frame_caption": {
+        "xywh_pixels": [
+          697,
+          645,
+          566,
+          49
+        ],
+        "xywh_normalized": [
+          0.392897,
+          0.72717,
+          0.319053,
+          0.055242
+        ]
+      },
+      "right_frame_caption": {
+        "xywh_pixels": [
+          1357,
+          644,
+          326,
+          49
+        ],
+        "xywh_normalized": [
+          0.764938,
+          0.726043,
+          0.183766,
+          0.055242
+        ]
+      },
+      "lower_actions": {
+        "xywh_pixels": [
+          662,
+          754,
+          1014,
+          64
+        ],
+        "xywh_normalized": [
+          0.373168,
+          0.850056,
+          0.57159,
+          0.072153
+        ]
+      }
+    },
+    "upper_reserved_sky_region_xywh_pixels": [
+      0,
+      0,
+      1774,
+      223
+    ],
+    "upper_reserved_sky_region_xywh_normalized": [
+      0,
+      0,
+      1,
+      0.251409
+    ]
+  }
+}

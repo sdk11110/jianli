@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>平均数 · 错中求解实验室</title>
+  <style>
+    :root {
+      --paper: #fff7ea;
+      --paper-2: #fffdf8;
+      --ink: #26324a;
+      --muted: #75819b;
+      --line: #eadfcf;
+      --purple: #5b57e8;
+      --purple-soft: #ebeafe;
+      --orange: #ff8a4c;
+      --orange-soft: #fff0e4;
+      --mint: #28bfa3;
+      --mint-soft: #e4fbf5;
+      --green: #45c96b;
+      --green-soft: #e7faea;
+      --yellow: #ffd45a;
+      --yellow-soft: #fff8d9;
+      --coral: #ff6b7a;
+      --coral-soft: #ffe9ed;
+      --sky: #44b7e8;
+      --shadow: 0 22px 48px rgba(82, 61, 31, .12);
+      --shadow-soft: 0 10px 24px rgba(82, 61, 31, .08);
+      --ease: cubic-bezier(.23, 1, .32, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      overflow: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 212, 90, .20) 0 2px, transparent 3px),
+        radial-gradient(circle at 88% 14%, rgba(68, 183, 232, .16) 0 3px, transparent 4px),
+        radial-gradient(circle at 74% 88%, rgba(40, 191, 163, .12) 0 2px, transparent 3px),
+        var(--paper);
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    }
+
+    button { font: inherit; }
+    button:focus-visible, [tabindex]:focus-visible { outline: 3px solid rgba(91, 87, 232, .34); outline-offset: 3px; }
+
+    .app-shell {
+      width: min(1520px, 100vw);
+      height: 100vh;
+      margin: 0 auto;
+      padding: 22px 26px 20px;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 16px;
+      position: relative;
+    }
+
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 260px; }
+    .brand-mark {
+      width: 46px; height: 46px; border-radius: 16px; display: grid; place-items: center;
+      color: white; font-size: 24px; background: var(--purple); box-shadow: 0 9px 18px rgba(91,87,232,.25);
+      transform: rotate(-7deg);
+    }
+    .brand-copy small { display: block; color: var(--purple); font-size: 12px; font-weight: 900; letter-spacing: .18em; }
+    .brand-copy h1 { margin: 2px 0 0; font-size: clamp(20px, 2.2vw, 30px); line-height: 1.1; letter-spacing: -.04em; }
+    .route { flex: 1; max-width: 660px; display: flex; align-items: center; gap: 8px; }
+    .route-line { height: 7px; flex: 1; border-radius: 99px; background: #eee8dd; position: relative; overflow: hidden; }
+    .route-fill { height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--purple), var(--sky), var(--mint)); transition: width .6s var(--ease); }
+    .route-dot { width: 33px; height: 33px; border: 0; padding: 0; border-radius: 50%; background: var(--paper-2); color: var(--muted); font-weight: 900; box-shadow: 0 0 0 2px #eee8dd; cursor: pointer; transition: transform .2s var(--ease), color .2s, background .2s; }
+    .route-dot:hover { transform: translateY(-2px); }
+    .route-dot.active { color: white; background: var(--purple); box-shadow: 0 0 0 3px rgba(91,87,232,.18); }
+    .route-dot.done { color: white; background: var(--mint); box-shadow: 0 0 0 3px rgba(40,191,163,.18); }
+    .voice-state { display: inline-flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; font-weight: 800; white-space: nowrap; }
+    .voice-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
+    .voice-dot.on { background: var(--mint); box-shadow: 0 0 0 6px rgba(40,191,163,.12); animation: breathe 1.5s ease-in-out infinite; }
+
+    .workbench { min-height: 0; display: grid; grid-template-columns: minmax(210px, .92fr) minmax(440px, 2.1fr) minmax(220px, .95fr); gap: 16px; }
+    .panel { min-height: 0; background: rgba(255,253,248,.88); border: 1px solid rgba(234,223,207,.94); border-radius: 28px; box-shadow: var(--shadow-soft); }
+    .mentor-panel { position: relative; overflow: hidden; padding: 20px 18px 18px; display: flex; flex-direction: column; justify-content: space-between; }
+    .mentor-panel::after { content: ""; position: absolute; width: 190px; height: 190px; border-radius: 50%; background: rgba(255,212,90,.23); right: -76px; top: -64px; }
+    .chapter-label { position: relative; z-index: 1; color: var(--purple); font-size: 12px; font-weight: 900; letter-spacing: .16em; }
+    .mentor-panel h2 { position: relative; z-index: 1; margin: 10px 0 5px; font-size: clamp(22px, 2.4vw, 34px); line-height: 1.1; letter-spacing: -.05em; }
+    .mentor-panel .subcopy { position: relative; z-index: 1; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .mascot-wrap { position: relative; z-index: 1; min-height: 220px; margin: 10px auto 0; display: grid; place-items: end center; flex: 1; }
+    .mascot { width: min(100%, 240px); height: auto; filter: drop-shadow(0 18px 16px rgba(64,45,25,.15)); transition: transform .5s var(--ease), filter .5s var(--ease); animation: float 4.5s ease-in-out infinite; }
+    .mascot.hint { transform: rotate(-4deg) translateX(-7px); filter: drop-shadow(0 18px 16px rgba(255,107,122,.22)); }
+    .mascot.success { transform: rotate(4deg) translateY(-9px) scale(1.04); filter: drop-shadow(0 18px 16px rgba(69,201,107,.26)); }
+    .speech { position: relative; z-index: 2; margin-top: -2px; padding: 14px 15px; background: var(--purple-soft); border-radius: 17px 17px 17px 6px; color: #3c3a91; font-size: 14px; line-height: 1.55; font-weight: 800; }
+    .speech::before { content: ""; position: absolute; left: 28px; bottom: -8px; border: 9px solid transparent; border-top-color: var(--purple-soft); border-left-width: 0; }
+    .speech strong { color: var(--purple); }
+
+    .stage-panel { padding: 20px 22px 18px; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; overflow: hidden; position: relative; }
+    .stage-head { display: flex; justify-content: space-between; align-items: start; gap: 18px; }
+    .kicker { color: var(--orange); font-size: 12px; font-weight: 900; letter-spacing: .16em; }
+    .stage-head h2 { margin: 6px 0 0; font-size: clamp(22px, 2.7vw, 38px); line-height: 1.05; letter-spacing: -.06em; }
+    .stage-head p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .stage-badge { display: inline-flex; align-items: center; gap: 7px; border-radius: 99px; padding: 9px 12px; font-size: 12px; font-weight: 900; background: var(--yellow-soft); color: #a87500; white-space: nowrap; }
+    .stage-badge .spark { font-size: 16px; }
+    #sceneStage { min-height: 0; overflow: auto; scrollbar-width: thin; padding: 16px 2px 8px; }
+    .scene { display: none; min-height: 100%; animation: sceneIn .48s var(--ease) both; }
+    .scene.active { display: block; }
+    .scene-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; align-items: stretch; }
+    .hero-question { grid-column: 1/-1; padding: 18px 20px; background: linear-gradient(135deg, #f8f6ff, #ffffff); border: 1px solid #e1defd; border-radius: 22px; position: relative; overflow: hidden; }
+    .hero-question::after { content: "?"; position: absolute; right: 22px; bottom: -32px; font-size: 130px; line-height: 1; font-weight: 1000; color: rgba(91,87,232,.08); }
+    .hero-question .eyebrow { color: var(--purple); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+    .hero-question h3 { margin: 9px 0 0; font-size: clamp(22px, 3vw, 38px); letter-spacing: -.06em; max-width: 80%; }
+    .score-card { padding: 18px; border-radius: 22px; background: white; border: 1px solid var(--line); box-shadow: 0 8px 18px rgba(82,61,31,.06); cursor: pointer; transition: transform .25s var(--ease), box-shadow .25s, border-color .25s; }
+    .score-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+    .score-card.orange { background: var(--orange-soft); border-color: #ffd0b5; }
+    .score-card.mint { background: var(--mint-soft); border-color: #b7eee2; }
+    .score-label { color: var(--muted); font-size: 12px; font-weight: 900; letter-spacing: .08em; }
+    .score-flow { display: flex; align-items: center; justify-content: center; gap: 13px; margin-top: 12px; }
+    .big-num { font-size: clamp(48px, 6vw, 78px); line-height: .9; letter-spacing: -.09em; font-weight: 1000; }
+    .orange .big-num { color: var(--orange); } .mint .big-num { color: var(--mint); }
+    .flow-arrow { font-size: 28px; color: var(--purple); font-weight: 900; }
+    .note-strip { grid-column: 1/-1; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 15px; border-radius: 16px; background: var(--yellow-soft); color: #957009; font-weight: 900; font-size: 14px; }
+    .formula-card { padding: 17px 18px; border-radius: 22px; background: white; border: 1px solid var(--line); }
+    .formula-card.orange { background: var(--orange-soft); border-color: #ffd0b5; } .formula-card.mint { background: var(--mint-soft); border-color: #b7eee2; }
+    .formula-title { color: var(--muted); font-size: 12px; font-weight: 900; }
+    .formula { margin-top: 10px; font-size: clamp(25px, 3vw, 42px); font-weight: 1000; letter-spacing: -.06em; }
+    .formula.orange { color: var(--orange); } .formula.mint { color: var(--mint); } .formula.purple { color: var(--purple); }
+    .formula-explain { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .difference-bar { height: 14px; margin-top: 14px; background: white; border-radius: 99px; padding: 3px; border: 1px solid rgba(255,138,76,.24); }
+    .difference-bar span { display: block; width: 72%; height: 100%; background: var(--orange); border-radius: inherit; transform-origin: left; animation: barIn .8s var(--ease) both; }
+    .difference-bar.mint { border-color: rgba(40,191,163,.24); } .difference-bar.mint span { width: 45%; background: var(--mint); }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .mini-chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px; border-radius: 12px; background: var(--paper); color: var(--muted); font-size: 12px; font-weight: 900; }
+    .mini-chip strong { color: var(--ink); }
+
+    .grouping-layout { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 14px; min-width: 0; }
+    .tray, .students { min-width: 0; padding: 15px; border-radius: 22px; border: 1px solid var(--line); background: var(--paper-2); }
+    .zone-title { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 11px; }
+    .zone-title b { font-size: 14px; } .zone-title span { color: var(--muted); font-size: 12px; font-weight: 900; }
+    .block-tray { min-height: 170px; display: grid; grid-template-columns: repeat(9, 1fr); gap: 7px; align-content: start; }
+    .score-block { width: 100%; aspect-ratio: 1; border: 0; border-radius: 12px; color: #99552c; background: #ffd8b7; box-shadow: inset 0 -3px 0 rgba(207,115,52,.15), 0 4px 0 rgba(255,138,76,.10); font-size: 11px; font-weight: 1000; cursor: grab; touch-action: none; user-select: none; transition: transform .18s var(--ease), box-shadow .18s, opacity .2s; }
+    .score-block:hover { transform: translateY(-3px) rotate(-3deg); box-shadow: inset 0 -3px 0 rgba(207,115,52,.15), 0 8px 12px rgba(255,138,76,.16); }
+    .score-block.is-dragging { position: fixed; z-index: 50; width: 46px; height: 46px; opacity: .92; transform: rotate(8deg) scale(1.1); cursor: grabbing; pointer-events: none; }
+    .score-block.is-placed { width: 30px; height: 30px; border-radius: 9px; cursor: default; background: var(--orange); color: white; box-shadow: none; }
+    .student-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; min-width: 0; }
+    .student-card { min-width: 0; min-height: 75px; padding: 9px 7px; border: 1px dashed #d9cdbd; border-radius: 15px; background: #fffaf1; transition: border-color .2s, background .2s, transform .25s var(--ease), box-shadow .25s; }
+    .student-card.near { border-color: var(--purple); background: var(--purple-soft); transform: translateY(-3px); }
+    .student-card.complete { border-style: solid; border-color: var(--green); background: var(--green-soft); box-shadow: 0 6px 12px rgba(69,201,107,.12); }
+    .student-card.wrong { animation: shake .36s ease; border-color: var(--coral); }
+    .student-top { display: flex; align-items: center; justify-content: space-between; gap: 3px; color: var(--muted); font-size: 11px; font-weight: 900; }
+    .student-top > span:last-child { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .student-face { width: 29px; height: 29px; display: grid; place-items: center; overflow: hidden; border-radius: 10px; background: #e6eaff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.88); }
+    .student-face img { width: 150%; height: 150%; max-width: none; object-fit: cover; object-position: 50% 20%; transform: translateY(5%); }
+    .slots { min-height: 33px; display: flex; align-items: center; justify-content: center; gap: 3px; margin-top: 6px; }
+    .empty-slot { width: 28px; height: 28px; border: 1px dashed #d9cdbd; border-radius: 8px; }
+    .count-panel { grid-column: 1/-1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: 18px; background: var(--purple-soft); color: #4643a5; }
+    .count-panel .count { font-size: 26px; font-weight: 1000; letter-spacing: -.06em; }
+    .count-panel small { color: #7772c9; font-weight: 800; }
+    .hint-line { grid-column: 1/-1; padding: 11px 14px; border-radius: 14px; background: var(--yellow-soft); color: #98740e; font-size: 12px; font-weight: 800; }
+
+    .ledger-layout { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; min-height: 270px; }
+    .ledger { padding: 18px; min-height: 200px; border-radius: 22px; background: white; border: 2px solid var(--line); box-shadow: var(--shadow-soft); }
+    .ledger.people { border-color: #b7eee2; background: var(--mint-soft); } .ledger.score { border-color: #ffd0b5; background: var(--orange-soft); }
+    .ledger-kicker { color: var(--muted); font-size: 12px; font-weight: 900; } .ledger h3 { margin: 10px 0 20px; font-size: 20px; }
+    .ledger-equation { font-size: clamp(22px, 2.7vw, 34px); font-weight: 1000; letter-spacing: -.07em; } .people .ledger-equation { color: var(--mint); } .score .ledger-equation { color: var(--orange); }
+    .ledger-note { margin-top: 12px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .equal-burst { width: 82px; height: 82px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: white; font-size: 23px; font-weight: 1000; box-shadow: 0 11px 20px rgba(69,201,107,.24); animation: popIn .7s var(--ease) both; }
+    .finale { display: grid; place-items: center; min-height: 330px; text-align: center; position: relative; overflow: hidden; }
+    .finale::before, .finale::after { content: "✦"; position: absolute; color: var(--yellow); font-size: 58px; animation: sparkle 2.4s ease-in-out infinite; } .finale::before { left: 13%; top: 10%; } .finale::after { right: 14%; bottom: 12%; animation-delay: .6s; }
+    .final-answer { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; padding: 22px 35px; border-radius: 28px; background: var(--green-soft); border: 2px solid #a8e9b7; box-shadow: 0 15px 30px rgba(69,201,107,.12); }
+    .final-answer small { color: #349a50; font-size: 13px; font-weight: 900; letter-spacing: .12em; } .final-answer strong { color: var(--green); font-size: clamp(37px, 5vw, 66px); letter-spacing: -.08em; }
+    .open-question { margin-top: 18px; padding: 13px 18px; border-radius: 16px; background: var(--yellow-soft); color: #94700d; font-size: 14px; font-weight: 900; }
+    .final-reveal { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 16px; padding: 14px 16px; border-radius: 20px; background: linear-gradient(135deg, var(--green-soft), #fffdf8); border: 1px solid #b7eec3; animation: sceneIn .5s var(--ease) both; }
+    .final-reveal b { color: var(--green); font-size: 28px; letter-spacing: -.06em; }
+    .final-reveal span { color: #4b9d5d; font-size: 13px; font-weight: 900; }
+
+    .formula-rail { padding: 17px 15px; display: flex; flex-direction: column; overflow: hidden; }
+    .rail-title { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; } .rail-title h3 { margin: 0; font-size: 16px; } .rail-title span { font-size: 12px; font-weight: 900; color: var(--muted); }
+    .rail-list { display: grid; gap: 10px; }
+    .rail-item { position: relative; padding: 13px 12px 13px 42px; border-radius: 17px; background: var(--paper); border: 1px solid var(--line); opacity: .5; transition: opacity .3s, transform .3s var(--ease), border-color .3s, background .3s; }
+    .rail-item::before { content: ""; position: absolute; left: 13px; top: 15px; width: 21px; height: 21px; display: grid; place-items: center; border-radius: 50%; background: #eae5dc; color: white; font-size: 12px; font-weight: 1000; }
+    .rail-item.unlocked { opacity: 1; transform: translateX(2px); } .rail-item.done { border-color: #a8e9b7; background: var(--green-soft); } .rail-item.done::before { content: "✓"; background: var(--green); }
+    .rail-item b { display: block; font-size: 14px; } .rail-item small { display: block; margin-top: 4px; color: var(--muted); line-height: 1.4; font-size: 11px; }
+    .rail-equation { margin-top: 8px; font-size: 20px; font-weight: 1000; letter-spacing: -.05em; } .rail-item.orange .rail-equation { color: var(--orange); } .rail-item.mint .rail-equation { color: var(--mint); } .rail-item.purple .rail-equation { color: var(--purple); } .rail-item.green .rail-equation { color: var(--green); }
+    .rail-tip { margin-top: auto; padding: 13px; border-radius: 16px; background: var(--purple-soft); color: #5450a9; font-size: 12px; line-height: 1.55; font-weight: 800; }
+
+    .controlbar { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 22px; background: #fffdf8; border: 1px solid var(--line); box-shadow: var(--shadow-soft); }
+    .controlbar button, .select-like { min-height: 42px; padding: 0 14px; border: 0; border-radius: 13px; background: var(--paper); color: var(--ink); font-weight: 900; cursor: pointer; transition: transform .2s var(--ease), background .2s, color .2s, box-shadow .2s; }
+    .controlbar button:hover { transform: translateY(-2px); box-shadow: 0 7px 14px rgba(82,61,31,.09); } .controlbar button.primary { color: white; background: var(--purple); box-shadow: 0 8px 15px rgba(91,87,232,.23); } .controlbar button.primary:hover { background: #4c47d5; }
+    .controlbar .divider { width: 1px; height: 28px; background: var(--line); margin: 0 2px; } .controlbar .spacer { flex: 1; }
+    .speed { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; font-weight: 900; } .speed select { border: 0; color: var(--ink); background: var(--paper); border-radius: 11px; padding: 10px; font-weight: 900; }
+    .caption { position: fixed; left: 50%; bottom: 92px; transform: translate(-50%, 14px); max-width: min(620px, 82vw); padding: 11px 16px; border-radius: 99px; background: rgba(38,50,74,.94); color: white; font-size: 13px; line-height: 1.45; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s var(--ease); z-index: 100; text-align: center; } .caption.show { opacity: 1; transform: translate(-50%, 0); }
+    .toast { position: fixed; top: 22px; left: 50%; transform: translate(-50%, -14px); padding: 11px 16px; border-radius: 99px; background: var(--coral); color: white; font-size: 13px; font-weight: 900; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s var(--ease); z-index: 120; } .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .confetti { position: fixed; z-index: 80; width: 10px; height: 15px; border-radius: 3px; pointer-events: none; animation: confettiDrop 950ms var(--ease) forwards; }
+
+    @keyframes breathe { 50% { transform: scale(1.05); } }
+    @keyframes float { 50% { transform: translateY(-6px) rotate(1deg); } }
+    @keyframes sceneIn { from { opacity: 0; transform: translateY(8px) scale(.985); } to { opacity: 1; transform: none; } }
+    @keyframes barIn { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes popIn { from { opacity: 0; transform: scale(.75); } to { opacity: 1; transform: scale(1); } }
+    @keyframes sparkle { 0%, 100% { transform: rotate(0) scale(.8); opacity: .5; } 50% { transform: rotate(15deg) scale(1.1); opacity: 1; } }
+    @keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+    @keyframes confettiDrop { to { transform: translate(var(--dx), 180px) rotate(420deg); opacity: 0; } }
+
+    @media (max-width: 1100px) {
+      body { overflow: auto; }
+      .app-shell { min-height: 100vh; height: auto; }
+      .workbench { grid-template-columns: 220px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; }
+      .formula-rail { grid-column: 1/-1; grid-row: 2; padding: 12px 15px; } .rail-title { margin-bottom: 8px; } .rail-list { grid-template-columns: repeat(4, 1fr); } .rail-tip { display: none; }
+      .mentor-panel { min-height: 520px; }
+    }
+    @media (max-width: 820px) {
+      .topbar { flex-wrap: wrap; } .route { order: 3; flex-basis: 100%; max-width: none; } .voice-state { margin-left: auto; }
+      .workbench { grid-template-columns: 1fr; } .mentor-panel { min-height: 390px; } .mascot-wrap { min-height: 180px; } .formula-rail { grid-row: auto; } .rail-list { grid-template-columns: repeat(2, 1fr); }
+      .controlbar { flex-wrap: wrap; } .controlbar .spacer { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+
+    /* Impeccable direction contract: this is a sunlit math stage, not a card dashboard. The page dramatizes one misread score as a physical trail of evidence, then lets the learner move the evidence. It refuses the category-default white dashboard by giving the stage a dark evidence rail, a warm paper floor, authored mascot scale, and scene-specific color choreography. First viewport: mentor left, oversized contradiction center, evidence rail right, controls anchored at the bottom. FORM: replacement world / sunny math stage. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md */
+
+    body { position: relative; background: #f7ead7; }
+    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .7; background: radial-gradient(circle at 48% 13%, rgba(255,255,255,.9), transparent 34%), radial-gradient(circle at 92% 88%, rgba(91,87,232,.10), transparent 28%), radial-gradient(circle at 7% 72%, rgba(255,138,76,.11), transparent 26%); }
+    body::after { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .28; background-image: radial-gradient(#d7c7af 1px, transparent 1px); background-size: 22px 22px; mask-image: linear-gradient(120deg, rgba(0,0,0,.2), transparent 42%, rgba(0,0,0,.12)); }
+    .app-shell { position: relative; isolation: isolate; width: min(1580px, 100vw); padding: 24px 30px 22px; gap: 18px; }
+    .topbar, .workbench, .controlbar { position: relative; z-index: 2; }
+    .brand-mark { background: linear-gradient(145deg, #6e68ff, #4a46d4); border-radius: 17px; box-shadow: 0 12px 22px rgba(91,87,232,.28), inset 0 1px 0 rgba(255,255,255,.32); }
+    .brand-copy h1 { font-size: clamp(22px, 2.35vw, 34px); }
+    .route-line { height: 9px; background: #e6dccd; box-shadow: inset 0 1px 2px rgba(69,49,29,.06); }
+    .route-fill { background: linear-gradient(90deg, #6e68ff, #44b7e8, #28bfa3); }
+    .route-dot { width: 36px; height: 36px; background: #fffdf8; box-shadow: 0 0 0 2px #e8dfd1, 0 5px 10px rgba(82,61,31,.06); }
+    .route-dot.active { background: #5b57e8; box-shadow: 0 0 0 4px rgba(91,87,232,.17), 0 8px 16px rgba(91,87,232,.22); }
+    .panel { border-radius: 30px; border-color: rgba(227,214,194,.95); box-shadow: 0 24px 56px rgba(82,61,31,.13), 0 2px 0 rgba(255,255,255,.8) inset; }
+    .mentor-panel { padding: 24px 20px 20px; background: linear-gradient(160deg, #fbf8ff 0%, #f0efff 58%, #fffdf8 100%); }
+    .mentor-panel::before { content: ""; position: absolute; width: 340px; height: 340px; border-radius: 50%; left: -140px; bottom: -132px; border: 1px solid rgba(91,87,232,.11); box-shadow: 0 0 0 22px rgba(91,87,232,.04), 0 0 0 44px rgba(91,87,232,.03); }
+    .mentor-panel::after { width: 230px; height: 230px; right: -112px; top: -84px; background: rgba(255,212,90,.36); }
+    .chapter-label { color: #6d68d9; letter-spacing: .2em; }
+    .mentor-panel h2 { font-size: clamp(26px, 3vw, 41px); }
+    .mascot-wrap { min-height: 280px; margin-top: 8px; }
+    .mascot { width: min(100%, 278px); filter: drop-shadow(0 24px 18px rgba(64,45,25,.17)); }
+    .speech { background: #5b57e8; color: white; box-shadow: 0 12px 18px rgba(91,87,232,.20); }
+    .speech::before { border-top-color: #5b57e8; }
+    .speech strong { color: #fff1a6; }
+    .stage-panel { --stage-accent: var(--purple); padding: 24px 26px 20px; background: #fffdf8; border-color: rgba(229,217,198,.96); overflow: hidden; }
+    .stage-panel::before { content: ""; position: absolute; width: 520px; height: 520px; right: -230px; top: -225px; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--stage-accent) 20%, transparent); box-shadow: 0 0 0 18px color-mix(in srgb, var(--stage-accent) 5%, transparent), 0 0 0 48px color-mix(in srgb, var(--stage-accent) 3%, transparent); pointer-events: none; }
+    .stage-panel::after { content: ""; position: absolute; left: 38%; bottom: -160px; width: 330px; height: 330px; border-radius: 50%; background: color-mix(in srgb, var(--stage-accent) 7%, transparent); pointer-events: none; }
+    #app[data-scene="total"] .stage-panel { --stage-accent: var(--orange); }
+    #app[data-scene="average"] .stage-panel { --stage-accent: var(--mint); }
+    #app[data-scene="grouping"] .stage-panel { --stage-accent: var(--purple); }
+    #app[data-scene="ledger"] .stage-panel { --stage-accent: var(--green); }
+    .stage-head, #sceneStage { position: relative; z-index: 1; }
+    .kicker { display: none; }
+    .stage-head h2 { font-size: clamp(30px, 4.2vw, 56px); line-height: .98; letter-spacing: -.075em; }
+    .stage-head p { max-width: 48ch; font-size: 14px; }
+    .stage-badge { background: #26324a; color: white; border-radius: 13px; padding: 10px 13px; box-shadow: 0 10px 18px rgba(38,50,74,.18); }
+    .stage-badge .spark { color: #ffd45a; }
+    #sceneStage { padding: 26px 2px 12px; }
+    .scene { min-height: 100%; }
+    .scene-grid { gap: 16px; }
+    .hero-question { min-height: 200px; display: flex; flex-direction: column; justify-content: center; padding: 24px 26px; border: 0; background: linear-gradient(135deg, #efeeff 0%, #ffffff 54%, #fff5da 100%); box-shadow: 0 18px 28px rgba(91,87,232,.10), inset 0 0 0 1px rgba(91,87,232,.12); }
+    .hero-question .eyebrow { color: #5b57e8; font-size: 12px; letter-spacing: .18em; }
+    .hero-question h3 { font-size: clamp(28px, 3.7vw, 52px); line-height: 1.02; max-width: 83%; }
+    .hero-question::after { color: rgba(91,87,232,.11); right: 30px; bottom: -42px; font-size: 165px; }
+    .score-card { min-height: 196px; display: flex; flex-direction: column; justify-content: center; border: 0; box-shadow: 0 16px 25px rgba(82,61,31,.10), inset 0 0 0 1px rgba(255,255,255,.56); }
+    .score-card.orange { transform: rotate(-1.7deg); } .score-card.mint { transform: rotate(1.7deg); }
+    .score-card.orange:hover, .score-card.mint:hover { transform: translateY(-6px) rotate(0); }
+    .big-num { font-size: clamp(58px, 7vw, 92px); }
+    .note-strip { background: #26324a; color: #fff; box-shadow: 0 10px 17px rgba(38,50,74,.14); }
+    .note-strip strong { color: #ffd45a; }
+    .formula-card { border: 0; box-shadow: 0 15px 25px rgba(82,61,31,.08), inset 0 0 0 1px rgba(255,255,255,.6); }
+    .formula-card.orange { transform: rotate(-1deg); } .formula-card.mint { transform: rotate(1deg); }
+    .formula { font-size: clamp(30px, 3.5vw, 50px); }
+    .grouping-layout { gap: 16px; }
+    .tray { background: #26324a; border-color: #1f293e; box-shadow: 0 15px 22px rgba(38,50,74,.18); }
+    .tray .zone-title b { color: white; } .tray .zone-title span { color: #b9c3dd; }
+    .students { background: #effbf8; border-color: #c3eee5; box-shadow: 0 15px 22px rgba(40,191,163,.10); }
+    .score-block { background: #ffbd87; color: #713f28; box-shadow: inset 0 -4px 0 rgba(207,115,52,.18), 0 6px 0 rgba(255,138,76,.12); }
+    .score-block:nth-child(3n+2) { background: #ffd45a; color: #725b05; } .score-block:nth-child(3n+3) { background: #ff9eab; color: #7c3540; }
+    .student-card { background: #fffdf8; }
+    .count-panel { background: #5b57e8; color: white; box-shadow: 0 12px 18px rgba(91,87,232,.18); }
+    .count-panel small { color: #dedcff; }
+    .hint-line { background: #fff1b8; color: #836306; }
+    .ledger { border: 0; box-shadow: 0 18px 28px rgba(82,61,31,.12); }
+    .ledger.people { transform: rotate(-1.3deg); } .ledger.score { transform: rotate(1.3deg); }
+    .equal-burst { width: 92px; height: 92px; box-shadow: 0 14px 24px rgba(69,201,107,.28), 0 0 0 10px rgba(69,201,107,.10); }
+    .formula-rail { background: #26324a; border-color: #1f293e; color: white; box-shadow: 0 24px 56px rgba(38,50,74,.22); }
+    .formula-rail::before { content: ""; position: absolute; left: 24px; top: 70px; bottom: 84px; width: 2px; background: linear-gradient(var(--purple), var(--sky), var(--mint), var(--green)); opacity: .45; }
+    .rail-title h3 { color: white; } .rail-title span { color: #b9c3dd; }
+    .rail-item { background: rgba(255,255,255,.075); border-color: rgba(255,255,255,.12); color: white; opacity: .38; }
+    .rail-item::before { background: rgba(255,255,255,.18); }
+    .rail-item.unlocked { opacity: 1; background: rgba(255,255,255,.12); }
+    .rail-item.done { background: rgba(69,201,107,.17); border-color: rgba(137,238,154,.7); }
+    .rail-item small { color: #b9c3dd; } .rail-tip { background: rgba(255,212,90,.14); color: #ffe694; border: 1px solid rgba(255,212,90,.25); }
+    .controlbar { padding: 11px; background: #26324a; border-color: #1f293e; box-shadow: 0 18px 32px rgba(38,50,74,.22); }
+    .controlbar button, .speed select { background: rgba(255,255,255,.11); color: white; }
+    .controlbar button:hover { background: rgba(255,255,255,.18); box-shadow: 0 8px 14px rgba(0,0,0,.15); }
+    .controlbar button.primary { background: #ffd45a; color: #5f4b04; box-shadow: 0 9px 17px rgba(255,212,90,.2); }
+    .controlbar button.primary:hover { background: #ffe08a; }
+    .controlbar .divider { background: rgba(255,255,255,.15); }
+    .speed { color: #b9c3dd; } .speed select { color: white; }
+    .speed select option { color: var(--ink); background: white; }
+    .final-reveal { box-shadow: 0 12px 22px rgba(69,201,107,.13); }
+
+    @media (max-width: 1100px) {
+      .formula-rail { background: #26324a; }
+      .formula-rail::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app-shell" id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">∑</div>
+        <div class="brand-copy"><small>AVERAGE LAB</small><h1>平均数 · 错中求解实验室</h1></div>
+      </div>
+      <nav class="route" aria-label="教学步骤">
+        <button class="route-dot active" data-jump="0" aria-label="第 1 幕">1</button><div class="route-line"><div class="route-fill" id="routeFill"></div></div>
+        <button class="route-dot" data-jump="1" aria-label="第 2 幕">2</button><div class="route-line"><div class="route-fill" id="routeFill2"></div></div>
+        <button class="route-dot" data-jump="2" aria-label="第 3 幕">3</button><div class="route-line"><div class="route-fill" id="routeFill3"></div></div>
+        <button class="route-dot" data-jump="3" aria-label="第 4 幕">4</button><div class="route-line"><div class="route-fill" id="routeFill4"></div></div>
+        <button class="route-dot" data-jump="4" aria-label="第 5 幕">5</button>
+      </nav>
+      <div class="voice-state"><span class="voice-dot" id="voiceDot"></span><span id="voiceText">自动讲解待开始</span></div>
+    </header>
+
+    <section class="workbench">
+      <aside class="panel mentor-panel">
+        <div><div class="chapter-label" id="chapterLabel">第 1 幕 · 发现问题</div><h2 id="mentorTitle">先别急着算答案。</h2><p class="subcopy" id="mentorSubcopy">跟着小橙一起，把这笔“看错的账”重新对一遍。</p></div>
+        <div class="mascot-wrap"><img class="mascot" id="mascot" src="assets/mascot/average-lab-mascot.png" alt="小橙，数学实验室伙伴" /></div>
+        <div class="speech" id="speech">嘿！一个分数看错了，<strong>为什么全班平均分也变了？</strong></div>
+      </aside>
+
+      <section class="panel stage-panel" aria-live="polite">
+        <div class="stage-head"><div><div class="kicker" id="stageKicker">START HERE · 先找到矛盾</div><h2 id="stageTitle">一个数字看错了</h2><p id="stageSubcopy">只错一位同学的分数，平均数为什么会跟着动？</p></div><div class="stage-badge"><span class="spark">✦</span><span id="stageMode">自动播放中</span></div></div>
+        <div id="sceneStage"></div>
+        <div class="caption" id="caption"></div>
+      </section>
+
+      <aside class="panel formula-rail" id="formulaRail">
+        <div class="rail-title"><h3>推理轨道</h3><span id="railProgress">0 / 4 已解锁</span></div>
+        <div class="rail-list">
+          <div class="rail-item orange unlocked" data-rail="0"><b>总分差</b><small>看大 / 看小了多少</small><div class="rail-equation">85 − 58 = 27</div></div>
+          <div class="rail-item mint" data-rail="1"><b>平均分差</b><small>每个人平均少多少</small><div class="rail-equation">95 − 92 = 3</div></div>
+          <div class="rail-item purple" data-rail="2"><b>分组思考</b><small>每 3 分分给 1 人</small><div class="rail-equation">27 ÷ 3 = ?</div></div>
+          <div class="rail-item green" data-rail="3"><b>最后答案</b><small>两本账要能对上</small><div class="rail-equation">27 ÷ 3 = 9</div></div>
+        </div>
+        <div class="rail-tip" id="railTip">小提示：先找“少了多少”，再想“每人少多少”。</div>
+      </aside>
+    </section>
+
+    <footer class="controlbar" id="controlBar">
+      <button id="prevBtn" aria-label="上一幕">← 上一幕</button>
+      <button class="primary" id="playBtn" aria-label="暂停自动播放">Ⅱ 暂停</button>
+      <button id="nextBtn" aria-label="下一幕">下一幕 →</button>
+      <button id="replayBtn" aria-label="重播当前幕">↻ 重播</button>
+      <div class="divider"></div>
+      <button id="restartBtn" aria-label="从头自动播放">⌂ 从头播放</button>
+      <button id="muteBtn" aria-label="切换静音">♫ 配音</button>
+      <div class="spacer"></div>
+      <label class="speed">速度 <select id="speedSelect" aria-label="播放速度"><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label>
+    </footer>
+    <div class="toast" id="toast" role="status"></div>
+  </main>
+
+  <audio id="narration" preload="auto"></audio>
+  <script>
+    (() => {
+      const $ = (s, root = document) => root.querySelector(s);
+      const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+      const sceneStage = $('#sceneStage');
+      const audio = $('#narration');
+      const state = {
+        sceneIndex: 0, playing: true, mode: 'auto', muted: false, speed: 1,
+        sceneTimer: null, audioIndex: 0, audioList: [], audioToken: 0, autoGroupTimer: null,
+        blocksRemaining: 27, groupsCompleted: 0, placedBlocks: new Set(), transitionLock: false,
+      };
+
+      const scenes = [
+        { id: 'intro', kicker: 'START HERE · 先找到矛盾', title: '一个数字看错了', subcopy: '只错一位同学的分数，平均数为什么会跟着动？', chapter: '第 1 幕 · 发现问题', mentorTitle: '先别急着算答案。', mentorSubcopy: '跟着小橙一起，把这笔“看错的账”重新对一遍。', speech: '嘿！一个分数看错了，<strong>为什么全班平均分也变了？</strong>', audio: ['01_intro.mp3', '02_problem.mp3', '03_conflict.mp3'], duration: 11500 },
+        { id: 'total', kicker: 'CLUE 01 · 总分差', title: '先找：总分少了多少？', subcopy: '把 85 看成 58，第一笔账先对总分。', chapter: '第 2 幕 · 找总分差', mentorTitle: '先把总账拎出来。', mentorSubcopy: '看错的那一分，先从全班总分里找差量。', speech: '85 比 58 多了多少？这个差量，就是全班总分少算的分数。', audio: ['04_total_difference.mp3', '05_culprit.mp3'], duration: 12500 },
+        { id: 'average', kicker: 'CLUE 02 · 平均分差', title: '再找：每个人少了多少？', subcopy: '平均分从 95 变成 92，差的是每个人头上的一小格。', chapter: '第 3 幕 · 找平均分差', mentorTitle: '再看每个人。', mentorSubcopy: '全班少的 27 分，究竟是怎么分摊到每个人身上的？', speech: '95 减 92 等于 3，说明每个人平均少了 3 分。', audio: ['06_average_difference.mp3', '07_spread.mp3', '08_unknown.mp3'], duration: 12500 },
+        { id: 'grouping', kicker: 'TRY IT · 动手分一分', title: '27 个分数块，按每人 3 个 +1 分来分', subcopy: '自动播放会演示；暂停后，你可以亲手把分数块拖进学生卡片。', chapter: '第 4 幕 · 分组求份数', mentorTitle: '轮到你来分组！', mentorSubcopy: '每张学生卡片放 3 个 +1 分块，看看 27 个块能分成几组。', speech: '拖 3 个 +1 分块进去，就完成 1 个人。放错了也没关系，分数块会自己回来。', audio: ['09_beans.mp3', '10_zero.mp3', '11_method.mp3', '12_trap.mp3'], duration: 22500 },
+        { id: 'ledger', kicker: 'CHECK · 两本账对上', title: '答案不是猜的，是对出来的', subcopy: '9 个人 × 每人少 3 分，刚好也是全班少的 27 分。', chapter: '第 5 幕 · 验证答案', mentorTitle: '两本账，刚好对上！', mentorSubcopy: '总差 ÷ 分差 = 份数，这就是差量倒推法。', speech: '所以答案是 9 人。最后留个问题：如果把 58 看成 85，平均分会怎样？', audio: ['13_check_people.mp3', '14_check_total.mp3', '15_answer.mp3', '16_question.mp3'], duration: 14000 },
+      ];
+
+      function escapeHtml(value) { return String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[char])); }
+      function setText(id, value) { const node = $('#' + id); if (node) node.textContent = value; }
+      function setHtml(id, value) { const node = $('#' + id); if (node) node.innerHTML = value; }
+      function setCaption(text, hold = 2600) { const node = $('#caption'); node.textContent = text; node.classList.add('show'); clearTimeout(setCaption.timer); setCaption.timer = setTimeout(() => node.classList.remove('show'), hold); }
+      function toast(text) { const node = $('#toast'); node.textContent = text; node.classList.add('show'); clearTimeout(toast.timer); toast.timer = setTimeout(() => node.classList.remove('show'), 2400); }
+      function setMascot(mode = 'idle') { const mascot = $('#mascot'); mascot.classList.remove('hint', 'success'); if (mode !== 'idle') mascot.classList.add(mode); }
+
+      function makeSceneMarkup(sceneId) {
+        if (sceneId === 'intro') return `
+          <div class="scene-grid">
+            <div class="hero-question"><div class="eyebrow">今天的数学谜题</div><h3>一个人的分数看错了，为什么全班平均分也变了？</h3></div>
+            <div class="score-card orange" tabindex="0" data-replay="misread"><div class="score-label">乐乐记下的分数</div><div class="score-flow"><span class="big-num">85</span><span class="flow-arrow">→</span><span class="big-num">58</span></div><div class="formula-explain">把 85 看成了 58，数字顺序悄悄换了。</div></div>
+            <div class="score-card mint" tabindex="0" data-replay="average"><div class="score-label">全班平均分</div><div class="score-flow"><span class="big-num">95</span><span class="flow-arrow">→</span><span class="big-num">92</span></div><div class="formula-explain">平均分也跟着少了 3 分。</div></div>
+            <div class="note-strip">✦ 先别猜人数，我们从“少了多少”开始查。</div>
+          </div>`;
+        if (sceneId === 'total') return `
+          <div class="scene-grid">
+            <div class="formula-card orange"><div class="formula-title">看错一个分数</div><div class="formula orange">85 − 58 = 27</div><div class="difference-bar"><span></span></div><p class="formula-explain">总分少算了 <strong>27 分</strong>，这是一笔“全班总账”。</p></div>
+            <div class="formula-card"><div class="formula-title">把数字放回原位</div><div class="chip-row"><div class="mini-chip"><strong>85</strong> 原来应该是</div><div class="mini-chip">看成 <strong>58</strong></div><div class="mini-chip">差量 <strong style="color:var(--orange)">27</strong></div></div><div class="formula purple" style="margin-top:24px">总分差 = 27</div><p class="formula-explain">先把“总共少了多少”固定下来。</p></div>
+            <div class="note-strip">橙色差量块已经入账：<strong>全班少算 27 分</strong>。</div>
+          </div>`;
+        if (sceneId === 'average') return `
+          <div class="scene-grid">
+            <div class="formula-card mint"><div class="formula-title">平均分从 95 变成 92</div><div class="formula mint">95 − 92 = 3</div><div class="difference-bar mint"><span></span></div><p class="formula-explain">每个人平均少了 <strong>3 分</strong>，这是“每份差量”。</p></div>
+            <div class="formula-card"><div class="formula-title">现在只差一个问题</div><div class="formula purple" style="margin-top:18px">27 ÷ 3 = ?</div><p class="formula-explain">总共少 27 分，每个人少 3 分，能分成几份？</p><div class="chip-row"><div class="mini-chip"><strong style="color:var(--orange)">27</strong> 总差</div><div class="mini-chip"><strong style="color:var(--mint)">3</strong> 分差</div><div class="mini-chip"><strong style="color:var(--purple)">?</strong> 人数</div></div></div>
+            <div class="note-strip">下一步，我们不用猜，直接把 27 分按每人 3 分分一分。</div>
+          </div>`;
+        if (sceneId === 'grouping') return `
+          <div class="grouping-layout">
+            <div class="tray"><div class="zone-title"><b>分数块仓库</b><span>拖 3 个 +1 分块给 1 个人</span></div><div class="block-tray" id="blockTray"></div></div>
+            <div class="students"><div class="zone-title"><b>学生卡片</b><span id="groupHint">每人 3 个 +1</span></div><div class="student-list" id="studentList"></div></div>
+            <div class="count-panel"><div><small>仓库里还剩</small><div class="count"><span id="blocksRemaining">27</span> 个分数块</div></div><div>已完成 <strong id="groupsCompleted">0</strong> / 9 组</div></div>
+            <div class="hint-line" id="groupHintLine">小提示：先找一个空的学生卡片，再把 3 个 +1 分块放进去。</div>
+          </div>`;
+        return `
+          <div class="finale">
+            <div><div class="final-answer"><small>差量倒推法 · 最终答案</small><strong>全班 9 人</strong></div><div class="open-question">如果把 58 看成 85，平均分会怎样？</div></div>
+          </div>`;
+      }
+
+      function renderLedgerMarkup() {
+        sceneStage.innerHTML = `<div class="ledger-layout"><div class="ledger people"><div class="ledger-kicker">平均分这本账</div><h3>9 个人，每人少 3 分</h3><div class="ledger-equation">9 × (−3) = −27</div><div class="ledger-note">每个人头上的小差量，加起来就是全班的总差量。</div></div><div class="equal-burst">−27<br><small style="font-size:10px">对上了</small></div><div class="ledger score"><div class="ledger-kicker">看错分数这本账</div><h3>85 看成 58</h3><div class="ledger-equation">85 − 58 = 27</div><div class="ledger-note">两边都指向同一个总差量 27 分。</div></div></div><div class="note-strip" style="margin-top:14px">两本账合并：<strong>9 人 × 每人少 3 分 = 全班少 27 分</strong>。</div><div class="final-reveal"><b>全班 9 人</b><span>差量倒推：总差 ÷ 分差 = 份数</span><div class="open-question" style="margin:0">如果把 58 看成 85，平均分会怎样？</div></div>`;
+      }
+
+      function renderSceneContent() {
+        const scene = scenes[state.sceneIndex];
+        if (scene.id === 'ledger') renderLedgerMarkup(); else sceneStage.innerHTML = `<div class="scene active">${makeSceneMarkup(scene.id)}</div>`;
+        if (scene.id === 'grouping') buildGrouping();
+        updateRail();
+      }
+
+      function updateHeader() {
+        const scene = scenes[state.sceneIndex];
+        $('#app').dataset.scene = scene.id;
+        setText('chapterLabel', scene.chapter); setText('mentorTitle', scene.mentorTitle); setText('mentorSubcopy', scene.mentorSubcopy); setHtml('speech', scene.speech);
+        setText('stageKicker', scene.kicker); setText('stageTitle', scene.title); setText('stageSubcopy', scene.subcopy);
+        setText('stageMode', state.playing ? (state.mode === 'auto' ? '自动播放中' : '手动操作中') : '已暂停 · 可以操作');
+        $('#playBtn').textContent = state.playing ? 'Ⅱ 暂停' : '▶ 继续'; $('#playBtn').setAttribute('aria-label', state.playing ? '暂停自动播放' : '继续播放');
+        setText('voiceText', state.muted ? '配音已静音' : (state.playing ? '小橙正在讲解' : '讲解已暂停'));
+        $('#voiceDot').classList.toggle('on', state.playing && !state.muted);
+        $$('.route-dot').forEach((dot, index) => { dot.classList.toggle('active', index === state.sceneIndex); dot.classList.toggle('done', index < state.sceneIndex); });
+        ['routeFill', 'routeFill2', 'routeFill3', 'routeFill4'].forEach((id, index) => { const node = $('#' + id); if (node) node.style.width = index < state.sceneIndex ? '100%' : '0%'; });
+        setMascot(state.sceneIndex === 3 && state.groupsCompleted < 2 ? 'hint' : state.sceneIndex === 4 ? 'success' : 'idle');
+      }
+
+      function updateRail() {
+        const unlocked = Math.min(4, state.sceneIndex + 1); const done = state.sceneIndex >= 4 ? 4 : Math.max(0, state.sceneIndex);
+        $$('.rail-item').forEach((item, index) => { item.classList.toggle('unlocked', index < unlocked); item.classList.toggle('done', index < done); });
+        setText('railProgress', `${done} / 4 已解锁`);
+        setText('railTip', state.sceneIndex === 3 ? '动手试试：每个学生卡片放 3 个块。' : state.sceneIndex === 4 ? '答案要经得起两本账的验证。' : '小提示：先找“少了多少”，再想“每人少多少”。');
+      }
+
+      function stopAudio() { state.audioToken += 1; audio.pause(); audio.onended = null; audio.onerror = null; audio.removeAttribute('src'); state.audioIndex = 0; state.audioList = []; if (window.speechSynthesis) window.speechSynthesis.cancel(); $('#voiceDot').classList.remove('on'); }
+      function speakFallback(scene) { if (!window.speechSynthesis || state.muted || !state.playing) return; window.speechSynthesis.cancel(); const utterance = new SpeechSynthesisUtterance(scene.speech.replace(/<[^>]+>/g, '')); utterance.lang = 'zh-CN'; utterance.rate = .96 * state.speed; window.speechSynthesis.speak(utterance); }
+      function playAudioSequence(list) {
+        if (state.muted || !list?.length) return;
+        state.audioToken += 1; const token = state.audioToken; state.audioList = list.slice(); state.audioIndex = 0;
+        const playCurrent = () => { if (token !== state.audioToken || state.muted || !state.playing || !state.audioList.length) return; audio.src = `assets/audio/${state.audioList[state.audioIndex]}`; audio.playbackRate = state.speed; audio.play().catch(() => { speakFallback(scenes[state.sceneIndex]); toast('浏览器拦截了自动配音，点击“配音”即可开启'); }); };
+        audio.onended = () => { if (token !== state.audioToken) return; state.audioIndex += 1; if (state.audioIndex < state.audioList.length) playCurrent(); };
+        audio.onerror = () => { if (token === state.audioToken) speakFallback(scenes[state.sceneIndex]); };
+        playCurrent();
+      }
+
+      function showScene(index, options = {}) {
+        clearTimeout(state.sceneTimer); clearInterval(state.autoGroupTimer); stopAudio();
+        state.sceneIndex = Math.max(0, Math.min(scenes.length - 1, index)); state.transitionLock = false;
+        if (scenes[state.sceneIndex].id !== 'grouping') { state.blocksRemaining = 27; state.groupsCompleted = 0; state.placedBlocks = new Set(); }
+        renderSceneContent(); updateHeader();
+        if (options.autoplay !== false) { state.playing = true; state.mode = 'auto'; playScene(); } else { state.playing = false; state.mode = 'manual'; updateHeader(); }
+      }
+
+      function playScene() {
+        clearTimeout(state.sceneTimer); clearInterval(state.autoGroupTimer); state.playing = true; updateHeader();
+        const scene = scenes[state.sceneIndex]; playAudioSequence(scene.audio);
+        if (scene.id === 'grouping') startAutoGrouping();
+        const duration = Math.max(3500, scene.duration / state.speed);
+        state.sceneTimer = setTimeout(() => { if (state.sceneIndex < scenes.length - 1) showScene(state.sceneIndex + 1, { autoplay: true }); else completeExperience(); }, duration);
+      }
+
+      function pauseScene() { state.playing = false; state.mode = 'manual'; clearTimeout(state.sceneTimer); clearInterval(state.autoGroupTimer); audio.pause(); updateHeader(); setCaption('已暂停。现在你可以自己点、自己拖，慢慢对账。', 3400); }
+      function togglePlay() { state.playing ? pauseScene() : playScene(); }
+      function goNext() { if (state.transitionLock) return; state.transitionLock = true; if (scenes[state.sceneIndex].id === 'grouping' && state.groupsCompleted < 9) autoFillAll(); setTimeout(() => { if (state.sceneIndex < scenes.length - 1) showScene(state.sceneIndex + 1, { autoplay: state.mode === 'auto' }); else completeExperience(); }, 120); }
+      function goPrev() { if (state.sceneIndex > 0) showScene(state.sceneIndex - 1, { autoplay: false }); }
+      function replayScene() { showScene(state.sceneIndex, { autoplay: state.playing }); }
+      function completeExperience() { state.playing = false; clearTimeout(state.sceneTimer); clearInterval(state.autoGroupTimer); stopAudio(); updateHeader(); setMascot('success'); fireConfetti(); setCaption('完成！你用总差除以分差，找到了全班人数。', 5000); }
+
+      function buildGrouping() {
+        const tray = $('#blockTray'); const studentList = $('#studentList'); if (!tray || !studentList) return;
+        tray.innerHTML = ''; studentList.innerHTML = '';
+        for (let i = 0; i < 27; i += 1) { const block = document.createElement('button'); block.className = 'score-block'; block.textContent = '+1'; block.dataset.blockId = String(i); block.setAttribute('aria-label', `第 ${i + 1} 个 +1 分数块`); addDrag(block); tray.appendChild(block); }
+        for (let i = 0; i < 9; i += 1) { const card = document.createElement('div'); card.className = 'student-card'; card.dataset.studentId = String(i); card.innerHTML = `<div class="student-top"><span class="student-face"><img src="assets/mascot/student-avatar.png" alt="小学生同学头像" /></span><span>第 ${i + 1} 人</span></div><div class="slots"><span class="empty-slot"></span><span class="empty-slot"></span><span class="empty-slot"></span></div>`; studentList.appendChild(card); }
+        state.blocksRemaining = 27; state.groupsCompleted = 0; state.placedBlocks = new Set(); updateGroupingCounter();
+      }
+
+      function addDrag(block) {
+        let startX = 0, startY = 0, moved = false, originParent = null, originNext = null;
+        block.addEventListener('pointerdown', event => { if (state.sceneIndex !== 3 || block.classList.contains('is-placed')) return; if (state.playing) pauseScene(); event.preventDefault(); block.setPointerCapture(event.pointerId); originParent = block.parentElement; originNext = block.nextSibling; startX = event.clientX; startY = event.clientY; moved = false; block.classList.add('is-dragging'); block.style.left = `${event.clientX - 23}px`; block.style.top = `${event.clientY - 23}px`; });
+        block.addEventListener('pointermove', event => { if (!block.classList.contains('is-dragging')) return; moved = moved || Math.hypot(event.clientX - startX, event.clientY - startY) > 4; block.style.left = `${event.clientX - 23}px`; block.style.top = `${event.clientY - 23}px`; const hit = document.elementFromPoint(event.clientX, event.clientY)?.closest('.student-card'); $$('.student-card').forEach(card => card.classList.toggle('near', card === hit && card.querySelectorAll('.is-placed').length < 3)); });
+        block.addEventListener('pointerup', event => { if (!block.classList.contains('is-dragging')) return; block.releasePointerCapture(event.pointerId); block.classList.remove('is-dragging'); block.style.left = ''; block.style.top = ''; $$('.student-card').forEach(card => card.classList.remove('near')); const target = document.elementFromPoint(event.clientX, event.clientY)?.closest('.student-card'); if (moved && target && target.querySelectorAll('.is-placed').length < 3) placeBlock(block, target); else { block.classList.add('wrong'); setTimeout(() => block.classList.remove('wrong'), 400); setMascot('hint'); setCaption('再想想：每位同学要拿到 3 个 +1 分块。', 2400); if (originParent && block.parentElement !== originParent) originParent.insertBefore(block, originNext); } });
+      }
+
+      function placeBlock(block, card, silent = false) {
+        if (block.classList.contains('is-placed')) return false; const slots = $('.slots', card); const empty = slots.querySelector('.empty-slot'); if (!empty) return false; empty.replaceWith(block); block.classList.remove('is-dragging'); block.classList.add('is-placed'); block.style.left = ''; block.style.top = ''; state.placedBlocks.add(block.dataset.blockId); state.blocksRemaining -= 1; if (slots.querySelectorAll('.is-placed').length === 3) { card.classList.add('complete'); state.groupsCompleted += 1; } updateGroupingCounter(); if (!silent) { setMascot(state.groupsCompleted >= 9 ? 'success' : 'idle'); setCaption(state.groupsCompleted >= 9 ? '27 个 +1 分块刚好分成 9 组！' : '吸附成功，继续给下一位同学 3 个 +1 分块。', 1800); } return true;
+      }
+
+      function updateGroupingCounter() { setText('blocksRemaining', state.blocksRemaining); setText('groupsCompleted', state.groupsCompleted); if (state.blocksRemaining === 0) { const line = $('#groupHintLine'); if (line) line.innerHTML = '全部分完！<strong style="color:var(--green)">27 ÷ 3 = 9</strong>，答案出现啦。'; updateRail(); } }
+      function startAutoGrouping() { if (state.mode !== 'auto' || !state.playing) return; state.autoGroupTimer = setInterval(() => { if (!state.playing || state.groupsCompleted >= 9) return; const block = $('.score-block:not(.is-placed)'); const card = $$('.student-card').find(node => node.querySelectorAll('.is-placed').length < 3); if (block && card) { placeBlock(block, card, true); if (state.groupsCompleted === 9) { setMascot('success'); setCaption('分完啦！27 ÷ 3 = 9。', 2500); } } }, 480 / state.speed); }
+      function autoFillAll() { if (scenes[state.sceneIndex].id !== 'grouping') return; $$('.student-card').forEach(card => { while (card.querySelectorAll('.is-placed').length < 3) { const block = $('.score-block:not(.is-placed)'); if (!block) break; placeBlock(block, card, true); } }); setMascot('success'); updateGroupingCounter(); }
+
+      function fireConfetti() { const colors = ['#5B57E8', '#FF8A4C', '#28BFA3', '#FFD45A', '#FF6B7A', '#44B7E8']; for (let i = 0; i < 28; i += 1) { const bit = document.createElement('i'); bit.className = 'confetti'; bit.style.left = `${46 + Math.random() * 8}%`; bit.style.top = `${35 + Math.random() * 12}%`; bit.style.background = colors[i % colors.length]; bit.style.setProperty('--dx', `${(Math.random() - .5) * 260}px`); bit.style.animationDelay = `${Math.random() * 160}ms`; document.body.appendChild(bit); setTimeout(() => bit.remove(), 1200); } }
+
+      function bindControls() {
+        $('#playBtn').addEventListener('click', togglePlay); $('#prevBtn').addEventListener('click', goPrev); $('#nextBtn').addEventListener('click', goNext); $('#replayBtn').addEventListener('click', replayScene); $('#restartBtn').addEventListener('click', () => showScene(0, { autoplay: true }));
+        $('#muteBtn').addEventListener('click', () => { state.muted = !state.muted; $('#muteBtn').textContent = state.muted ? '♫ 已静音' : '♫ 配音'; if (state.muted) stopAudio(); else if (state.playing) playAudioSequence(scenes[state.sceneIndex].audio); updateHeader(); });
+        $('#speedSelect').addEventListener('change', event => { state.speed = Number(event.target.value); audio.playbackRate = state.speed; if (state.playing) playScene(); });
+        $$('.route-dot').forEach(dot => dot.addEventListener('click', () => showScene(Number(dot.dataset.jump), { autoplay: false })));
+        document.addEventListener('keydown', event => { if (event.target.matches('input, select, textarea')) return; if (event.code === 'Space') { event.preventDefault(); togglePlay(); } if (event.key === 'ArrowRight') goNext(); if (event.key === 'ArrowLeft') goPrev(); if (event.key.toLowerCase() === 'm') $('#muteBtn').click(); });
+        sceneStage.addEventListener('click', event => { const replay = event.target.closest('[data-replay]'); if (replay) { setMascot(replay.dataset.replay === 'misread' ? 'hint' : 'idle'); setCaption(replay.dataset.replay === 'misread' ? '85 和 58 的顺序看错了，总分就少了。' : '95 变 92，每个人平均少 3 分。'); } });
+      }
+
+      bindControls(); showScene(0, { autoplay: true });
+    })();
+  </script>
+</body>
+</html>

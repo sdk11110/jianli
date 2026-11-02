@@ -1,0 +1,691 @@
+/* Immersive photo museum — wall ink + city-tinted exhibit */
+
+:root {
+  --exhibit-accent: #5c3a28;
+  --exhibit-glow: #c9a66b;
+  --exhibit-wash: #141c18;
+  --exhibit-paper: #fff8e8;
+  --exhibit-ink: #1a2e28;
+}
+
+/* —— Camera: larger eject + notes clear of polaroid —— */
+.chapter-camera {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-bottom: calc(28px + var(--camera-eject, 0) * 56px) !important;
+}
+
+.camera-eject-stage {
+  width: min(100%, 340px) !important;
+  margin: -20px auto 0 !important;
+  margin-bottom: calc(28px + var(--camera-eject, 0) * 168px) !important;
+}
+
+.camera-slot-mask {
+  left: 6% !important;
+  right: 6% !important;
+  bottom: -85% !important;
+}
+
+.chapter-photo {
+  left: 0% !important;
+  right: 0% !important;
+  padding: 12px 12px 34px !important;
+}
+
+.chapter-photo img,
+.chapter-photo .travel-photo img {
+  height: clamp(190px, 24vh, 260px) !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.chapter-photo > span:not(.travel-photo):not(.photo-slot) {
+  font-size: 14px !important;
+  margin-top: 12px !important;
+  line-height: 1.35;
+  padding: 0 4px;
+}
+
+.chapter-camera .camera-meta {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-height: 2.8em;
+  width: min(100%, 16em);
+  text-align: center;
+}
+
+.chapter-camera .hand-note,
+.chapter-camera .camera-deep-link {
+  position: relative;
+  z-index: 6;
+  max-width: 16em;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.chapter-camera[data-eject-hint="out"] .hand-note {
+  opacity: 0 !important;
+  max-height: 0;
+  margin: 0 !important;
+  overflow: hidden;
+  pointer-events: none;
+  transition:
+    opacity 280ms ease,
+    max-height 280ms ease,
+    margin 280ms ease;
+}
+
+.chapter-camera[data-eject-hint="in"] .hand-note {
+  opacity: 0.85;
+  max-height: 3.5em;
+  transition:
+    opacity 280ms ease,
+    max-height 280ms ease;
+}
+
+.chapter-camera[data-eject-hint="out"] .hand-note::after {
+  content: none !important;
+}
+
+/* Deep link only after photo is out, and always below the polaroid slot */
+.chapter-camera .camera-deep-link {
+  margin-top: 0 !important;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition:
+    opacity 280ms ease,
+    transform 280ms ease;
+}
+
+.chapter-camera[data-eject-hint="out"] .camera-deep-link {
+  opacity: 0.9;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* —— Gallery wall: salon hang, less clutter —— */
+.gallery.water-scene {
+  --gallery-gap-x: clamp(22px, 3vw, 40px);
+  --gallery-gap-y: clamp(36px, 4.5vw, 56px);
+}
+
+.gallery-wall {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--gallery-gap-y) var(--gallery-gap-x) !important;
+  align-items: start;
+  padding: 8px 2% 12px;
+}
+
+.gallery-photo {
+  --city-accent: var(--exhibit-accent);
+  isolation: isolate;
+  background: #fff9e8 !important;
+  box-shadow:
+    2px 4px 0 color-mix(in srgb, var(--city-accent) 18%, transparent),
+    6px 14px 28px rgba(40, 55, 30, 0.14) !important;
+  transition:
+    opacity 640ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    outline-color 220ms ease !important;
+  transition-delay: calc(var(--i, 0) * 55ms);
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+}
+
+.gallery-photo[data-city="banna"] {
+  --city-accent: #c45c28;
+  --city-glow: #e8a045;
+  --city-wash: #1a3024;
+}
+.gallery-photo[data-city="puer"] {
+  --city-accent: #5c6b2a;
+  --city-glow: #a67c3a;
+  --city-wash: #241e14;
+}
+.gallery-photo[data-city="dali"] {
+  --city-accent: #2a6f7a;
+  --city-glow: #e07a3a;
+  --city-wash: #14242c;
+}
+.gallery-photo[data-city="gallery"] {
+  --city-accent: #7a4a2a;
+  --city-glow: #c9a66b;
+  --city-wash: #1c1814;
+}
+
+.gallery-photo:nth-child(3n + 1) {
+  transform: rotate(calc(var(--tilt, -1deg) - 0.4deg));
+}
+.gallery-photo:nth-child(3n + 2) {
+  margin-top: 18px;
+}
+.gallery-photo:nth-child(3n) {
+  transform: rotate(calc(var(--tilt, 1deg) + 0.5deg));
+}
+
+.gallery-wall.is-in .gallery-photo {
+  opacity: 1;
+}
+
+.gallery-photo:focus-visible,
+.gallery-photo:hover {
+  outline-color: color-mix(in srgb, var(--city-accent) 55%, transparent);
+  box-shadow:
+    2px 4px 0 color-mix(in srgb, var(--city-accent) 28%, transparent),
+    8px 18px 32px color-mix(in srgb, var(--city-accent) 22%, transparent) !important;
+  z-index: 3;
+}
+
+.gallery-photo .photo-tape {
+  background: color-mix(in srgb, var(--city-accent) 35%, #d2b48c) !important;
+}
+
+.gallery-filters button {
+  border-color: color-mix(in srgb, var(--exhibit-accent) 35%, #174d433d) !important;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 160ms ease,
+    box-shadow 180ms ease;
+}
+
+.gallery-filters button[aria-pressed="true"] {
+  background: var(--exhibit-accent) !important;
+  border-color: var(--exhibit-accent) !important;
+  color: var(--exhibit-paper) !important;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--exhibit-accent) 28%, transparent);
+}
+
+.gallery-filters button[data-filter="banna"][aria-pressed="true"] {
+  --exhibit-accent: #c45c28;
+}
+.gallery-filters button[data-filter="puer"][aria-pressed="true"] {
+  --exhibit-accent: #5c6b2a;
+}
+.gallery-filters button[data-filter="dali"][aria-pressed="true"] {
+  --exhibit-accent: #2a6f7a;
+}
+
+/* Wall ink plates before develop */
+.gallery-photo .travel-photo.is-ink-plate:not(.is-ink-done) img {
+  /* inherits ink-reveal.css mask */
+}
+
+.gallery-photo.is-developing {
+  pointer-events: none;
+}
+
+/* —— Immersive exhibit dialog —— */
+#photo-dialog.exhibit-open {
+  width: min(1080px, 96vw) !important;
+  max-width: none;
+  max-height: 96svh;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--exhibit-paper);
+}
+
+#photo-dialog.exhibit-open::backdrop {
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 50% 42%,
+      color-mix(in srgb, var(--exhibit-glow) 18%, transparent) 0%,
+      transparent 58%
+    ),
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--exhibit-wash) 92%, #000) 0%,
+      var(--exhibit-wash) 48%,
+      color-mix(in srgb, var(--exhibit-accent) 22%, #0a100e) 100%
+    );
+  backdrop-filter: blur(10px) saturate(0.85);
+}
+
+#photo-dialog.exhibit-open[open] {
+  animation: exhibit-in 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes exhibit-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.exhibit-shell {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: center;
+  padding: clamp(20px, 3vw, 36px);
+  min-height: min(86svh, 780px);
+}
+
+.exhibit-frame {
+  position: relative;
+  background: var(--exhibit-paper);
+  padding: 14px 14px 48px;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--exhibit-glow) 35%, transparent),
+    12px 28px 48px rgba(0, 0, 0, 0.35);
+  transform: rotate(-0.8deg);
+}
+
+.exhibit-frame::before {
+  content: "";
+  position: absolute;
+  inset: -10% -6%;
+  pointer-events: none;
+  opacity: 0.55;
+  background:
+    radial-gradient(ellipse 40% 30% at 18% 70%, color-mix(in srgb, var(--exhibit-accent) 35%, transparent), transparent 70%),
+    radial-gradient(ellipse 35% 28% at 82% 22%, color-mix(in srgb, var(--exhibit-glow) 28%, transparent), transparent 68%);
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.exhibit-frame .travel-photo,
+.exhibit-frame .photo-slot--dialog {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0;
+}
+
+.exhibit-frame .travel-photo img,
+.exhibit-frame .photo-slot--dialog img {
+  width: 100%;
+  height: auto;
+  max-height: min(62svh, 560px);
+  object-fit: cover;
+  display: block;
+}
+
+.exhibit-copy {
+  text-align: left;
+  color: #f4efe4;
+  max-width: 36ch;
+}
+
+.exhibit-hall {
+  margin: 0 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--exhibit-glow) 85%, #fff);
+  opacity: 0.9;
+}
+
+.exhibit-copy h3 {
+  margin: 0;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.25;
+  font-weight: 700;
+  color: #fff8ec;
+}
+
+.exhibit-copy > p {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.85;
+  opacity: 0.88;
+}
+
+.exhibit-copy .photo-download,
+.exhibit-copy .text-link {
+  margin-top: 22px;
+  color: color-mix(in srgb, var(--exhibit-glow) 70%, #fff);
+  border-bottom-color: color-mix(in srgb, var(--exhibit-glow) 45%, transparent);
+}
+
+#photo-dialog.exhibit-open .dialog-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid color-mix(in srgb, var(--exhibit-glow) 40%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--exhibit-wash) 70%, transparent);
+  color: #fff8ec;
+  z-index: 12;
+}
+
+#photo-dialog.exhibit-open .dialog-controls {
+  margin: 0 0 18px;
+  color: #f0e8d8;
+}
+
+#photo-dialog.exhibit-open .dialog-controls button {
+  border-color: color-mix(in srgb, var(--exhibit-glow) 45%, transparent);
+  color: #fff8ec;
+  background: color-mix(in srgb, var(--exhibit-accent) 35%, transparent);
+}
+
+#photo-dialog.exhibit-open .dialog-controls button:hover {
+  background: color-mix(in srgb, var(--exhibit-accent) 65%, transparent);
+}
+
+#photo-dialog.exhibit-open #dialog-counter {
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+}
+
+/* Theme tokens on dialog */
+#photo-dialog[data-theme="banna"] {
+  --exhibit-accent: #c45c28;
+  --exhibit-glow: #e8a045;
+  --exhibit-wash: #15261c;
+}
+#photo-dialog[data-theme="puer"] {
+  --exhibit-accent: #5c6b2a;
+  --exhibit-glow: #c4a06a;
+  --exhibit-wash: #1c1810;
+}
+#photo-dialog[data-theme="dali"] {
+  --exhibit-accent: #2a6f7a;
+  --exhibit-glow: #f0a060;
+  --exhibit-wash: #101820;
+}
+#photo-dialog[data-theme="gallery"] {
+  --exhibit-accent: #7a4a2a;
+  --exhibit-glow: #d4b48a;
+  --exhibit-wash: #181410;
+}
+
+@media (max-width: 860px) {
+  .gallery-wall {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .gallery-photo:nth-child(3n + 2) {
+    margin-top: 0;
+  }
+
+  .exhibit-shell {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 56px 18px 24px;
+    min-height: auto;
+  }
+
+  .exhibit-frame {
+    transform: rotate(0);
+    padding: 12px 12px 36px;
+  }
+
+  .exhibit-frame .travel-photo img,
+  .exhibit-frame .photo-slot--dialog img {
+    max-height: min(48svh, 420px);
+  }
+
+  .exhibit-copy {
+    max-width: none;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #photo-dialog.exhibit-open[open] {
+    animation: none !important;
+  }
+
+  .gallery-photo {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
+
+/* —— Desk: clear two-column layout, no film-strip pile-up —— */
+#desk.desk {
+  overflow: visible;
+}
+
+#desk > .section-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+#desk > .section-wrap > h2,
+#desk > .section-wrap > p:not(.eyebrow) {
+  max-width: 36em;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.camera-desk {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px) !important;
+  grid-template-areas: "copy cam";
+  align-items: start !important;
+  gap: clamp(28px, 5vw, 56px) !important;
+  width: 100% !important;
+  max-width: 920px !important;
+  margin: 40px auto 0 !important;
+  min-height: 0 !important;
+  text-align: left;
+  isolation: isolate;
+}
+
+.camera-desk .camera-controls {
+  grid-area: copy;
+  order: unset !important;
+  align-items: flex-start !important;
+  margin: 0 !important;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 420px;
+}
+
+.camera-desk .desk-camera-unit {
+  grid-area: cam;
+  order: unset !important;
+  width: 100% !important;
+  max-width: 340px;
+  height: auto !important;
+  min-height: 0 !important;
+  padding-bottom: 200px !important;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.camera-desk .camera-controls h3,
+.camera-desk .camera-kicker,
+.camera-desk .camera-film-label,
+.camera-desk .film-counter {
+  display: block !important;
+}
+
+.camera-contact-sheet {
+  display: flex !important;
+  flex-wrap: nowrap;
+  gap: 14px !important;
+  margin: 8px 0 22px !important;
+  width: 100%;
+  max-width: 360px;
+  overflow: visible;
+}
+
+.camera-contact-sheet > span {
+  flex: 1 1 0;
+  width: auto !important;
+  min-width: 0;
+  max-width: 110px;
+  padding: 7px 7px 16px !important;
+  background: #fff9e8;
+  box-shadow: 2px 4px 10px rgba(40, 77, 50, 0.16);
+  transform: rotate(-3deg);
+}
+
+.camera-desk .camera-controls h3 {
+  margin-bottom: 18px !important;
+}
+
+.camera-desk .camera-film-label {
+  margin-bottom: 14px !important;
+}
+
+#desk.desk {
+  padding-bottom: 120px !important;
+}
+
+.camera-contact-sheet > span:nth-child(2) {
+  transform: translateY(6px) rotate(2.5deg);
+}
+
+.camera-contact-sheet > span:nth-child(3) {
+  transform: rotate(-1.5deg);
+}
+
+.camera-contact-sheet > span:nth-child(n + 4) {
+  display: none !important;
+}
+
+.camera-contact-sheet img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.camera-desk .camera-controls .primary-button {
+  margin-top: 4px !important;
+}
+
+#camera-status {
+  color: #164538 !important;
+  opacity: 0.9 !important;
+  max-width: 32ch;
+}
+
+#polaroid-stage .empty-photo {
+  color: #1a4a40 !important;
+  opacity: 0.8 !important;
+  background: rgba(255, 249, 222, 0.72) !important;
+  border: 1.5px dashed rgba(30, 90, 80, 0.35) !important;
+}
+
+#polaroid-stage .empty-photo p,
+#polaroid-stage .empty-photo small {
+  color: #1a4a40 !important;
+}
+
+@media (max-width: 860px) {
+  .camera-desk {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "cam"
+      "copy" !important;
+    justify-items: center;
+    gap: 12px !important;
+    text-align: center;
+  }
+
+  .camera-desk .camera-controls {
+    align-items: center !important;
+    max-width: 360px;
+  }
+
+  .camera-contact-sheet {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .camera-desk .desk-camera-unit {
+    padding-bottom: 180px !important;
+  }
+}
+
+/* Short creator notes stay inside the existing paper-and-wood journal. */
+#faq .faq-list {
+  max-width: 760px;
+  margin: 36px auto 0;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.vinyl-disc-copy {
+  pointer-events: none;
+}
+
+/* City lighting is visual progress; every real destination stays operable. */
+.city-route .city-stop {
+  pointer-events: auto;
+}
+
+@media (max-width: 700px) {
+  .site-header > .brand,
+  .site-header > .home-back,
+  .site-header > .sound-switch,
+  .site-header > .menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .site-header > .menu-toggle,
+  .site-header > .sound-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+/* Printed ink belongs to the journal; the landscape supplies the texture. */
+.hero h1 {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: #922f23;
+  -webkit-text-fill-color: #922f23;
+  text-shadow: none;
+  filter: none;
+}
+.primary-button {
+  background: #953a2b;
+  border: 1px solid #7e2a20;
+  color: #fff7e7;
+  box-shadow: 0 4px 12px rgba(81,37,22,.2);
+  filter: none;
+  will-change: auto;
+  transition: transform 220ms cubic-bezier(.16,1,.3,1), background-color 180ms, box-shadow 220ms !important;
+}
+.primary-button:hover {
+  background: #843124;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(81,37,22,.22);
+  filter: none;
+}
+.primary-button:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 2px 7px rgba(81,37,22,.18);
+}
+@media (prefers-reduced-motion:reduce) {
+  .primary-button { transition: none !important; }
+  .primary-button:hover,.primary-button:active { transform: none !important; }
+}

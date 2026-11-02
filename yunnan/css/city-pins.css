@@ -1,0 +1,209 @@
+/* Each city stop = one sticker image + label; light up in journey order */
+
+.city-route.map-stage {
+  left: 8%;
+  right: 8%;
+  top: 44%;
+  height: 48%;
+  display: block;
+}
+
+.city-stops {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.city-stop-wrap {
+  position: absolute;
+  width: min(28vw, 220px);
+  transform: translate(-50%, -50%);
+}
+
+/* Sit on the map paper: 版纳 → 普洱 → 大理 */
+.city-stop-wrap:nth-child(1) {
+  left: 22%;
+  top: 58%;
+}
+.city-stop-wrap:nth-child(2) {
+  left: 50%;
+  top: 36%;
+}
+.city-stop-wrap:nth-child(3) {
+  left: 78%;
+  top: 48%;
+}
+
+.city-stop {
+  --accent: #1f6f5b;
+  --wash: #d8ebe2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: center;
+  color: #5c3a28;
+  opacity: 0.35;
+  filter: saturate(0.35) brightness(0.92);
+  transform: translateY(16px) scale(0.9);
+  pointer-events: none;
+}
+
+.city-stop.is-lit {
+  opacity: 1;
+  filter: saturate(1) brightness(1);
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.city-stop__glow {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: 78%;
+  aspect-ratio: 1;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 42%, #ffe9a8) 0%, transparent 70%);
+  opacity: 0;
+  transform: scale(0.6);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.city-stop.is-lit .city-stop__glow {
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+.city-stop__art {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  filter:
+    drop-shadow(0 2px 0 #fffdf8)
+    drop-shadow(4px 14px 12px rgba(70, 40, 20, 0.28));
+}
+
+.city-stop__art .art {
+  width: 100%;
+  clip-path: none;
+}
+
+.city-stop__meta {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 2px;
+  justify-items: center;
+  width: max-content;
+  max-width: 100%;
+  padding: 7px 12px 8px;
+  border-radius: 10px;
+  background: rgba(255, 249, 232, 0.92);
+  border: 1.5px solid rgba(255, 253, 248, 0.95);
+  box-shadow: 0 6px 14px rgba(60, 35, 18, 0.14);
+}
+
+.city-stop__order {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: color-mix(in srgb, var(--accent) 80%, #3a2418);
+}
+
+.city-stop__label {
+  font-size: clamp(14px, 1.7vw, 18px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.city-stop__mood {
+  font-size: 11px;
+  line-height: 1.35;
+  opacity: 0.7;
+}
+
+.city-stop:hover,
+.city-stop:focus-visible {
+  transform: translateY(-8px) scale(1.04);
+  outline: none;
+}
+
+.city-stop:focus-visible .city-stop__art {
+  outline: 3px solid #ab3626;
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+
+.city-stop:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .city-stop {
+    transition:
+      opacity 560ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 640ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 560ms ease;
+  }
+
+  .city-stop__glow {
+    transition:
+      opacity 520ms ease,
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .city-stop,
+  .city-stop.is-lit {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    pointer-events: auto;
+    transition: none;
+  }
+
+  .city-stop__glow {
+    opacity: 0.65;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .city-route.map-stage {
+    left: 2%;
+    right: 2%;
+    top: 48%;
+    height: 46%;
+  }
+
+  .city-stop-wrap {
+    width: min(34vw, 150px);
+  }
+
+  .city-stop-wrap:nth-child(1) { left: 18%; top: 62%; }
+  .city-stop-wrap:nth-child(2) { left: 50%; top: 30%; }
+  .city-stop-wrap:nth-child(3) { left: 82%; top: 54%; }
+
+  .city-stop__mood {
+    display: none;
+  }
+
+  .city-stop__label {
+    font-size: 12px;
+  }
+
+  .city-stop__meta {
+    padding: 5px 8px 6px;
+  }
+}
