@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3aa5f2">
+  <meta name="description" content="邵笛珂的教材图生视频案例：设计教材到成片的可复用链路，将脚本与提示词封装为 Skill，设置制作审核与成品品检。查看真实五幕成片与本地流程演示。">
+  <title>教材图生视频 · 邵笛珂的项目案例</title>
+  <link rel="stylesheet" href="static/styles.css?v=20261030-case"><link rel="stylesheet" href="static/case.css?v=20261030-case">
+<link rel="preload" as="font" href="static/weavy-sans.woff2" type="font/woff2" crossorigin><link rel="preload" as="image" href="assets/weavy/production-scene.webp"><link rel="stylesheet" href="static/weavy.css?v=20261031-approved"><link rel="stylesheet" href="static/lower-b.css?v=20261031-feedback"></head>
+<body id="top"><!-- THESIS: A tangible, operable textbook-to-film production canvas. OWN-WORLD: approved Weavy-inspired blue atmosphere, coral floor, transparent material artifacts, white node paths, navy semantic controls. STORY: inspect real work, try the local seven-phase simulation, understand the author's sustainable production mechanism and confirmed60%+/70% results. FIRST VIEWPORT: sparse navigation above headline left, results right, sourcebook left/ribbon center/actual video right; quiet white operation dock below. FORM: user-pinned Weavy reference and approved05-textbook-v4-weavy.png. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance -->
+  <a class="skip-link" href="#main">跳到正文</a>
+  <div class="toast-stack" id="toastStack" role="status"></div>
+  <header class="site-header"><div class="container header-inner"><a class="logo" href="/home/#work">一点好奇心</a><a class="case-name" href="#top">教材 AI 自动化</a><nav class="nav" aria-label="案例导航"><a href="#demo">制作画布</a><a href="#heroVideoPlayer">真实成片</a><a href="#project-value">我的贡献</a></nav></div></header>
+  <main id="main">
+<section class="weavy-hero" aria-labelledby="case-title"><div class="scene-art" data-scene-art><img class="production-scene" src="assets/weavy/production-scene.webp" alt="教材原页经蓝色透明分镜带连接到成片的产线场景示意" fetchpriority="high" width="1774" height="820"><div class="hero-video-player" id="heroVideoPlayer"><div class="hero-video-frame"><video id="heroVideo" playsinline preload="metadata" poster="assets/weavy/film-poster.png" aria-label="真实五幕教材教学成片"><source src="assets/video/final.mp4" type="video/mp4"></video><button type="button" id="heroVideoPlay" class="hero-video-play" aria-label="有声播放教学成片"><svg class="player-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7Z"/></svg><svg class="player-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><span>观看真实五幕成片</span></button><span id="heroPlayerMessage" class="player-message" role="status">点击，有声播放</span></div><div class="case-player-controls"><button type="button" id="heroSound" aria-label="关闭声音" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4 6 8H3v8h3l5 4Z M15 8c2 2 2 6 0 8m3-11c4 4 4 10 0 14"/></svg><span>声音开</span></button><input type="range" id="heroSeek" min="0" max="100" step="0.1" value="0" aria-label="教学成片播放进度"><span id="heroTime">0:00</span><button type="button" id="heroExpand" aria-label="放大观看"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg></button></div></div></div><div class="weavy-heading"><h1 id="case-title">把教材，<br>接成自动化产线。</h1><p>邵笛珂 / AI 自动化方案设计</p></div><div class="weavy-results"><p>成本降低 <strong>60%<span>以上</span></strong><i></i>效率提高 <strong>70%</strong></p><small>用户确认的项目结果</small></div><div class="flow-graph" aria-label="七段自动化制作流程"><svg class="flow-connectors" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true"><path class="flow-base" d="M95 63C165 63 230 45 304 45S470 30 547 30S655 22 724 22S830 10 900 10S1025 22 1108 22S1210 4 1270 4"/><path class="flow-return" d="M900 24V120Q900 134 884 134H566Q547 134 547 116V52"/><path class="flow-skill" d="M304 64V112Q304 126 322 126H382"/><circle class="flow-traveler" r="4" cx="95" cy="72"/></svg><button type="button" class="flow-node" data-node="vision" style="--node:0" aria-label="查看教材识读的输入与产出"><span class="node-check" aria-hidden="true"></span>教材识读</button><button type="button" class="flow-node" data-node="prompt" style="--node:1" aria-label="查看设计分镜的输入与产出"><span class="node-check" aria-hidden="true"></span>设计分镜</button><button type="button" class="flow-node" data-node="seedance" style="--node:2" aria-label="查看生成画面的输入与产出"><span class="node-check" aria-hidden="true"></span>生成画面</button><button type="button" class="flow-node" data-node="upscale" style="--node:3" aria-label="查看提升画质的输入与产出"><span class="node-check" aria-hidden="true"></span>提升画质</button><button type="button" class="flow-node" data-node="ffmpeg" style="--node:4" aria-label="查看拼接画面的输入与产出"><span class="node-check" aria-hidden="true"></span>拼接画面</button><button type="button" class="flow-node" data-node="audio" style="--node:5" aria-label="查看配音配乐的输入与产出"><span class="node-check" aria-hidden="true"></span>配音配乐</button><button type="button" class="flow-node" data-node="done" style="--node:6" aria-label="查看成片的输入与产出"><span class="node-check" aria-hidden="true"></span>成片</button><a href="#script" class="skill-node">脚本与提示词 Skill</a><button type="button" class="review-node" data-open-review>审核不通过 → 返回修改</button><div class="node-info" id="nodeInfo" hidden><button type="button" class="node-info-close" aria-label="关闭阶段说明">×</button><h2></h2><p></p><a href="#demo">在工作台继续体验 →</a></div></div><div class="hero-bottom-line"><span>教材原页 → 动态分镜 → 真实成片</span><button type="button" id="heroStartBtn">亲自体验产线 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-5-5 5 5-5 5"/></svg></button><span id="demoBookLabel">译林版二上 · U3 Animals at the Zoo</span></div><span id="heroStatsBadge" class="sr-only">5幕镜头</span></section><section id="demo" class="b-workbench" aria-labelledby="b-title"><div class="b-canvas" data-b-canvas>
+<div class="b-scene-native" data-b-native><img class="b-scenery" src="assets/lower-b/lower-b-stage.webp" width="1774" height="887" alt="橙色制作台上的教材与透明蓝色分镜展示架" loading="lazy">
+<div class="b-plane b-book-plane" data-b-plane="book"><img data-b-book src="assets/original/p014.jpg" alt="译林版英语教材原页 P14" width="438" height="529"></div>
+<div class="b-plane b-media-plane" data-b-plane="large"><img data-b-image="large" src="assets/images/p014_2.png" alt="熊馆参考分镜"><video data-b-video="large" playsinline preload="none" hidden></video><button type="button" class="b-media-play" data-b-play="large" aria-label="播放当前片段" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b-play-path" d="m9 5 10 7-10 7Z"/><path class="b-pause-path" d="M9 5v14M15 5v14"/></svg></button><span class="b-plane-message" data-b-message="large" role="status"></span></div>
+<div class="b-plane b-media-plane" data-b-plane="right"><img data-b-image="right" src="assets/images/p015_1.png" alt="长颈鹿参考分镜"><video data-b-video="right" playsinline preload="none" hidden></video><button type="button" class="b-media-play" data-b-play="right" aria-label="播放当前片段" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path class="b-play-path" d="m9 5 10 7-10 7Z"/><path class="b-pause-path" d="M9 5v14M15 5v14"/></svg></button><span class="b-plane-message" data-b-message="right" role="status"></span></div>
+<div class="b-frame-caption b-caption-large"><strong data-b-caption="large">Look at the bear.</strong><small data-b-subcaption="large">已有参考图 · 第二幕</small><button type="button" data-b-expand="large" aria-label="放大当前分镜或片段"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg></button></div>
+<div class="b-frame-caption b-caption-right"><strong data-b-caption="right">It has a long neck.</strong><small data-b-subcaption="right">已有参考图 · 第三幕</small><button type="button" data-b-expand="right" aria-label="放大下一分镜或片段"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg></button></div>
+</div>
+<div class="b-heading"><h2 id="b-title">亲自走一遍制作链路。</h2><p>本地模拟 · 不调用真实生成服务</p></div><div class="b-current"><p data-dock-current>当前：选择教材</p><strong data-dock-count>01 / 07</strong></div>
+<div class="step-track b-step-track" id="stepTrack" aria-label="七步本地制作模拟"><div class="step-item" data-step="vision"><span class="step-dot" aria-hidden="true"></span><span class="step-label">教材识读</span></div><div class="step-line" aria-hidden="true"></div><div class="step-item" data-step="prompt"><span class="step-dot" aria-hidden="true"></span><span class="step-label">设计分镜</span></div><div class="step-line" aria-hidden="true"></div><div class="step-item" data-step="seedance"><span class="step-dot" aria-hidden="true"></span><span class="step-label">生成画面</span></div><div class="step-line" aria-hidden="true"></div><div class="step-item" data-step="upscale"><span class="step-dot" aria-hidden="true"></span><span class="step-label">提升画质</span></div><div class="step-line" aria-hidden="true"></div><div class="step-item" data-step="ffmpeg"><span class="step-dot" aria-hidden="true"></span><span class="step-label">拼接画面</span></div><div class="step-line" aria-hidden="true"></div><div class="step-item" data-step="audio"><span class="step-dot" aria-hidden="true"></span><span class="step-label">配音配乐</span></div><div class="step-line" aria-hidden="true"></div><div class="step-item" data-step="done"><span class="step-dot" aria-hidden="true"></span><span class="step-label">成片</span></div></div>
+<div class="b-source-controls" role="group" aria-label="选用教材原页"><button type="button" data-b-page="p014.jpg" aria-pressed="false">P14</button><button type="button" data-b-page="p015.jpg" aria-pressed="false">P15</button></div><p class="b-source-note" data-b-source-note>选择教材原页</p>
+<div class="b-action-shelf"><div class="phase-panel" id="phaseSelectPanel"><div class="phase-head"><strong id="phaseActionTitle">选用教材原图</strong><p id="phaseActionHint">请先选择教材，再开始识读</p></div><button type="button" class="btn btn-primary" id="phaseActionBtn" disabled><span class="btn-spinner panel-hidden" id="phaseActionSpinner"></span><span id="phaseActionBtnText">开始识读教材</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-5-5 5 5-5 5"/></svg></button></div><section class="review-gate" id="reviewGate" hidden aria-labelledby="reviewGateTitle"><div><h3 id="reviewGateTitle">待人工确认</h3><p id="reviewGateCopy"></p></div><button type="button" class="btn btn-primary" id="reviewApprove">确认通过，继续 →</button><button type="button" class="review-rework" id="reviewRework">需要修改</button></section><div class="demo-actions"><span class="status-chip sr-only" id="statusChip" role="status">待开始</span><button type="button" class="demo-reset" id="demoReset" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 9M4 4v6h6"/></svg>重新体验</button></div></div>
+</div>
+<div class="b-stage-footer"><div class="b-shot-strip" data-b-shot-strip role="group" aria-label="查看五幕中的一幕"><span>逐幕看产物</span><button type="button" data-b-shot="0" aria-pressed="false">1</button><button type="button" data-b-shot="1" aria-pressed="true">2</button><button type="button" data-b-shot="2" aria-pressed="false">3</button><button type="button" data-b-shot="3" aria-pressed="false">4</button><button type="button" data-b-shot="4" aria-pressed="false">5</button><span data-b-artifact-note>现有参考图预览，尚未执行模拟</span></div><details class="progress-block" id="progressBlock"><summary><span id="progressLabel">等待开始</span><span id="progressPct">0%</span><span>步骤记录</span></summary><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><div class="log-console" id="logConsole">逐步执行与确认各阶段。</div></details></div>
+<details class="b-inspector" id="bInspector"><summary>查看本步的完整产物与制作说明 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><div class="b-inspector-layout"><form class="demo-panel demo-form" id="demoForm" onsubmit="return false"><div class="source-label">输入 / 选用教材原页</div><div class="textbook-picker" id="textbookPicker"></div><div class="info-blocks"><div class="info-block"><span class="info-block-label">教材单元</span><span class="info-block-value" id="fieldBook">—</span></div><div class="info-block"><span class="info-block-label">镜头数量</span><span class="info-block-value" id="fieldShots">—</span></div></div></form><aside class="menu-preview" id="video"><div class="menu-card"><p id="outputEyebrow">本步产出</p><h3 id="outputTitle">等待选择教材</h3><p class="output-desc" id="outputDesc"></p><div class="output-body" id="outputBody"></div><div class="stats-row panel-hidden" id="outputStats"></div></div></aside></div></details>
+</section><section class="section section-alt" id="workflow" aria-labelledby="workflow-title">
+  <div class="container">
+    
+    <div class="b-review-spread"><div><h2 id="workflow-title">把审核，留在关键处。</h2><p>每个环节都可预览效果，仅在关键处人工确认。需要时随时返回修改。</p><button type="button" class="b-return-link" data-b-return>回到工作台，亲自确认一次 <svg viewBox="0 0 30 20" aria-hidden="true"><path d="M2 10h26m-7-6 7 6-7 6"/></svg></button></div><div class="b-review-visual"><svg viewBox="0 0 800 300" aria-hidden="true"><path d="M-30 130C100 -15 215 15 275 105S375 205 470 185"/><path d="M454 175 470 185 454 192"/></svg><span class="b-review-stop"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3M9 21v-4m6 4v-4"/></svg>人工审核</span><figure><img src="assets/images/p014_2.png" alt="人工核对熊馆画面的情景、角色与对白" loading="lazy"><figcaption>情景、角色、运动和对白，分别核对。</figcaption></figure><img class="b-review-next" src="assets/images/p015_1.png" alt="下一幕长颈鹿参考画面" loading="lazy"></div></div><details class="b-process-fold"><summary>查看每步的输入、产出与制作要点</summary><p class="b-process-note">自动化负责环节接力，人工在关键处审核、修正与放行。按需查看各阶段的输入、输出与检查重点。</p><div class="workflow-shell" id="workflowShell"><nav class="workflow-timeline" id="workflowTimeline" aria-label="制作流程步骤"><p class="loading-card">正在读取本地流程…</p></nav><div class="workflow-body"><aside class="workflow-detail" id="workflowDetail" aria-live="polite"><p class="loading-card">正在读取步骤…</p></aside></div></div>
+    </details><details class="review-fold" id="tech"><summary><span>四道制作审核 + 成品品检</span><small>展开查看各节点，AI 负责生成，人工决定放行</small></summary><div class="review-fold-body">
+        <div class="collab-shell" id="aiCapShell">
+          <div class="collab-board">
+            <div class="collab-rail" aria-hidden="true">
+              <span class="collab-rail-icon is-ai" title="AI">AI</span>
+              <span class="collab-rail-icon is-human" title="人工">人</span>
+            </div>
+            <div class="collab-track" id="aiCapFlow" role="list" aria-label="协作流程">
+              <div class="loading-card">加载中…</div>
+            </div>
+          </div>
+          <aside class="collab-detail" id="aiCapDetail" aria-live="polite">
+            <div class="loading-card">加载中…</div>
+          </aside>
+        </div>
+      </div></details>
+    <details class="cost-fold"><summary>查看案例投入与数据口径</summary><div class="workflow-cost-summary" id="workflowCostSummary"></div><p>约 5 分钟仅指约 5 个并行任务的视频生成环节；不含人工审核与返修。费用为该 5 镜头案例的制作记录，不是含人工的全成本。</p></details>
+  </div>
+</section>
+    <section class="section project-value" id="project-value" aria-labelledby="project-value-title"><div class="container value-layout">
+      <div class="value-heading"><h2 id="project-value-title">从单次制作，<br><em>到持续生产。</em></h2><p>成本降低 60% 以上、效率提高 70%，是这个项目的整体结果。下方用真实五幕成片与对应脚本，展示自动化如何落地。</p><a class="text-link" href="#script">查看实际脚本<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg></a></div>
+      <dl class="project-value-list">
+        <div><dt>要解决的问题</dt><dd>教材理解、分镜、画面与后期彼此分散，每份任务都要重新组织。要持续供片，需要降低重复操作和环节之间的衔接成本。</dd></div>
+        <div><dt>我主导的设计</dt><dd>设计 AI 自动化方案，打通教材解析、分镜、生成与后期；将脚本与提示词封装为 <strong>Skill</strong>，设置审核与返修节点，让产线可以持续执行。</dd></div>
+        <div><dt>沉淀下来的价值</dt><dd>把一次性的制作经验沉淀为可复用流程：重复工作交给自动化，团队集中判断内容、处理异常和验收成片，支撑更低成本、更高效率的持续生产。</dd></div>
+      </dl>
+    </div></section>
+    <section class="section" id="script">
+      <div class="container">
+        <div class="section-head">
+          <h2>让下一份教材，也有章可循。</h2>
+          <p class="sub center" id="scriptSummary">把教材约束写进脚本与提示词 Skill。先看这份教材如何拆成五幕，再查看每一幕的参考图、运镜和台词。</p>
+        </div>
+        <div class="script-pipeline">
+          <!-- 输入 · 素材概览条 -->
+          <div class="script-block script-inputs">
+            <div class="script-mod-head">
+              <h3>输入</h3>
+              <span class="script-meta">教材内容 · 页面顺序 · 图片信息 · 台词</span>
+            </div>
+            <div class="script-material-bar" id="scriptInputs">
+              <div class="loading-card">加载中…</div>
+            </div>
+          </div>
+          <!-- 固定提示词模板 · 默认折叠 -->
+          <details class="script-template-fold">
+            <summary class="script-template-summary">
+              <span class="script-template-summary-text" id="scriptTemplateSummary">展开脚本 Skill：固定规则与风格约束</span>
+              <span class="script-template-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="script-template-body">
+              <div class="script-rules" id="scriptTemplate">加载中…</div>
+              <div class="script-template-divider" aria-hidden="true"></div>
+              <h4 class="script-template-subhead">固定风格</h4>
+              <div class="script-style-fixed" id="scriptStyle">加载中…</div>
+            </div>
+          </details>
+          <!-- 输出：生成结果 + 故事结构 + 逐镜（同一卡片） -->
+          <div class="script-block script-output-card">
+            <div class="script-mod-head">
+              <h3>生成结果</h3>
+              <span class="script-meta" id="scriptArcTag">起承转合 · 动态分镜</span>
+            </div>
+            <p class="script-output-summary" id="scriptOutputSummary"></p>
+            <details class="script-outline-section script-outline-fold"><summary>查看五幕故事结构</summary>
+              <div class="script-mod-head">
+                <h3>故事结构</h3>
+                <span class="script-meta">点击某一行查看对应分镜详情</span>
+              </div>
+              <div class="script-table-wrap">
+                <table class="script-table script-table-selectable" id="scriptArcTable">
+                  <thead>
+                    <tr>
+                      <th>幕</th>
+                      <th>结构</th>
+                      <th>场景</th>
+                      <th>参考图</th>
+                      <th>镜头</th>
+                      <th>情绪</th>
+                      <th>教材台词</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div></details>
+<div class="script-scene-panel" id="scriptScenePanel">
+              <div class="script-scene-panel-head">
+                <div class="script-mod-head">
+                  <h3>逐幕看脚本</h3>
+                  <span class="script-meta" id="scriptShotTag">1 参考图 = 1 视频</span>
+                </div>
+                <div class="script-scene-tabs" id="scriptSceneTabs" aria-label="分镜切换"></div>
+              </div>
+              <div class="script-scenes" id="scriptScenes">
+                <div class="loading-card">加载中…</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="case-closing"><div class="container"><p>自动化接住重复工作。<br><strong>团队把精力留给内容与判断。</strong></p><a class="btn btn-primary" href="/home/#work">回到全部作品<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10"/></svg></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span>邵笛珂 · 教材图生视频案例</span><span id="healthStatus">正在读取本地案例…</span><a href="#top">回到顶部</a></div></footer>
+  <dialog class="image-lightbox" id="imageLightbox" aria-label="图片预览"><button type="button" class="image-lightbox-backdrop" id="lightboxBackdrop" aria-label="关闭图片预览"></button><div class="image-lightbox-panel"><button type="button" class="image-lightbox-close" id="lightboxClose" aria-label="关闭图片预览">×</button><p class="image-lightbox-caption" id="lightboxCaption"></p><img id="lightboxImg" src="assets/images/p014_1.png" alt=""></div></dialog>
+  <script src="static/app.js?v=20261031-feedback"></script>
+<script src="static/weavy.js?v=20261031-approved"></script><script src="static/lower-b.js?v=20261031-feedback"></script></body>
+</html>
