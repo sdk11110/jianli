@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-31T10:51:51.353188+00:00",
+  "title": "Design System: 教材 AI 自动化 · Production Canvas",
+  "extensions": {
+    "colorMeta": {
+      "sky": {
+        "role": "primary",
+        "displayName": "Sky",
+        "tonalRamp": [
+          "oklch(0.150 0.14808 244.44)",
+          "oklch(0.264 0.14808 244.44)",
+          "oklch(0.379 0.14808 244.44)",
+          "oklch(0.493 0.14808 244.44)",
+          "oklch(0.607 0.14808 244.44)",
+          "oklch(0.721 0.14808 244.44)",
+          "oklch(0.836 0.14808 244.44)",
+          "oklch(0.950 0.14808 244.44)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(0.150 0.08456 270.39)",
+          "oklch(0.264 0.08456 270.39)",
+          "oklch(0.379 0.08456 270.39)",
+          "oklch(0.493 0.08456 270.39)",
+          "oklch(0.607 0.08456 270.39)",
+          "oklch(0.721 0.08456 270.39)",
+          "oklch(0.836 0.08456 270.39)",
+          "oklch(0.950 0.08456 270.39)"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Body Blue Grey",
+        "tonalRamp": [
+          "oklch(0.150 0.06277 266.84)",
+          "oklch(0.264 0.06277 266.84)",
+          "oklch(0.379 0.06277 266.84)",
+          "oklch(0.493 0.06277 266.84)",
+          "oklch(0.607 0.06277 266.84)",
+          "oklch(0.721 0.06277 266.84)",
+          "oklch(0.836 0.06277 266.84)",
+          "oklch(0.950 0.06277 266.84)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Blue Grey",
+        "tonalRamp": [
+          "oklch(0.150 0.04340 261.95)",
+          "oklch(0.264 0.04340 261.95)",
+          "oklch(0.379 0.04340 261.95)",
+          "oklch(0.493 0.04340 261.95)",
+          "oklch(0.607 0.04340 261.95)",
+          "oklch(0.721 0.04340 261.95)",
+          "oklch(0.836 0.04340 261.95)",
+          "oklch(0.950 0.04340 261.95)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(0.150 0.00573 264.53)",
+          "oklch(0.264 0.00573 264.53)",
+          "oklch(0.379 0.00573 264.53)",
+          "oklch(0.493 0.00573 264.53)",
+          "oklch(0.607 0.00573 264.53)",
+          "oklch(0.721 0.00573 264.53)",
+          "oklch(0.836 0.00573 264.53)",
+          "oklch(0.950 0.00573 264.53)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(0.150 0.00000 0.00)",
+          "oklch(0.264 0.00000 0.00)",
+          "oklch(0.379 0.00000 0.00)",
+          "oklch(0.493 0.00000 0.00)",
+          "oklch(0.607 0.00000 0.00)",
+          "oklch(0.721 0.00000 0.00)",
+          "oklch(0.836 0.00000 0.00)",
+          "oklch(0.950 0.00000 0.00)"
+        ]
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Action Navy",
+        "tonalRamp": [
+          "oklch(0.150 0.08370 265.40)",
+          "oklch(0.264 0.08370 265.40)",
+          "oklch(0.379 0.08370 265.40)",
+          "oklch(0.493 0.08370 265.40)",
+          "oklch(0.607 0.08370 265.40)",
+          "oklch(0.721 0.08370 265.40)",
+          "oklch(0.836 0.08370 265.40)",
+          "oklch(0.950 0.08370 265.40)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(0.150 0.02463 259.82)",
+          "oklch(0.264 0.02463 259.82)",
+          "oklch(0.379 0.02463 259.82)",
+          "oklch(0.493 0.02463 259.82)",
+          "oklch(0.607 0.02463 259.82)",
+          "oklch(0.721 0.02463 259.82)",
+          "oklch(0.836 0.02463 259.82)",
+          "oklch(0.950 0.02463 259.82)"
+        ]
+      },
+      "line-light": {
+        "role": "neutral",
+        "displayName": "Light Line",
+        "tonalRamp": [
+          "oklch(0.150 0.01557 257.20)",
+          "oklch(0.264 0.01557 257.20)",
+          "oklch(0.379 0.01557 257.20)",
+          "oklch(0.493 0.01557 257.20)",
+          "oklch(0.607 0.01557 257.20)",
+          "oklch(0.721 0.01557 257.20)",
+          "oklch(0.836 0.01557 257.20)",
+          "oklch(0.950 0.01557 257.20)"
+        ]
+      },
+      "node-backing": {
+        "role": "primary",
+        "displayName": "Node Backing",
+        "tonalRamp": [
+          "oklch(0.150 0.08209 258.41 / 0.859)",
+          "oklch(0.264 0.08209 258.41 / 0.859)",
+          "oklch(0.379 0.08209 258.41 / 0.859)",
+          "oklch(0.493 0.08209 258.41 / 0.859)",
+          "oklch(0.607 0.08209 258.41 / 0.859)",
+          "oklch(0.721 0.08209 258.41 / 0.859)",
+          "oklch(0.836 0.08209 258.41 / 0.859)",
+          "oklch(0.950 0.08209 258.41 / 0.859)"
+        ]
+      },
+      "node-current": {
+        "role": "primary",
+        "displayName": "Current Node",
+        "tonalRamp": [
+          "oklch(0.150 0.20918 263.80)",
+          "oklch(0.264 0.20918 263.80)",
+          "oklch(0.379 0.20918 263.80)",
+          "oklch(0.493 0.20918 263.80)",
+          "oklch(0.607 0.20918 263.80)",
+          "oklch(0.721 0.20918 263.80)",
+          "oklch(0.836 0.20918 263.80)",
+          "oklch(0.950 0.20918 263.80)"
+        ]
+      },
+      "bench-blue": {
+        "role": "primary",
+        "displayName": "Workbench Selection Blue",
+        "tonalRamp": [
+          "oklch(0.150 0.18975 263.36)",
+          "oklch(0.264 0.18975 263.36)",
+          "oklch(0.379 0.18975 263.36)",
+          "oklch(0.493 0.18975 263.36)",
+          "oklch(0.607 0.18975 263.36)",
+          "oklch(0.721 0.18975 263.36)",
+          "oklch(0.836 0.18975 263.36)",
+          "oklch(0.950 0.18975 263.36)"
+        ]
+      },
+      "bench-body": {
+        "role": "neutral",
+        "displayName": "Workbench Body Blue Grey",
+        "tonalRamp": [
+          "oklch(0.150 0.05848 259.28)",
+          "oklch(0.264 0.05848 259.28)",
+          "oklch(0.379 0.05848 259.28)",
+          "oklch(0.493 0.05848 259.28)",
+          "oklch(0.607 0.05848 259.28)",
+          "oklch(0.721 0.05848 259.28)",
+          "oklch(0.836 0.05848 259.28)",
+          "oklch(0.950 0.05848 259.28)"
+        ]
+      },
+      "bench-line": {
+        "role": "neutral",
+        "displayName": "Workbench Divider",
+        "tonalRamp": [
+          "oklch(0.150 0.03681 255.96)",
+          "oklch(0.264 0.03681 255.96)",
+          "oklch(0.379 0.03681 255.96)",
+          "oklch(0.493 0.03681 255.96)",
+          "oklch(0.607 0.03681 255.96)",
+          "oklch(0.721 0.03681 255.96)",
+          "oklch(0.836 0.03681 255.96)",
+          "oklch(0.950 0.03681 255.96)"
+        ]
+      },
+      "selection-line": {
+        "role": "neutral",
+        "displayName": "Selection Border",
+        "tonalRamp": [
+          "oklch(0.150 0.04492 256.79)",
+          "oklch(0.264 0.04492 256.79)",
+          "oklch(0.379 0.04492 256.79)",
+          "oklch(0.493 0.04492 256.79)",
+          "oklch(0.607 0.04492 256.79)",
+          "oklch(0.721 0.04492 256.79)",
+          "oklch(0.836 0.04492 256.79)",
+          "oklch(0.950 0.04492 256.79)"
+        ]
+      },
+      "editorial-paper": {
+        "role": "neutral",
+        "displayName": "Editorial Paper",
+        "tonalRamp": [
+          "oklch(0.150 0.00569 84.57)",
+          "oklch(0.264 0.00569 84.57)",
+          "oklch(0.379 0.00569 84.57)",
+          "oklch(0.493 0.00569 84.57)",
+          "oklch(0.607 0.00569 84.57)",
+          "oklch(0.721 0.00569 84.57)",
+          "oklch(0.836 0.00569 84.57)",
+          "oklch(0.950 0.00569 84.57)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "原批准首屏的紧凑主标题。"
+      },
+      "bench-headline": {
+        "displayName": "Workbench Headline",
+        "purpose": "B 工作台的大幅中文标题。"
+      },
+      "headline": {
+        "displayName": "Editorial Headline",
+        "purpose": "当前贡献区标题；其他下方标题保留自身 clamp。"
+      },
+      "frame-caption": {
+        "displayName": "Frame Caption",
+        "purpose": "原生场景坐标内的主分镜对白，随整个场景缩放。"
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "流程说明；贡献正文有独立的15px/1.95。"
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "输入、输出和状态标签。"
+      },
+      "action": {
+        "displayName": "Workbench Action",
+        "purpose": "B 承台的执行和审核通过按钮。"
+      },
+      "node": {
+        "displayName": "Hero Node",
+        "purpose": "原批准首屏的可点击流程节点。"
+      }
+    },
+    "shadows": [
+      {
+        "name": "explanation-overlay",
+        "value": "0 16px 35px -12px #12255175",
+        "purpose": "节点解释覆盖层。"
+      },
+      {
+        "name": "toast",
+        "value": "0 9px 24px -10px #14275477",
+        "purpose": "短时动作反馈。"
+      },
+      {
+        "name": "film-focus",
+        "value": "0 20px 80px -30px #000b",
+        "purpose": "沉浸播放层。"
+      },
+      {
+        "name": "workbench-action-shelf",
+        "value": "7px 13px 23px -17px #634a3180",
+        "purpose": "B 场景上的开放动作承台，柔和接触深度。"
+      }
+    ],
+    "motion": [
+      {
+        "name": "weavy-ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "已实现的动作与产出切换缓动；对应 CSS --weavy-ease。"
+      },
+      {
+        "name": "node-state",
+        "value": "background 180ms, color 180ms, scale 220ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "节点悬停与状态。"
+      },
+      {
+        "name": "execution-token",
+        "value": "460ms; 1 - (1 - t)^4",
+        "purpose": "仅阶段索引改变时沿主 SVG 路径移动，隐藏/离屏/减少动态时取消。"
+      },
+      {
+        "name": "output-replacement",
+        "value": "250ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "新输出取消上次动画，从 opacity .7、右侧4%裁切、translateX(6px) 恢复。"
+      },
+      {
+        "name": "output-reduced",
+        "value": "100ms opacity .75 to 1",
+        "purpose": "减少动态路径，不保留空间位移。"
+      },
+      {
+        "name": "player-controls",
+        "value": "opacity 180ms, transform 250ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "播放控件在 hover/focus-within 出现。"
+      },
+      {
+        "name": "pointer-spring",
+        "value": "stiffness .09; damping .70; target span 5px × 3px; settle .015",
+        "purpose": "仅精确悬停指针、场景可见且页面激活时运行一个 RAF，静止后停止；与影片共用坐标容器。"
+      },
+      {
+        "name": "b-media-replacement",
+        "value": "380ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "底层媒体源更换的亮度/透明度过渡；阶段资料层另用360ms裁切与淡入。减少动态、隐藏或离屏时不启动。"
+      },
+      {
+        "name": "b-phase-state",
+        "value": "background 220ms, border-color 220ms",
+        "purpose": "B 阶段胶囊的状态颜色切换，不表示可跳步。"
+      },
+      {
+        "name": "b-primary-action",
+        "value": "background 200ms, transform 300ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "B 主动作悬停上移1px、按下回位，禁用无位移。"
+      },
+      {
+        "name": "b-source-selection",
+        "value": "background 180ms, color 180ms",
+        "purpose": "P14/P15原页选择反馈。"
+      },
+      {
+        "name": "b-phase-sheet-replacement",
+        "value": "360ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "阶段DOM资料层由 opacity .45 / inset(0 0 10% 0) 切换至完整可见；减少动态时直接更新内容。"
+      },
+      {
+        "name": "b-local-artifact-cadence",
+        "value": "~1400ms per phase; per log max(110ms, round(1400 / totalSteps))",
+        "purpose": "固定本地资料的短阅读节奏，不代表真实生成速度或服务延迟。"
+      },
+      {
+        "name": "b-data-row-reveal",
+        "value": "opacity 240ms; transform 350ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "随本地进度逐项揭示实际解析、分镜与片段清单，未揭示项 opacity .14 / translateX(12px)；减少动态保留内容状态并取消过渡。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "weavy-compact-desktop",
+        "value": "1100px"
+      },
+      {
+        "name": "weavy-stacked-fallback",
+        "value": "760px"
+      },
+      {
+        "name": "weavy-wide-desktop",
+        "value": "1800px"
+      },
+      {
+        "name": "inherited-case-stack",
+        "value": "900px"
+      },
+      {
+        "name": "inherited-case-small",
+        "value": "560px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Workbench primary action",
+      "kind": "button",
+      "description": "B 开放承台的执行动作；审核通过共用视觉变体。",
+      "html": "<button type=\"button\" class=\"ds-b-primary\"><span>开始识读教材</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15m-5-5 5 5-5 5\"/></svg></button>",
+      "css": ".ds-b-primary{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);display:flex;align-items:center;justify-content:center;gap:10px;background:#142551;color:#fff;border:0;border-radius:35px;padding:12px 19px;min-height:48px;font-size:clamp(12px,1.12vw,19px);font-weight:550;line-height:1.4;cursor:pointer;transition:background 200ms,transform 300ms cubic-bezier(.16,1,.3,1)}.ds-b-primary svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5}.ds-b-primary:hover{background:#234990;transform:translateY(-1px)}.ds-b-primary:active{transform:translateY(0)}.ds-b-primary:disabled{background:#cdd9ee;color:#536c91;cursor:default;transform:none}.ds-b-primary:focus-visible{outline:2px solid #1647b3;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-b-primary{transition:none}}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Workbench reset action",
+      "kind": "button",
+      "description": "B 的次级细边胶囊，替代旧 dock 的底边文字动作。",
+      "html": "<button type=\"button\" class=\"ds-b-reset\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 10a8 8 0 1 1 1 9M4 4v6h6\"/></svg>重新体验</button>",
+      "css": ".ds-b-reset{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);display:flex;align-items:center;justify-content:center;gap:7px;border:1px solid #b9cae5;border-radius:27px;padding:10px 12px;background:none;min-height:43px;font-size:clamp(10px,.9vw,15px);line-height:1.4;color:#23457a;cursor:pointer}.ds-b-reset svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5}.ds-b-reset:hover{background:#e8f0fc}.ds-b-reset:disabled{opacity:.4;cursor:default;background:none}.ds-b-reset:focus-visible{outline:2px solid #1647b3;outline-offset:5px}",
+      "refersTo": "button-reset"
+    },
+    {
+      "name": "Manual rework action",
+      "kind": "button",
+      "description": "待审核时的琥珀返修动作，当前审核说明由页面状态提供。",
+      "html": "<button type=\"button\" class=\"ds-b-rework\">需要修改</button>",
+      "css": ".ds-b-rework{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);background:none;border:1px solid #c0cce4;border-radius:27px;min-height:43px;font-size:clamp(11px,.95vw,16px);color:#b85f1c;padding:9px 12px;line-height:1.4;cursor:pointer}.ds-b-rework:hover{background:#fff1df;border-color:#e3b17b}.ds-b-rework:focus-visible{outline:2px solid #1647b3;outline-offset:5px}"
+    },
+    {
+      "name": "Production graph nodes",
+      "kind": "button",
+      "refersTo": "flow-node",
+      "description": "七段主流程共享胶囊、白描边与深色背衬；当前、完成和待审核均是语义状态。",
+      "html": "<div class=\"ds-flow-stage\"><button class=\"ds-flow-node\">设计分镜</button> <button class=\"ds-flow-node ds-flow-current\" aria-current=\"step\">生成画面</button> <button class=\"ds-flow-node ds-flow-complete\"><span aria-hidden=\"true\"></span>教材识读</button></div>",
+      "css": ".ds-flow-stage{background:#3aa5f2;padding:24px;display:flex;flex-wrap:wrap;gap:16px}.ds-flow-node{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);border:1.5px solid #fff;border-radius:30px;padding:7px 19px;min-height:33px;background:#18345edb;color:#fff;font-size:clamp(12px,1.05vw,17px);font-weight:550;line-height:1.2;white-space:nowrap;cursor:pointer;transition:background 180ms,color 180ms,scale 220ms var(--weavy-ease,cubic-bezier(.16,1,.3,1))}.ds-flow-node:hover{background:#153b7a;scale:1.025}.ds-flow-node:focus-visible{outline:2px solid #fff;outline-offset:5px}.ds-flow-current{background:#1345c8}.ds-flow-complete span{display:inline-block;width:13px;height:7px;border:solid currentColor;border-width:0 0 2px 2px;transform:rotate(-45deg);margin-right:9px;vertical-align:4px}@media(prefers-reduced-motion:reduce){.ds-flow-node{transition:none}}"
+    },
+    {
+      "name": "Source page toggle",
+      "kind": "chip",
+      "description": "在大幅教材页下方选择P14/P15；选中反馈使用aria-pressed。",
+      "html": "<div class=\"ds-b-pages\" role=\"group\" aria-label=\"选用教材原页\"><button type=\"button\" aria-pressed=\"true\">P14</button><button type=\"button\" aria-pressed=\"false\">P15</button></div>",
+      "css": ".ds-b-pages{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid #fff;background:#ffedddd9;border-radius:30px}.ds-b-pages button{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);border:0;background:none;color:#64402d;border-radius:25px;padding:4px 15px;min-height:28px;cursor:pointer;font-weight:550;font-size:clamp(12px,1vw,17px);transition:background 180ms,color 180ms}.ds-b-pages button[aria-pressed=true]{background:#fff;color:#c45b1d}.ds-b-pages button:disabled{opacity:.65;cursor:default}.ds-b-pages button:focus-visible{outline:2px solid #1647b3;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-b-pages button{transition:none}}"
+    },
+    {
+      "name": "Five-shot selector",
+      "kind": "button",
+      "description": "独立浏览已有五幕素材；不改变模拟执行阶段。32px为当前工具行实装，不作为通用触达尺寸基准。",
+      "html": "<div class=\"ds-b-shots\" role=\"group\" aria-label=\"查看五幕中的一幕\"><span>逐幕看产物</span><button type=\"button\" aria-pressed=\"false\">1</button><button type=\"button\" aria-pressed=\"true\">2</button><button type=\"button\" aria-pressed=\"false\">3</button><button type=\"button\" aria-pressed=\"false\">4</button><button type=\"button\" aria-pressed=\"false\">5</button></div>",
+      "css": ".ds-b-shots{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);display:flex;align-items:center;gap:8px;white-space:nowrap;color:#3e5d89;font-size:12px}.ds-b-shots>span{margin-right:8px}.ds-b-shots button{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);border:1px solid #b8cce8;border-radius:50%;width:32px;height:32px;flex:none;background:none;color:#2c4a7a;cursor:pointer;font-weight:500;font-size:13px;padding:0}.ds-b-shots button[aria-pressed=true]{background:#1748bc;border-color:#1748bc;color:#fff}.ds-b-shots button:hover{border-color:#1748bc}.ds-b-shots button:focus-visible{outline:2px solid #1647b3;outline-offset:5px}"
+    },
+    {
+      "name": "Workbench phase status",
+      "kind": "custom",
+      "description": "状态轨道的代表性三段：完成、当前、后续；原页面共七段，轨道自身不提供跳步操作。",
+      "html": "<div class=\"ds-b-track\" aria-label=\"制作阶段\"><span class=\"ds-b-step ds-b-done\">教材识读</span><i aria-hidden=\"true\"></i><span class=\"ds-b-step ds-b-active\" aria-current=\"step\">设计分镜</span><i aria-hidden=\"true\"></i><span class=\"ds-b-step\">生成画面</span></div>",
+      "css": ".ds-b-track{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);display:flex;align-items:center;background:#4cb0f8;padding:18px 14px;max-width:760px}.ds-b-step{border:1px solid #fff;border-radius:28px;background:#1f5f96d9;color:#fff;min-height:37px;display:flex;align-items:center;justify-content:center;gap:8px;flex:1;min-width:0;padding:5px 10px;font-size:clamp(11px,1.05vw,18px);font-weight:550;line-height:1.4;white-space:nowrap;transition:background 220ms,border-color 220ms}.ds-b-active{background:#1647d6;box-shadow:0 3px 13px #1856ad47}.ds-b-done{background:#dceeffdb;color:#1b4b9a}.ds-b-done::after{content:\"\";width:10px;height:6px;border:solid #1d5ac3;border-width:0 0 2px 2px;transform:rotate(-45deg);margin-top:-3px}.ds-b-track>i{height:1px;background:#fff;min-width:18px;flex:.25}@media(prefers-reduced-motion:reduce){.ds-b-step{transition:none}}"
+    },
+    {
+      "name": "Viewer progress controls",
+      "kind": "input",
+      "description": "B 放大播放器的原生range、时间与声音动作；预览为有声成片状态。",
+      "html": "<div class=\"ds-b-view-controls\"><button type=\"button\">播放</button><input type=\"range\" min=\"0\" max=\"1000\" value=\"350\" aria-label=\"放大视频进度\"><span>0:10 / 0:29</span><button type=\"button\">声音开</button></div>",
+      "css": ".ds-b-view-controls{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);display:flex;align-items:center;gap:20px;padding:12px 16px;background:#11274b;color:#e5f1ff}.ds-b-view-controls button{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);border:1px solid #6985ac;border-radius:20px;color:#e5f1ff;background:none;padding:7px 16px;font-size:12px;cursor:pointer}.ds-b-view-controls button:disabled{opacity:.6;cursor:default}.ds-b-view-controls input{flex:1;min-width:40px;accent-color:#82c9ff}.ds-b-view-controls span{font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}.ds-b-view-controls :focus-visible{outline:2px solid #18399c;outline-offset:5px}"
+    },
+    {
+      "name": "Case navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "三个锚点为轻量文字导航，当前项用细线提示；状态由滚动观察同步。",
+      "html": "<nav class=\"ds-navigation\" aria-label=\"案例导航\"><a href=\"#demo\">制作画布</a><a class=\"ds-nav-active\" href=\"#heroVideoPlayer\" aria-current=\"location\">真实成片</a><a href=\"#project-value\">我的贡献</a></nav>",
+      "css": ".ds-navigation{display:flex;gap:24px;color:var(--brown,#121b48)}.ds-navigation a{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);position:relative;display:flex;align-items:center;font-size:14px;font-weight:500;padding:10px 0;min-height:44px;border:0;color:inherit;text-decoration:none;transition:color .2s,background .2s}.ds-navigation a:hover{color:#00368a}.ds-navigation a:focus-visible{outline:2px solid #18399c;outline-offset:5px;}.ds-navigation .ds-nav-active{color:var(--accent-text,#1642b8);font-weight:600}.ds-nav-active::after{content:\"\";position:absolute;left:50%;transform:translateX(-50%);bottom:5px;width:calc(100% - 26px);height:1px;background:var(--accent-text,#1642b8)}"
+    },
+    {
+      "name": "Manual quality sheet",
+      "kind": "card",
+      "description": "最终人工gate的五项实际审核清单；前四项已确认，最终品检保持待确认，人工放行后才变为完成。尺寸为303px高原生场景平面的资料适配，不是最终屏幕字号基准。",
+      "html": "<section class=\"ds-b-quality\"><h3>最后一步，由人判断。</h3><ol><li><span>教材识读</span><strong>已确认</strong></li><li><span>分镜与提示词</span><strong>已确认</strong></li><li><span>生成画面</span><strong>已确认</strong></li><li><span>音画与配音</span><strong>已确认</strong></li><li class=\"ds-b-pending\"><span>最终成片品检</span><strong>待确认</strong></li></ol><footer>请观看成片，再点击下方确认或返回修改。</footer></section>",
+      "css": ".ds-b-quality{font-family:var(--font-body,WeavyText,'Microsoft YaHei',sans-serif);box-sizing:border-box;width:355px;min-height:303px;background:#f8fcff;color:#142551;padding:16px 21px}.ds-b-quality h3{font-size:22px;line-height:1.35;font-weight:650;letter-spacing:-.025em;margin:0}.ds-b-quality ol{margin:12px 0 10px;list-style:none;padding:0}.ds-b-quality li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid #cee1f1;font-size:16px;line-height:1.4}.ds-b-quality li>strong{font-size:15px;font-weight:500;color:#245b96}.ds-b-quality li.ds-b-pending>strong{color:#8f4b1c}.ds-b-quality li.ds-b-pending{background:#fff1df;margin-inline:-8px;padding-inline:8px}.ds-b-quality footer{font-size:13px;line-height:1.4;color:#41658c}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Tangible Production Canvas",
+    "overview": "这是教材案例（05）的局部系统。原有蓝天、珊瑚实体地面、纸本教材、透明蓝色分镜带与亚克力成片平面继续约束首屏；用户批准的 B 工作台把相同材料延展为大幅教材页与两个不等大的产物平面。平面随阶段呈现教材解析、分镜、实际影片或品检资料，实体几何保持不变。物理光影留在场景资产中，实际教材、图像、影片、标题和控件保留为语义 DOM。\n\n层级由作品尺度与操作状态共同建立：首屏展示用户确认的整体结果和真实成片，工作台提供固定本地模拟，后续浅色阅读区说明人工审核、作者贡献与制作细节。首屏结果口径仍为成本降低 60% 以上、效率提高 70%；它们不是模拟运行的测量值。本记录合并原已批准的首屏系统与 B 下方实现，不扩展到其他案例或整站。\n\n来源为继承的 `static/styles.css`、`static/case.css`、`static/weavy.css`、`static/weavy.js`，以及本包 `index.html`、`static/app.js`、`static/lower-b.css`、`static/lower-b.js` 最后覆盖规则。批准构图记于 `surface-brief.json`；物理资产与映射分别见 `lower-b-asset-manifest.json`、`assets/lower-b/geometry.json`。`qa/full-workflow.json` 记录原七阶段、五道审核、返修、媒体与焦点验证；`qa/05-b-composition-after.png`、`qa/confirmation.json` 保留原 B 几何与两档桌面控制布局的确认。本次 `qa/feedback-confirmation.json` 记录七种可区分的阶段产物、审核、返修与媒体状态；其中 `sheets.content` 是映射后的投影高度，不是局部滚动溢出指标。反馈截图未作为本次最终构图证据，带 `before` 的截图和 `REVIEW.md` 仍仅记录先前发现。文档写入不代表已安装或发布。",
+    "keyCharacteristics": [
+      "蓝天、暖橙实体底座与透明蓝色材料连接真实作品。",
+      "单一自托管中文可变字体，以尺度、字重和留白区分角色。",
+      "大幅教材与不等大的两个产物平面，共享几何并随阶段更换实际内容。",
+      "开放动作承台与紧凑工具行承接操作，完整资料按需展开。",
+      "人工确认决定继续或返修，动效和影片随状态与可见性停止。"
+    ],
+    "rules": [
+      {
+        "name": "The Material / Control Rule",
+        "body": "透明蓝与暖橙负责实体连续性；深蓝、白和蓝灰负责阅读与操作，琥珀提示人工审核。",
+        "section": "colors"
+      },
+      {
+        "name": "The One Font Rule",
+        "body": "延续自托管可变中文字体，以字重与信息角色建立层级，不另加系统默认展示字体。",
+        "section": "typography"
+      },
+      {
+        "name": "The Depth Lives in the Work Rule",
+        "body": "让实体场景和必要承台承担深度，阅读条目保持开放，临时覆盖层使用柔和环境阴影。",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** 保留蓝天、暖橙实体材料与透明蓝连接，并让实际教材、分镜、影片和控件保持语义 DOM。",
+      "**Do** 让场景、真实媒体与交互区域共享各自场景的几何映射。",
+      "**Do** 将阶段、人工确认、返修和完成状态同步到文字、动作与进度。",
+      "**Do** 让阶段更换可核对的实际产物，资料展开进入完整 DOM，媒体展开进入播放器。",
+      "**Do** 保留开放动作承台、紧凑工具行和按需展开的完整资料。",
+      "**Do** 保留可见焦点、Escape 返回、原生滚动、离屏暂停与减少动态路径。",
+      "**Do** 将整体项目结果、真实素材和固定本地模拟分别标明来源。"
+    ],
+    "donts": [
+      "**Don't** 用整页 mock 替代真实布局，或把操作文字、影片与控件烧进场景图。",
+      "**Don't** 将旧三栏 dock、修正前暖色审核衬垫或未实现的连接线运动写成 B 的系统规则。",
+      "**Don't** 将固定演示当作现场调用生成服务，或把 60% 以上 / 70% 改写为分阶段测量与学习效果。",
+      "**Don't** 为每条事实和对白重复添加玻璃卡、硬偏移阴影或装饰性标题。",
+      "**Don't** 将桌面流程记录、修正前截图或继承的窄屏规则表述为完整移动端验证。"
+    ]
+  }
+}

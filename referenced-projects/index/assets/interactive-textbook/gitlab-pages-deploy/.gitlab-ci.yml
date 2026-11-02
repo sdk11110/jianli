@@ -1,0 +1,11 @@
+pages:
+  stage: deploy
+  script:
+    - echo "Deploying static site to GitLab Pages"
+    - mkdir -p public
+    - cp -r index.html static api assets public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

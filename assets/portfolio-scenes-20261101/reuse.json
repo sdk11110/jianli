@@ -1,0 +1,703 @@
+{
+  "watch": {
+    "title_safe_box_normalized": [
+      0.045,
+      0.17,
+      0.34,
+      0.44
+    ],
+    "screen_quad_pixels": [
+      [
+        932,
+        195
+      ],
+      [
+        1232,
+        208
+      ],
+      [
+        1170,
+        566
+      ],
+      [
+        862,
+        537
+      ]
+    ],
+    "screen_quad_normalized": [
+      [
+        0.525366,
+        0.219842
+      ],
+      [
+        0.694476,
+        0.234498
+      ],
+      [
+        0.659526,
+        0.638106
+      ],
+      [
+        0.485908,
+        0.605411
+      ]
+    ],
+    "screen_quad_order": "top-left, top-right, bottom-right, bottom-left; nominal square-corner extensions of the rounded glass",
+    "screen_mask_path_source_pixels": "M 992 198 L 1051 201 C 1062 201 1064 218 1077 221 C 1097 225 1106 216 1109 202 L 1175 204 C 1211 205 1226 231 1218 270 L 1176 512 C 1170 550 1144 565 1110 561 L 914 544 C 879 541 870 520 877 484 L 927 252 C 934 217 955 198 992 198 Z",
+    "mask_note": "Path is visually measured and should receive final video-overlay browser alignment; preserve rounded corners and the top camera notch."
+  },
+  "math": {
+    "note": "recess_center is the geometric center of the empty capsule recess and is a visual reference. contact_anchor is the original piece's bottom contact center and is the movement/placement anchor. initial_piece_center is the visible shape bbox center, not the PNG canvas center.",
+    "slots": [
+      {
+        "id": "back-left",
+        "initial_piece": "ring",
+        "recess_center_px": [
+          698,
+          445
+        ],
+        "recess_center_normalized": [
+          0.393461,
+          0.501691
+        ],
+        "initial_piece_center_px": [
+          676,
+          409.5
+        ],
+        "initial_piece_center_normalized": [
+          0.38106,
+          0.461669
+        ],
+        "contact_anchor_px": [
+          676,
+          466
+        ],
+        "contact_anchor_normalized": [
+          0.38106,
+          0.525366
+        ],
+        "variants": {
+          "ring": {
+            "expected_piece_size_px": [
+              118,
+              113
+            ],
+            "piece_bbox_xywh_px": [
+              617,
+              353,
+              118,
+              113
+            ],
+            "piece_bbox_xywh_normalized": [
+              0.347802,
+              0.397971,
+              0.066516,
+              0.127396
+            ],
+            "image_element_rect_xywh_px": [
+              598.4008,
+              335.7041,
+              154.4593,
+              144.5939
+            ],
+            "image_element_rect_xywh_normalized": [
+              0.337317,
+              0.378471,
+              0.087068,
+              0.163015
+            ]
+          },
+          "triangle": {
+            "expected_piece_size_px": [
+              123,
+              115
+            ],
+            "piece_bbox_xywh_px": [
+              614.5,
+              351,
+              123,
+              115
+            ],
+            "piece_bbox_xywh_normalized": [
+              0.346392,
+              0.395716,
+              0.069335,
+              0.129651
+            ],
+            "image_element_rect_xywh_px": [
+              604.2962,
+              329.6513,
+              139.0821,
+              147.9077
+            ],
+            "image_element_rect_xywh_normalized": [
+              0.34064,
+              0.371647,
+              0.0784,
+              0.166751
+            ]
+          }
+        }
+      },
+      {
+        "id": "back-right",
+        "initial_piece": "triangle",
+        "recess_center_px": [
+          1063,
+          414
+        ],
+        "recess_center_normalized": [
+          0.599211,
+          0.466742
+        ],
+        "initial_piece_center_px": [
+          1103.5,
+          374.5
+        ],
+        "initial_piece_center_normalized": [
+          0.622041,
+          0.42221
+        ],
+        "contact_anchor_px": [
+          1103.5,
+          432
+        ],
+        "contact_anchor_normalized": [
+          0.622041,
+          0.487035
+        ],
+        "variants": {
+          "ring": {
+            "expected_piece_size_px": [
+              118,
+              113
+            ],
+            "piece_bbox_xywh_px": [
+              1044.5,
+              319,
+              118,
+              113
+            ],
+            "piece_bbox_xywh_normalized": [
+              0.588782,
+              0.359639,
+              0.066516,
+              0.127396
+            ],
+            "image_element_rect_xywh_px": [
+              1025.9008,
+              301.7041,
+              154.4593,
+              144.5939
+            ],
+            "image_element_rect_xywh_normalized": [
+              0.578298,
+              0.34014,
+              0.087068,
+              0.163015
+            ]
+          },
+          "triangle": {
+            "expected_piece_size_px": [
+              123,
+              115
+            ],
+            "piece_bbox_xywh_px": [
+              1042,
+              317,
+              123,
+              115
+            ],
+            "piece_bbox_xywh_normalized": [
+              0.587373,
+              0.357384,
+              0.069335,
+              0.129651
+            ],
+            "image_element_rect_xywh_px": [
+              1031.7962,
+              295.6513,
+              139.0821,
+              147.9077
+            ],
+            "image_element_rect_xywh_normalized": [
+              0.581621,
+              0.333316,
+              0.0784,
+              0.166751
+            ]
+          }
+        }
+      },
+      {
+        "id": "front-left",
+        "initial_piece": "triangle",
+        "recess_center_px": [
+          747,
+          611
+        ],
+        "recess_center_normalized": [
+          0.421082,
+          0.688839
+        ],
+        "initial_piece_center_px": [
+          729.5,
+          575
+        ],
+        "initial_piece_center_normalized": [
+          0.411218,
+          0.648253
+        ],
+        "contact_anchor_px": [
+          729.5,
+          634
+        ],
+        "contact_anchor_normalized": [
+          0.411218,
+          0.714769
+        ],
+        "variants": {
+          "ring": {
+            "expected_piece_size_px": [
+              125,
+              118
+            ],
+            "piece_bbox_xywh_px": [
+              667,
+              516,
+              125,
+              118
+            ],
+            "piece_bbox_xywh_normalized": [
+              0.375986,
+              0.581736,
+              0.070462,
+              0.133033
+            ],
+            "image_element_rect_xywh_px": [
+              647.2975,
+              497.9388,
+              163.6221,
+              150.9918
+            ],
+            "image_element_rect_xywh_normalized": [
+              0.36488,
+              0.561374,
+              0.092233,
+              0.170228
+            ]
+          },
+          "triangle": {
+            "expected_piece_size_px": [
+              125,
+              118
+            ],
+            "piece_bbox_xywh_px": [
+              667,
+              516,
+              125,
+              118
+            ],
+            "piece_bbox_xywh_normalized": [
+              0.375986,
+              0.581736,
+              0.070462,
+              0.133033
+            ],
+            "image_element_rect_xywh_px": [
+              656.6303,
+              494.0944,
+              141.3436,
+              151.7662
+            ],
+            "image_element_rect_xywh_normalized": [
+              0.370141,
+              0.55704,
+              0.079675,
+              0.171101
+            ]
+          }
+        }
+      },
+      {
+        "id": "front-right",
+        "initial_piece": "ring",
+        "recess_center_px": [
+          1151,
+          576
+        ],
+        "recess_center_normalized": [
+          0.648816,
+          0.64938
+        ],
+        "initial_piece_center_px": [
+          1175.5,
+          536
+        ],
+        "initial_piece_center_normalized": [
+          0.662627,
+          0.604284
+        ],
+        "contact_anchor_px": [
+          1175.5,
+          595
+        ],
+        "contact_anchor_normalized": [
+          0.662627,
+          0.6708
+        ],
+        "variants": {
+          "ring": {
+            "expected_piece_size_px": [
+              125,
+              118
+            ],
+            "piece_bbox_xywh_px": [
+              1113,
+              477,
+              125,
+              118
+            ],
+            "piece_bbox_xywh_normalized": [
+              0.627396,
+              0.537768,
+              0.070462,
+              0.133033
+            ],
+            "image_element_rect_xywh_px": [
+              1093.2975,
+              458.9388,
+              163.6221,
+              150.9918
+            ],
+            "image_element_rect_xywh_normalized": [
+              0.616289,
+              0.517406,
+              0.092233,
+              0.170228
+            ]
+          },
+          "triangle": {
+            "expected_piece_size_px": [
+              125,
+              118
+            ],
+            "piece_bbox_xywh_px": [
+              1113,
+              477,
+              125,
+              118
+            ],
+            "piece_bbox_xywh_normalized": [
+              0.627396,
+              0.537768,
+              0.070462,
+              0.133033
+            ],
+            "image_element_rect_xywh_px": [
+              1102.6303,
+              455.0944,
+              141.3436,
+              151.7662
+            ],
+            "image_element_rect_xywh_normalized": [
+              0.62155,
+              0.513071,
+              0.079675,
+              0.171101
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "journal": {
+    "title_safe_box_normalized": [
+      0.055,
+      0.13,
+      0.285,
+      0.34
+    ],
+    "photo_plane_quad_pixels": [
+      [
+        805,
+        0
+      ],
+      [
+        1270,
+        0
+      ],
+      [
+        1298,
+        649
+      ],
+      [
+        800,
+        663
+      ]
+    ],
+    "photo_plane_quad_normalized": [
+      [
+        0.453777,
+        0
+      ],
+      [
+        0.715896,
+        0
+      ],
+      [
+        0.73168,
+        0.73168
+      ],
+      [
+        0.450958,
+        0.747463
+      ]
+    ],
+    "photo_plane_quad_note": "Underlying inferred photo plane; its top-left is occluded. Use the separate visible polygon to avoid covering paper scenery.",
+    "photo_visible_clip_polygon_pixels": [
+      [
+        894,
+        0
+      ],
+      [
+        1269,
+        0
+      ],
+      [
+        1273,
+        50
+      ],
+      [
+        1274,
+        100
+      ],
+      [
+        1278,
+        150
+      ],
+      [
+        1279,
+        180
+      ],
+      [
+        1283,
+        250
+      ],
+      [
+        1286,
+        330
+      ],
+      [
+        1288,
+        400
+      ],
+      [
+        1292,
+        500
+      ],
+      [
+        1296,
+        575
+      ],
+      [
+        1296,
+        600
+      ],
+      [
+        1297,
+        646
+      ],
+      [
+        1206,
+        649
+      ],
+      [
+        1050,
+        654
+      ],
+      [
+        886,
+        659
+      ],
+      [
+        880,
+        649
+      ],
+      [
+        869,
+        629
+      ],
+      [
+        832,
+        600
+      ],
+      [
+        806,
+        575
+      ],
+      [
+        806,
+        500
+      ],
+      [
+        809,
+        400
+      ],
+      [
+        807,
+        385
+      ],
+      [
+        792,
+        333
+      ],
+      [
+        798,
+        250
+      ],
+      [
+        802,
+        180
+      ],
+      [
+        818,
+        150
+      ],
+      [
+        840,
+        100
+      ],
+      [
+        864,
+        50
+      ]
+    ],
+    "photo_visible_clip_polygon_normalized": [
+      [
+        0.503946,
+        0
+      ],
+      [
+        0.715333,
+        0
+      ],
+      [
+        0.717587,
+        0.05637
+      ],
+      [
+        0.718151,
+        0.11274
+      ],
+      [
+        0.720406,
+        0.169109
+      ],
+      [
+        0.72097,
+        0.202931
+      ],
+      [
+        0.723224,
+        0.281849
+      ],
+      [
+        0.724915,
+        0.372041
+      ],
+      [
+        0.726043,
+        0.450958
+      ],
+      [
+        0.728298,
+        0.563698
+      ],
+      [
+        0.730552,
+        0.648253
+      ],
+      [
+        0.730552,
+        0.676437
+      ],
+      [
+        0.731116,
+        0.728298
+      ],
+      [
+        0.67982,
+        0.73168
+      ],
+      [
+        0.591883,
+        0.737317
+      ],
+      [
+        0.499436,
+        0.742954
+      ],
+      [
+        0.496054,
+        0.73168
+      ],
+      [
+        0.489853,
+        0.709132
+      ],
+      [
+        0.468997,
+        0.676437
+      ],
+      [
+        0.45434,
+        0.648253
+      ],
+      [
+        0.45434,
+        0.563698
+      ],
+      [
+        0.456032,
+        0.450958
+      ],
+      [
+        0.454904,
+        0.434047
+      ],
+      [
+        0.446449,
+        0.375423
+      ],
+      [
+        0.449831,
+        0.281849
+      ],
+      [
+        0.452086,
+        0.202931
+      ],
+      [
+        0.461105,
+        0.169109
+      ],
+      [
+        0.473506,
+        0.11274
+      ],
+      [
+        0.487035,
+        0.05637
+      ]
+    ],
+    "photo_clip_css_percentage": "polygon(50.3946% 0.0000%, 71.5333% 0.0000%, 71.7587% 5.6370%, 71.8151% 11.2740%, 72.0406% 16.9109%, 72.0970% 20.2931%, 72.3224% 28.1849%, 72.4915% 37.2041%, 72.6043% 45.0958%, 72.8298% 56.3698%, 73.0552% 64.8253%, 73.0552% 67.6437%, 73.1116% 72.8298%, 67.9820% 73.1680%, 59.1883% 73.7317%, 49.9436% 74.2954%, 49.6054% 73.1680%, 48.9853% 70.9132%, 46.8997% 67.6437%, 45.4340% 64.8253%, 45.4340% 56.3698%, 45.6032% 45.0958%, 45.4904% 43.4047%, 44.6449% 37.5423%, 44.9831% 28.1849%, 45.2086% 20.2931%, 46.1105% 16.9109%, 47.3506% 11.2740%, 48.7035% 5.6370%)",
+    "photo_overlay_bounds_normalized": [
+      0.445,
+      0,
+      0.289,
+      0.749
+    ],
+    "photo_overlay_note": "Polygon values are relative to the full 1774×887 stage. If the DOM photo uses a local bounding box, subtract/scale the polygon into that box. Keep all stage layers at identical scaling."
+  }
+}

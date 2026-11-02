@@ -1,0 +1,565 @@
+{
+  "book": {
+    "name": "译林版小学英语二年级上册",
+    "unit": "U3",
+    "title": "Animals at the Zoo",
+    "material_root": "F:\\工作记录\\2026\\六.1\\1",
+    "textbook_images_dir": "F:\\工作记录\\2026\\六.1\\大旺季视频优化\\视频\\译林二上",
+    "bgm": "千库网_卡通欢乐儿童背景音乐_配乐编号48782",
+    "bgm_path": "F:\\工作记录\\2026\\六.1\\大旺季视频优化\\视频\\2背景音乐",
+    "audio_dir": "F:\\工作记录\\2026\\六.1\\大旺季视频优化\\视频\\译林二上\\解析输出_20260703_182936\\U3\\audio",
+    "dual_audio": true,
+    "bgm_file": "F:\\工作记录\\2026\\六.1\\大旺季视频优化\\视频\\2背景音乐\\千库网_卡通欢乐儿童背景音乐_配乐编号48782.wav"
+  },
+  "vision_stats": {
+    "pages_total": 2,
+    "pages_ok": 2,
+    "scenes_extracted": 5,
+    "dialogues_total": 8
+  },
+  "pipeline_stats": {
+    "shot_count": 5,
+    "raw_segments": 5,
+    "hd_segments": 5,
+    "duration_seconds": 25,
+    "resolution": "3144×2160 · 60fps",
+    "upscale_engine": "本地超分",
+    "dual_audio": true,
+    "audio_tracks": [
+      "配音+BGM（默认）",
+      "纯BGM"
+    ]
+  },
+  "textbook_pages": [
+    {
+      "page": 14,
+      "original_image": "p014.jpg",
+      "scene_hint": "动物园 · 熊展区",
+      "image_url": "assets/original/p014.jpg"
+    },
+    {
+      "page": 15,
+      "original_image": "p015.jpg",
+      "scene_hint": "动物园 · 长颈鹿与猴子",
+      "image_url": "assets/original/p015.jpg"
+    }
+  ],
+  "lesson_preview": {
+    "unit": "U3",
+    "title": "Animals at the Zoo",
+    "scenes": [
+      {
+        "scene_id": "s1",
+        "page": 14,
+        "topic": "Look at the bear",
+        "dialogues": [
+          {
+            "en": "Look at the bear.",
+            "zh": "看这只熊。"
+          },
+          {
+            "en": "Oh, it has a short tail.",
+            "zh": "哦，它有一条短尾巴。"
+          }
+        ],
+        "visual_elements": [
+          "brown bear",
+          "zoo enclosure",
+          "children pointing"
+        ]
+      },
+      {
+        "scene_id": "s2",
+        "page": 15,
+        "topic": "Look at the giraffe",
+        "dialogues": [
+          {
+            "en": "Look at the giraffe.",
+            "zh": "看这只长颈鹿。"
+          },
+          {
+            "en": "Wow!",
+            "zh": "哇！"
+          },
+          {
+            "en": "It has a long neck!",
+            "zh": "它有一个长脖子！"
+          }
+        ],
+        "visual_elements": [
+          "giraffe",
+          "long neck",
+          "zoo background"
+        ]
+      },
+      {
+        "scene_id": "s3",
+        "page": 15,
+        "topic": "Look at the monkey",
+        "dialogues": [
+          {
+            "en": "Look at the monkey!",
+            "zh": "看这只猴子！"
+          }
+        ],
+        "visual_elements": [
+          "monkey",
+          "tree branch",
+          "playful motion"
+        ]
+      },
+      {
+        "scene_id": "s4",
+        "page": 15,
+        "topic": "Oh no!",
+        "dialogues": [
+          {
+            "en": "Oh no!",
+            "zh": "哦，不！"
+          }
+        ],
+        "visual_elements": [
+          "monkey jumping",
+          "surprised children"
+        ]
+      },
+      {
+        "scene_id": "s5",
+        "page": 15,
+        "topic": "Ha ha!",
+        "dialogues": [
+          {
+            "en": "Ha ha!",
+            "zh": "哈哈！"
+          }
+        ],
+        "visual_elements": [
+          "laughing children",
+          "happy ending"
+        ]
+      }
+    ]
+  },
+  "shots": [
+    {
+      "id": 1,
+      "shot_id": "shot_01",
+      "name": "第一幕",
+      "scene_id": "s1",
+      "duration": 5,
+      "prompt": "风格：儿童教材扁平卡通风，粗黑色描边，高饱和撞色，2D插画质感\n\n[脚本提示词]\n三人从画面左侧走入镜头，右侧是黄色导览牌，牌上有老虎、猴子、狮子、长颈鹿、熊五张动物图片，黑色路线连接至底部红色五角星。儿子走在最前面，率先注意到导览牌并兴奋地指向它，爸爸跟上前抬手指向导览牌，妈妈微笑看向牌子。儿子视线转向导览牌右上角的猴子图片，眼神好奇微笑。镜头先跟随人物入画，再横移至导览牌，微风吹动一旁植物叶片，最后推近定格在猴子图片与红色五角星路线交汇处。\n\n[旁白] Let's see where we are.（教材本页无明确台词，按旁白音处理）",
+      "raw_video": "第一幕.mp4",
+      "hd_video": "第一幕_60fps_out.mp4",
+      "ref_image": "p014_1.png",
+      "arc_label": "【起】",
+      "scene_title": "场景一｜走进动物园，发现导览图",
+      "camera": "跟随入画 → 横移定格",
+      "dialogue_timeline": [
+        {
+          "time": "0:00-0:01",
+          "speaker": "—",
+          "line": "（建立镜头，三人从左侧入画）",
+          "note": "不开口"
+        },
+        {
+          "time": "0:01-0:01.5",
+          "speaker": "儿子",
+          "line": "（兴奋跳起，手指导览牌）",
+          "note": "嘴巴闭合"
+        },
+        {
+          "time": "0:01.5-0:03.5",
+          "speaker": "爸爸",
+          "line": "Let's see where we are.",
+          "note": "妈妈微笑闭嘴"
+        },
+        {
+          "time": "0:03.5-0:04.3",
+          "speaker": "儿子",
+          "line": "（视线转向猴子图片，微笑）",
+          "note": "伏笔"
+        },
+        {
+          "time": "0:04.3-0:05",
+          "speaker": "—",
+          "line": "（推近定格：猴子图与红星路线）",
+          "note": "悬念收尾"
+        }
+      ],
+      "subtitles": []
+    },
+    {
+      "id": 2,
+      "shot_id": "shot_02",
+      "name": "第二幕",
+      "scene_id": "s1",
+      "duration": 5,
+      "prompt": "风格：儿童教材扁平卡通风，粗黑色描边，高饱和撞色，2D插画质感\n\n[脚本提示词]\n左侧一只黑熊坐在草地沙丘旁，背景有树木和洞穴，右侧栏杆外三人站立观看。镜头从熊的鼻子特写缓慢拉远，揭示熊坐着的完整姿态。儿子扶栏杆身体前倾，抬手指向熊，说出台词「Look at the bear.」。熊打了个哈欠、憨厚地转头看向人物方向。妈妈说出台词「Oh, it has a short tail.」，爸爸儿子聆听，露出被熊憨态萌到的表情。镜头推近定格在熊的短尾巴处。",
+      "raw_video": "第二幕.mp4",
+      "hd_video": "第二幕_60fps_out.mp4",
+      "ref_image": "p014_2.png",
+      "arc_label": "【承·上升1】",
+      "scene_title": "场景二｜熊馆——好奇的第一步",
+      "camera": "推近揭晓",
+      "dialogue_timeline": [
+        {
+          "time": "0:00-0:00.5",
+          "speaker": "—",
+          "line": "（从熊鼻特写拉远揭示全貌）",
+          "note": "悬念建立"
+        },
+        {
+          "time": "0:00.5-0:02.3",
+          "speaker": "儿子",
+          "line": "Look at the bear.",
+          "note": "爸妈闭嘴看熊"
+        },
+        {
+          "time": "0:02.3-0:02.8",
+          "speaker": "—",
+          "line": "（熊打哈欠转头）",
+          "note": "环境反应"
+        },
+        {
+          "time": "0:02.8-0:04.7",
+          "speaker": "妈妈",
+          "line": "Oh, it has a short tail.",
+          "note": "爸儿子聆听"
+        },
+        {
+          "time": "0:04.7-0:05",
+          "speaker": "—",
+          "line": "（推近定格熊短尾巴）",
+          "note": "揭晓收尾"
+        }
+      ],
+      "subtitles": [
+        {
+          "en": "Look at the bear.",
+          "zh": "看这只熊。"
+        },
+        {
+          "en": "Oh, it has a short tail.",
+          "zh": "哦，它有一条短尾巴。"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "shot_id": "shot_03",
+      "name": "第三幕",
+      "scene_id": "s2",
+      "duration": 5,
+      "prompt": "风格：儿童教材扁平卡通风，粗黑色描边，高饱和撞色，2D插画质感\n\n[脚本提示词]\n一只长颈鹿站在木栏杆后方吃树叶，脖子高高伸向左上方树冠，背景有岩石和树林，三人在栏杆内侧看向长颈鹿。镜头从地面低角度仰拍，沿长颈鹿腿部缓慢上移至头部，强化其身高震撼感。爸爸抬手指向长颈鹿，说出台词「Look at the giraffe.」。长颈鹿脖子伸得更高、低头叼住新树叶咀嚼。儿子扶栏杆立柱抬手指向长颈鹿脖子，惊讶说出台词「Wow! It has a long neck!」，比在熊馆时更兴奋，爸爸妈妈聆听并露出会心微笑。镜头定格在长颈鹿脖子与树冠交叠的最高点。",
+      "raw_video": "第三幕.mp4",
+      "hd_video": "第三幕_60fps_out.mp4",
+      "ref_image": "p015_1.png",
+      "arc_label": "【承·上升2】",
+      "scene_title": "场景三｜长颈鹿区——惊叹升级",
+      "camera": "仰拍震撼",
+      "dialogue_timeline": [
+        {
+          "time": "0:00-0:00.5",
+          "speaker": "—",
+          "line": "（低角度仰拍沿腿上升至头部）",
+          "note": "震撼建立"
+        },
+        {
+          "time": "0:00.5-0:02.3",
+          "speaker": "爸爸",
+          "line": "Look at the giraffe.",
+          "note": "母子闭嘴"
+        },
+        {
+          "time": "0:02.3-0:02.8",
+          "speaker": "—",
+          "line": "（长颈鹿伸脖叼叶咀嚼）",
+          "note": "环境反应"
+        },
+        {
+          "time": "0:02.8-0:04.7",
+          "speaker": "儿子",
+          "line": "Wow! It has a long neck!",
+          "note": "比熊馆更兴奋"
+        },
+        {
+          "time": "0:04.7-0:05",
+          "speaker": "—",
+          "line": "（定格脖子与树冠最高点）",
+          "note": "惊叹收尾"
+        }
+      ],
+      "subtitles": [
+        {
+          "en": "Look at the giraffe.",
+          "zh": "看这只长颈鹿。"
+        },
+        {
+          "en": "Wow!",
+          "zh": "哇！"
+        },
+        {
+          "en": "It has a long neck!",
+          "zh": "它有一个长脖子！"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "shot_id": "shot_04",
+      "name": "第四幕",
+      "scene_id": "s3",
+      "duration": 5,
+      "prompt": "风格：儿童教材扁平卡通风，粗黑色描边，高饱和撞色，2D插画质感\n\n[脚本提示词]\n右侧绿色铁笼中三只猴子，一只猴子手臂缓慢伸出笼外靠近爸爸的帽子。镜头从猴子好奇睁大的眼神特写快速拉远，揭示三人站在笼子前的全景。儿子笑着抬手跳了一下，激动说出台词「Look at the monkey!」。妈妈手指向猴笼，笑着说出台词「Ha ha!」，笼内猴子发出吱吱叫声并抓挠笼杆。镜头快速甩向猴子手臂伸出即将碰到爸爸帽子的瞬间，配合低角度仰拍，爸爸身体后仰躲闪，惊讶说出台词「Oh no!」，帽子被轻轻碰歪一角。镜头定格在爸爸惊恐表情与歪帽子的细节特写。",
+      "raw_video": "第四幕.mp4",
+      "hd_video": "第四幕_60fps_out.mp4",
+      "ref_image": "p015_2.png",
+      "arc_label": "【转】",
+      "scene_title": "场景四｜猴笼区——伏笔揭晓，高潮爆发",
+      "camera": "甩镜 + 特写",
+      "dialogue_timeline": [
+        {
+          "time": "0:00-0:00.3",
+          "speaker": "—",
+          "line": "（猴子眼神特写快速拉远）",
+          "note": "悬念"
+        },
+        {
+          "time": "0:00.3-0:01.8",
+          "speaker": "儿子",
+          "line": "Look at the monkey!",
+          "note": "最激动"
+        },
+        {
+          "time": "0:01.8-0:03.0",
+          "speaker": "妈妈",
+          "line": "Ha ha!",
+          "note": "猴子吱吱叫"
+        },
+        {
+          "time": "0:03.0-0:04.7",
+          "speaker": "爸爸",
+          "line": "Oh no!",
+          "note": "甩镜+帽子碰歪"
+        },
+        {
+          "time": "0:04.7-0:05",
+          "speaker": "—",
+          "line": "（定格爸爸惊恐与歪帽特写）",
+          "note": "高潮收尾"
+        }
+      ],
+      "subtitles": [
+        {
+          "en": "Look at the monkey!",
+          "zh": "看这只猴子！"
+        },
+        {
+          "en": "Ha ha!",
+          "zh": "哈哈！"
+        },
+        {
+          "en": "Oh no!",
+          "zh": "哦，不！"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "shot_id": "shot_05",
+      "name": "第五幕",
+      "scene_id": "s4",
+      "duration": 5,
+      "prompt": "风格：儿童教材扁平卡通风，粗黑色描边，高饱和撞色，2D插画质感\n\n[脚本提示词]\n右侧绿色铁笼中三只猴子，一只手臂仍搭在笼杆上。爸爸扶正被碰歪的帽子，表情从惊恐逐渐转为哭笑不得。妈妈笑着安慰爸爸，说出台词「Ha ha!」，儿子在旁边开心大笑。儿子跑过去挽住爸爸的手臂，三人一起放声大笑，笼内猴子好奇张望。三人转身，笑着并肩走出画面右侧，其中一只猴子抬起手臂做出挥手告别的动作。镜头从固定中景缓慢拉远，最后跟随人物离开画面。",
+      "raw_video": "第五幕.mp4",
+      "hd_video": "第五幕_60fps_out.mp4",
+      "ref_image": "p015_2.png",
+      "arc_label": "【合】",
+      "scene_title": "场景五｜结尾——从惊恐到大笑，一家人转身离开",
+      "camera": "定格拉远 → 跟随出画",
+      "dialogue_timeline": [
+        {
+          "time": "0:00-0:01",
+          "speaker": "爸爸",
+          "line": "（扶正歪帽，表情缓和）",
+          "note": "嘴巴闭合"
+        },
+        {
+          "time": "0:01-0:02.3",
+          "speaker": "妈妈",
+          "line": "Ha ha, don't worry!",
+          "note": "安慰"
+        },
+        {
+          "time": "0:02.3-0:03.3",
+          "speaker": "—",
+          "line": "（儿子挽臂，三人大笑）",
+          "note": "肢体释放"
+        },
+        {
+          "time": "0:03.3-0:05",
+          "speaker": "—",
+          "line": "（转身并肩出画，猴子挥手）",
+          "note": "拉远收尾"
+        }
+      ],
+      "subtitles": [
+        {
+          "en": "Ha ha!",
+          "zh": "哈哈！"
+        }
+      ]
+    }
+  ],
+  "vision_steps": [
+    {
+      "phase": "scan",
+      "label": "读取教材图片",
+      "detail": "载入 U3 单元 2 页教材扫描图"
+    },
+    {
+      "phase": "vision",
+      "label": "豆包 Vision 理解",
+      "detail": "OCR 识读 + 场景语义理解，提取对话与画面要素"
+    },
+    {
+      "phase": "structure",
+      "label": "结构化课程内容",
+      "detail": "按场景组织对话、视觉元素与页码映射"
+    },
+    {
+      "phase": "export",
+      "label": "输出 lesson.json",
+      "detail": "课程理解结果已序列化，供 Prompt 生成使用"
+    }
+  ],
+  "prompt_steps": [
+    {
+      "phase": "load",
+      "label": "读取 lesson.json",
+      "detail": "载入 5 个场景的结构化课程内容"
+    },
+    {
+      "phase": "template",
+      "label": "匹配 Prompt 模板",
+      "detail": "按场景类型选择图生视频提示词模板"
+    },
+    {
+      "phase": "generate",
+      "label": "生成镜头 Prompt",
+      "detail": "为每幕生成 Seedance 图生视频提示词"
+    },
+    {
+      "phase": "export",
+      "label": "输出 shots.json",
+      "detail": "5 条镜头 Prompt 已就绪，进入视频生成"
+    }
+  ],
+  "seedance_steps": [
+    {
+      "phase": "load",
+      "label": "读取 shots.json",
+      "detail": "5 幕镜头 Prompt 与参考图已加载"
+    },
+    {
+      "phase": "submit",
+      "label": "提交 Seedance 2.0",
+      "detail": "逐幕调用图生视频 API"
+    },
+    {
+      "phase": "poll",
+      "label": "等待生成完成",
+      "detail": "5 段 AI 视频片段陆续返回"
+    },
+    {
+      "phase": "download",
+      "label": "下载视频片段",
+      "detail": "原始片段已保存至 ai生成视频片段/"
+    }
+  ],
+  "upscale_steps": [
+    {
+      "phase": "queue",
+      "label": "排队本地超分",
+      "detail": "5 段原始片段进入超分队列"
+    },
+    {
+      "phase": "process",
+      "label": "逐段超分处理",
+      "detail": "超分至 3144×2160 · 60fps"
+    },
+    {
+      "phase": "export",
+      "label": "输出高清片段",
+      "detail": "超分结果已保存至 本地超分/"
+    }
+  ],
+  "ffmpeg_steps": [
+    {
+      "phase": "prepare",
+      "label": "准备拼接清单",
+      "detail": "5 段高清片段按幕次排序"
+    },
+    {
+      "phase": "concat",
+      "label": "FFmpeg 拼接",
+      "detail": "无缝连接各幕视频，生成完整画面轨"
+    },
+    {
+      "phase": "export",
+      "label": "输出完整视频",
+      "detail": "无音频的完整视频已生成"
+    }
+  ],
+  "audio_steps": [
+    {
+      "phase": "demucs",
+      "label": "Demucs 音轨分离",
+      "detail": "从参考音频中分离人声与背景"
+    },
+    {
+      "phase": "whisper",
+      "label": "Whisper 语音识别",
+      "detail": "识别对话时间轴与文本"
+    },
+    {
+      "phase": "align",
+      "label": "时间轴对齐",
+      "detail": "将本地配音对齐到视频时间轴"
+    },
+    {
+      "phase": "dub",
+      "label": "替换本地配音",
+      "detail": "逐句替换为标准教材配音"
+    },
+    {
+      "phase": "bgm",
+      "label": "替换随机 BGM",
+      "detail": "混入背景音乐，完成最终音轨"
+    },
+    {
+      "phase": "mux",
+      "label": "混流导出成片",
+      "detail": "画面 + 配音 + BGM 合成最终视频"
+    }
+  ],
+  "video_file": "final.mp4",
+  "video_source_file": "7月13日 (1)_原音轨备份.mp4",
+  "video_label": "7月13日 (1)_原音轨备份",
+  "images": [
+    "p014_1.png",
+    "p014_2.png",
+    "p015_1.png",
+    "p015_2.png"
+  ],
+  "script_design_file": "script_u3.json",
+  "assets": {
+    "video_url": "assets/video/final.mp4",
+    "images_base": "assets/images/",
+    "segments_raw_base": "assets/segments/raw/",
+    "segments_hd_base": "assets/segments/hd/",
+    "video_exists": true,
+    "raw_segments_ready": true,
+    "hd_segments_ready": true
+  }
+}

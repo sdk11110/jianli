@@ -1,0 +1,56 @@
+/* The original paper masthead stays with the visitor through the long exhibit. */
+:root { --masthead-height:84px; }
+html { scroll-padding-top:calc(var(--masthead-height) + 18px); }
+.site-header {
+  position:sticky; top:0; isolation:isolate; z-index:30;
+  background:var(--paper); transition:border-color 180ms;
+}
+.site-header::before {
+  content:''; position:fixed; top:0; left:0; right:0; height:var(--masthead-height);
+  background:var(--paper); z-index:-1;
+  pointer-events:none; transition:box-shadow 220ms;
+}
+.site-header.is-reading::before { box-shadow:0 8px 20px -17px #17171366; }
+.site-header.is-reading { border-bottom-color:#1717134d; }
+.nav-location { display:none; }
+.header-contact[aria-current="location"] { background:var(--blue); color:var(--paper); }
+
+/* A next step at the end of the explanation avoids a trip back up the screen. */
+.method-navigation {
+  display:grid; grid-template-columns:44px 1fr 44px; align-items:center; gap:12px;
+  padding-top:18px; margin-top:22px; border-top:1px solid var(--line);
+}
+.method-navigation>span { text-align:center; color:var(--blue); font-size:12px; font-variant-numeric:tabular-nums; }
+.method-navigation button {
+  display:grid; place-items:center; width:44px; height:44px; padding:9px;
+  border:1px solid var(--line); border-radius:50%; background:transparent;
+  transition:background-color 180ms,color 180ms,border-color 180ms;
+}
+.method-navigation button:hover:not(:disabled) { background:var(--blue); border-color:var(--blue); color:var(--paper); }
+.method-navigation button:disabled { opacity:.3; }
+.method-navigation .icon { width:21px; height:21px; }
+.method-navigation [data-method-prev] .icon { transform:rotate(180deg); }
+.method-navigation button:focus-visible { outline-color:var(--blue); }
+.method-copy { display:flex; flex-direction:column; }
+.method-copy>.method-navigation { margin-top:auto; padding-top:18px; }
+.method-copy>.method-boundary { margin-bottom:20px; }
+@media(min-width:701px) and (max-width:1100px) {
+  :root { --masthead-height:74px; }
+}
+@media(max-width:700px) {
+  :root { --masthead-height:72px; }
+  .site-header.is-reading .nav-location {
+    display:block; margin-left:auto; min-width:0; max-width:78px;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+    font-size:12px; font-weight:550; color:var(--blue);
+  }
+  .site-header.is-reading .menu-toggle { margin-left:0; flex:none; }
+  .method-copy { min-height:0!important; }
+  .method-copy>.method-navigation { margin-top:0; }
+}
+@media(max-width:374px) {
+  .site-header { gap:9px; }.site-header .nav-location { max-width:68px!important; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .site-header,.site-header::before,.method-navigation button { transition:none; }
+}
