@@ -1,0 +1,181 @@
+{
+  "recorded_at_utc": "2026-10-25T03:03:10.369455+00:00",
+  "content_identity": "Exact original hero: sheep host before apple/play tiles, same 15-second sequence.",
+  "quality_disclosure": "AI super-resolution from an 1112x834 interpolated source; 3840x2880 output is not native 4K capture.",
+  "source": {
+    "path": "D:\\ai\\tep1\\8.23\\VideoSuperRes_便携版.zip\\VideoSuperRes_便携版\\VideoSuperRes\\Real-ESRGAN\\temp_resized\\01_两家换一条_v2_60fps.mp4",
+    "sha256": "b4bfc4486bc86c1fe588a0adef72e1a63b4618bd538623158dea0e6e9707c99b",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1112,
+          "height": 834,
+          "pix_fmt": "yuv444p",
+          "r_frame_rate": "48/1",
+          "avg_frame_rate": "48/1",
+          "bit_rate": "59512988"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "bit_rate": "130308"
+        }
+      ],
+      "format": {
+        "duration": "15.041667",
+        "size": "112161322",
+        "bit_rate": "59653665"
+      }
+    }
+  },
+  "original_web_video": {
+    "path": "D:\\ai\\tep1\\jianli\\assets\\media\\project-reels\\watch\\watch-volume.mp4",
+    "size": "960x720",
+    "fps": 30,
+    "video_bitrate_bps": 2220372
+  },
+  "engine": {
+    "root": "D:\\ai\\tep1\\8.23\\VideoSuperRes\\Real-ESRGAN",
+    "script": "D:\\ai\\tep1\\8.23\\VideoSuperRes\\Real-ESRGAN\\inference_realesrgan_video.py",
+    "python": "D:\\ai\\tep1\\8.22\\AnimeSR\\.venv\\Scripts\\python.exe",
+    "torch": "2.7.1+cu128",
+    "cuda": "12.8",
+    "device": "NVIDIA GeForce RTX 5070",
+    "architecture": "sm_120",
+    "model": "D:\\ai\\tep1\\8.23\\VideoSuperRes\\Real-ESRGAN\\weights\\realesr-animevideov3.pth",
+    "model_sha256": "b8a8376811077954d82ca3fcf476f1ac3da3e8a68a4f4d71363008000a18b75d",
+    "operation": "Real-ESRGAN realesr-animevideov3, exact output 3840x2880, original 48fps and AAC retained."
+  },
+  "master": {
+    "path": "D:\\ai\\tep1\\8.23\\output\\h5-player-20261025\\sr\\01_两家换一条_v2_60fps_out.mp4",
+    "sha256": "515a125cbb47bf7da8d2fe268b31e76b5a3f256158723a266e1fdf5797f2e8c6",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 3840,
+          "height": 2880,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "48/1",
+          "avg_frame_rate": "48/1",
+          "bit_rate": "31443132"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "bit_rate": "130308"
+        }
+      ],
+      "format": {
+        "duration": "15.041667",
+        "size": "59383396",
+        "bit_rate": "31583412"
+      }
+    }
+  },
+  "web_outputs": [
+    {
+      "path": "D:\\ai\\tep1\\8.23\\output\\h5-player-20261025\\staged\\assets\\media\\project-reels\\watch\\watch-volume-4k.mp4",
+      "sha256": "e0b7336b4f85a4b3b5d0e2e4ab1290f4046d4b85afdb55f65320fbbd6359ec23",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 3840,
+            "height": 2880,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "48/1",
+            "avg_frame_rate": "48/1",
+            "bit_rate": "31856688"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "bit_rate": "130308"
+          }
+        ],
+        "format": {
+          "duration": "15.041667",
+          "size": "60161173",
+          "bit_rate": "31997077"
+        }
+      },
+      "encoding": "libx264, CRF 20, preset medium, yuv420p, AAC copied, faststart"
+    },
+    {
+      "path": "D:\\ai\\tep1\\8.23\\output\\h5-player-20261025\\staged\\assets\\media\\project-reels\\watch\\watch-volume-hd.mp4",
+      "sha256": "559ce83a3d96289b747e641c37a9faa43d56cf33eb9a2e4beeec70b4ab4ec11b",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1920,
+            "height": 1440,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "48/1",
+            "avg_frame_rate": "48/1",
+            "bit_rate": "10277109"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "bit_rate": "130308"
+          }
+        ],
+        "format": {
+          "duration": "15.041667",
+          "size": "19587563",
+          "bit_rate": "10417761"
+        }
+      },
+      "encoding": "libx264, CRF 20, preset medium, yuv420p, AAC copied, faststart"
+    }
+  ],
+  "poster": {
+    "path": "D:\\ai\\tep1\\8.23\\output\\h5-player-20261025\\staged\\assets\\media\\project-reels\\watch\\watch-volume-hq.webp",
+    "sha256": "25223af8d93f4226d5cbb8f22b7fe3a9b2fd455b6df67d99e6f17508881aeb50",
+    "time_seconds": 1,
+    "width": 1920,
+    "height": 1440,
+    "format": "WebP",
+    "quality": 90,
+    "choice": "Open-eyed sheep before the lightbulb-eyes expression."
+  }
+}
