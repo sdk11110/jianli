@@ -1,0 +1,174 @@
+/* Scroll tide seams + silkier motion overrides */
+
+:root {
+  --ease-silk: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tide-seam {
+  position: relative;
+  z-index: 5;
+  display: block;
+  height: 0;
+  line-height: 0;
+  pointer-events: none;
+  margin: 0;
+  overflow: visible;
+}
+
+.tide-seam svg {
+  display: block;
+  width: 100%;
+  height: clamp(78px, 13vw, 148px);
+  margin-top: calc(clamp(78px, 13vw, 148px) * -0.72);
+  overflow: visible;
+}
+
+.tide-wave {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tide-fill {
+  transition: d 60ms linear;
+}
+
+.tide-seam--sky-to-wood .tide-fill--back {
+  fill: #c9a06a;
+}
+
+.tide-seam--sky-to-wood .tide-fill--mid {
+  fill: #d7a164;
+}
+
+.tide-seam--sky-to-wood .tide-fill--front {
+  fill: #e0b57a;
+  opacity: 0.88;
+}
+
+.tide-seam--wood-to-forest .tide-fill--back {
+  fill: #7a8f1c;
+}
+
+.tide-seam--wood-to-forest .tide-fill--mid {
+  fill: #8fa527;
+}
+
+.tide-seam--wood-to-forest .tide-fill--front {
+  fill: #a3b83a;
+  opacity: 0.82;
+}
+
+.tide-seam--forest-to-water .tide-fill--back {
+  fill: #7ad4c8;
+}
+
+.tide-seam--forest-to-water .tide-fill--mid {
+  fill: #a1eddf;
+}
+
+.tide-seam--forest-to-water .tide-fill--front {
+  fill: #c5f7ec;
+  opacity: 0.78;
+}
+
+.tide-seam--water-to-sand .tide-fill--back {
+  fill: #c9ad7a;
+}
+
+.tide-seam--water-to-sand .tide-fill--mid {
+  fill: #d6bc8b;
+}
+
+.tide-seam--water-to-sand .tide-fill--front {
+  fill: #e4d0a4;
+  opacity: 0.82;
+}
+
+.tide-foam {
+  fill: none;
+  stroke: rgba(255, 248, 220, 0.58);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 11;
+  opacity: 0.9;
+}
+
+.tide-crest {
+  fill: none;
+  stroke: rgba(90, 70, 40, 0.18);
+  stroke-width: 1.1;
+}
+
+/* Soften hard desk dome — tide carries the handoff */
+.desk {
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .map-object,
+  .primary-button,
+  .text-link,
+  .gallery-photo,
+  .postcard,
+  .vinyl-disc,
+  .instant-photo .photo-inner,
+  .chapter-controls a,
+  .gallery-filters button,
+  .sound-switch,
+  .menu-toggle,
+  .loose-record,
+  .turntable-controls button {
+    transition-timing-function: var(--ease-silk) !important;
+  }
+
+  .postcard {
+    transition:
+      opacity 560ms var(--ease-silk),
+      transform 780ms var(--ease-silk),
+      visibility 560ms ease !important;
+  }
+
+  .map-object {
+    transition:
+      transform 400ms var(--ease-silk),
+      filter 400ms var(--ease-silk) !important;
+  }
+
+  .primary-button {
+    transition:
+      transform 260ms var(--ease-silk),
+      box-shadow 260ms var(--ease-silk) !important;
+  }
+
+  .gallery-photo {
+    transition: transform 400ms var(--ease-silk) !important;
+  }
+
+  .instant-photo .photo-inner {
+    transition: transform 760ms var(--ease-silk) !important;
+  }
+
+  .camera-eject {
+    transition: transform 300ms var(--ease-silk) !important;
+  }
+
+  .scroll-cue {
+    transition: opacity 400ms var(--ease-silk), transform 400ms var(--ease-silk);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tide-seam svg {
+    height: 52px;
+    margin-top: -36px;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,11 @@
+﻿项目,包内入口,引用来源
+完整作品集,index/index.html,home/js/routes.mjs: portfolio；home/index.html 完整作品集入口
+手表互联工作台,index/assets/watch-link/index.html,home/js/routes.mjs: watch；index/app.js 手表案例
+内容培训平台展厅,index/assets/training-platform/platform-tour/index.html,home/js/routes.mjs: training；index/app.js 培训案例
+生 H5 培训,index/assets/training-platform/ai-h5/index.html,index/app.js 与平台展厅内课程入口
+数学互动 H5,index/assets/math-project/interactive-h5/index.html,home/js/routes.mjs: math；index/app.js 数学案例
+数学情景视频,index/assets/math-project/scenario-video/average-misread-geometric.mp4,index/app.js 数学案例视频入口
+教材图生视频工作室,index/assets/interactive-textbook/gitlab-pages-deploy/index.html,home/js/routes.mjs: textbook；index/app.js 教材案例
+平均数互动教学附属页,index/assets/interactive-textbook/average-lab/平均数错中求解互动教学H5.html,随教材项目现有目录一并保留的附属演示
+项目交付经历,index/assets/project-delivery/index.html,index/index.html 项目交付入口
+云南手帐,yunnan/index.html,home/js/routes.mjs: travel；home/index.html 云南手帐入口

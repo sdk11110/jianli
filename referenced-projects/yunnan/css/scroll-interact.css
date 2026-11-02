@@ -1,0 +1,233 @@
+/* HTN-style scroll-linked UI feedback */
+
+:root {
+  --page-progress: 0;
+  --hero-out: 0;
+  --chapter-local: 0;
+}
+
+.reading-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #922722, #e07a3a);
+  transform: scaleX(var(--page-progress));
+  transform-origin: left center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.site-header {
+  position: relative;
+}
+
+/* Hero leaves as you scroll — like HTN vignette fade */
+.hero-copy {
+  transition: none;
+  opacity: calc(1 - var(--hero-out) * 1.15);
+  transform: translate3d(0, calc(var(--hero-out) * -28px), 0) scale(calc(1 - var(--hero-out) * 0.04));
+  will-change: opacity, transform;
+}
+
+.scroll-cue {
+  opacity: calc(0.75 * (1 - var(--hero-out) * 2)) !important;
+  pointer-events: auto;
+}
+
+.scroll-cue.is-gone {
+  pointer-events: none;
+}
+
+/* City pins: current chapter pulses while sticky journey scrolls */
+.city-stop.is-current {
+  opacity: 1;
+  filter: saturate(1.1) brightness(1.05);
+  transform: translateY(-6px) scale(1.06);
+  z-index: 4;
+}
+
+.city-stop.is-current .city-stop__glow {
+  opacity: 1;
+  transform: scale(1.15);
+  animation: pin-pulse 1.8s ease-in-out infinite;
+}
+
+.city-stop.is-current .city-stop__meta {
+  border-color: color-mix(in srgb, var(--accent) 55%, #fffdf8);
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent),
+    0 8px 18px rgba(60, 35, 18, 0.18);
+}
+
+@keyframes pin-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1.05);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.22);
+  }
+}
+
+/* Postcard swap — soft crossfade when chapter changes */
+.postcard {
+  transition:
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 420ms;
+}
+
+.postcard.active {
+  transition:
+    opacity 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s;
+}
+
+/* Camera eject feel: shadow grows as photo slides out */
+.chapter-photo {
+  box-shadow:
+    0 1px 0 #fff,
+    4px calc(8px + var(--camera-eject) * 18px) calc(14px + var(--camera-eject) * 18px)
+      rgba(30, 50, 15, calc(0.16 + var(--camera-eject) * 0.22)) !important;
+}
+
+.chapter-camera .hand-note {
+  /* Opacity driven by eject-hint in exhibit.css */
+}
+
+/* Vinyl row drifts with page scroll */
+.record-row {
+  --row-shift: 0px;
+  transform: translate3d(var(--row-shift), 10%, 0) !important;
+  will-change: transform;
+}
+
+body.sound-on .vinyl-disc {
+  animation: vinyl-spin 8s linear infinite;
+}
+
+@keyframes vinyl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Section enter reveals (HTN-ish settle) */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal="left"] {
+  transform: translate3d(-24px, 16px, 0);
+}
+
+[data-reveal="right"] {
+  transform: translate3d(24px, 16px, 0);
+}
+
+[data-reveal="left"].is-in,
+[data-reveal="right"].is-in {
+  transform: none;
+}
+
+/* Sticky journey chapter wash tint */
+.journey-sticky {
+  transition: filter 400ms ease;
+  filter: saturate(calc(0.92 + var(--chapter-local) * 0.12));
+}
+
+.chapter-controls a {
+  position: relative;
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease,
+    color 200ms ease;
+  opacity: 0.55;
+}
+
+.chapter-controls a.active,
+.chapter-controls a[aria-current="step"] {
+  opacity: 1;
+  transform: translateY(-2px);
+  font-weight: 800;
+}
+
+.chapter-controls a.active::after,
+.chapter-controls a[aria-current="step"]::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -4px;
+  height: 3px;
+  border-radius: 2px;
+  background: #5c3a28;
+}
+
+/* Gallery cards stagger when wall enters */
+.gallery-photo {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) rotate(var(--tilt, -1deg));
+  transition:
+    opacity 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 200ms ease;
+  transition-delay: calc(var(--i, 0) * 45ms);
+}
+
+.gallery-wall.is-in .gallery-photo {
+  opacity: 1;
+  transform: rotate(var(--tilt, -1deg));
+}
+
+.gallery-photo:hover {
+  transform: translateY(-8px) rotate(0deg) scale(1.02);
+  z-index: 2;
+}
+
+/* Nav current underline (aria-current) */
+#site-nav a[aria-current="location"] {
+  opacity: 1;
+}
+
+#site-nav a[aria-current="location"]::after {
+  transform: scaleX(1);
+}
+
+/* Tide curtain: subtle opacity breathe with progress */
+.tide-curtain__svg {
+  opacity: calc(0.85 + var(--tide-progress) * 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy,
+  .scroll-cue,
+  [data-reveal],
+  .gallery-photo,
+  .postcard,
+  .city-stop.is-current .city-stop__glow {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reading-line {
+    display: none;
+  }
+}

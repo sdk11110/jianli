@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>云南手帐 · 西双版纳 · 普洱 · 大理</title>
+  <meta name="theme-color" content="#9ed9e8" />
+  <meta name="description" content="一条虚线，三座城，一卷拍立得。翻开一份交互旅行手帐。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="preload" as="image" href="assets/illustrations/hero-landscape.png" />
+  <link rel="preload" as="image" href="assets/illustrations/objects.png" />
+  <link rel="stylesheet" href="css/narrative.css" />
+  <link rel="stylesheet" href="css/turntable.css" />
+  <link rel="stylesheet" href="css/polish.css" />
+  <link rel="stylesheet" href="css/htn-fidelity.css" />
+  <link rel="stylesheet" href="css/scroll-fx.css" />
+  <link rel="stylesheet" href="css/ui-polish.css" />
+  <link rel="stylesheet" href="css/painted-assets.css" />
+  <link rel="stylesheet" href="css/city-pins.css" />
+  <link rel="stylesheet" href="css/gallery-flow.css" />
+  <link rel="stylesheet" href="css/photo-experience.css" />
+</head>
+<body>
+  <div id="narrative-root"></div>
+  <template id="legacy-layout"><header class="site-header">
+    <a class="logo" href="#hero">云南手帐</a>
+    <nav class="site-nav" aria-label="章节">
+      <a href="#about">开场</a>
+      <a href="#banna">版纳</a>
+      <a href="#puer">普洱</a>
+      <a href="#dali">大理</a>
+      <a href="#desk">物件台</a>
+      <a href="#gallery">展厅</a>
+      <a href="#faq">FAQ</a>
+      <a href="#outro">结尾</a>
+    </nav>
+  </header>
+  <main>
+    <section id="hero" class="section hero"></section>
+    <section id="about" class="section"></section>
+    <section id="banna" class="section chapter" data-chapter="banna"></section>
+    <section id="puer" class="section chapter" data-chapter="puer"></section>
+    <section id="dali" class="section chapter" data-chapter="dali"></section>
+    <section id="desk" class="section desk"></section>
+    <section id="gallery" class="section"></section>
+    <section id="faq" class="section"></section>
+    <section id="outro" class="section"></section>
+  </main>
+  </template>
+  <script src="js/content.js"></script>
+  <script src="js/journey-state.js"></script>
+  <script src="js/instant-camera.js"></script>
+  <script src="js/narrative.js"></script>
+  <script src="js/turntable.js"></script>
+  <script src="js/painted-assets.js"></script>
+  <noscript>这本交互手帐需要启用 JavaScript 才能翻阅照片和城市故事。</noscript>
+</body>
+</html>

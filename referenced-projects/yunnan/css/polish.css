@@ -1,0 +1,62 @@
+.art {
+  clip-path: inset(1.5% 2.2%);
+}
+/* Left cloud cell crops badly — use the intact cloud, mirror it for the left */
+.hero .decor-cloud,
+.hero .decor-cloud2 {
+  aspect-ratio: 1.5 / 1;
+  width: min(30vw, 440px);
+  background-position: 50% 0 !important; /* intact cloud cell */
+  clip-path: none !important;
+}
+
+.hero .cloud-left {
+  left: 1%;
+  top: 0;
+  z-index: 1;
+  animation-name: cloud-drift-mirror;
+  animation-duration: 16s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transform: scaleX(-1);
+}
+
+.hero .cloud-right {
+  right: 1%;
+  top: -1%;
+  left: auto;
+  z-index: 1;
+  transform: none;
+}
+
+@keyframes cloud-drift-mirror {
+  from {
+    transform: scaleX(-1) translate3d(0, 0, 0) rotate(0deg);
+  }
+  to {
+    transform: scaleX(-1) translate3d(-28px, 12px, 0) rotate(-4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .cloud-left {
+    animation: none;
+    transform: scaleX(-1);
+  }
+}
+
+.desk{background:#a1eddf url('../assets/illustrations/underwater.png') center / cover no-repeat}
+.desk>.section-wrap>p,.desk h2{text-shadow:0 1px 12px #a9f9f155}
+.player-base{mask-image:url('../assets/illustrations/record-player.png');mask-size:100% 100%;mask-repeat:no-repeat}
+.tonearm{opacity:1}
+@media(max-width:700px){
+  .journey{height:auto}
+  .journey-sticky{height:auto;min-height:0;position:relative;padding:105px 0 70px;background-size:auto 100%}
+  .chapter-layout{display:block}
+  .postcards{height:auto;display:grid;gap:30px}
+  .postcard,.postcard.active{position:relative;opacity:1;visibility:visible;transform:rotate(-1deg);min-height:325px}
+  .postcard:nth-child(2){transform:rotate(1deg)}
+  .chapter-camera,.chapter-controls,.chapter-triggers,.chapter-top>span{display:none}
+  .chapter-top{margin-bottom:32px}
+}
