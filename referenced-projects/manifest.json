@@ -1,0 +1,1410 @@
+{
+  "date": "2026-10-25",
+  "scope": "Referenced local projects; home excluded",
+  "sourceBytes": 321781591,
+  "fileCount": 269,
+  "projects": [
+    {
+      "name": "完整作品集",
+      "entry": "index/index.html",
+      "reference": "home/js/routes.mjs: portfolio；home/index.html 完整作品集入口"
+    },
+    {
+      "name": "手表互联工作台",
+      "entry": "index/assets/watch-link/index.html",
+      "reference": "home/js/routes.mjs: watch；index/app.js 手表案例"
+    },
+    {
+      "name": "内容培训平台展厅",
+      "entry": "index/assets/training-platform/platform-tour/index.html",
+      "reference": "home/js/routes.mjs: training；index/app.js 培训案例"
+    },
+    {
+      "name": "生 H5 培训",
+      "entry": "index/assets/training-platform/ai-h5/index.html",
+      "reference": "index/app.js 与平台展厅内课程入口"
+    },
+    {
+      "name": "数学互动 H5",
+      "entry": "index/assets/math-project/interactive-h5/index.html",
+      "reference": "home/js/routes.mjs: math；index/app.js 数学案例"
+    },
+    {
+      "name": "数学情景视频",
+      "entry": "index/assets/math-project/scenario-video/average-misread-geometric.mp4",
+      "reference": "index/app.js 数学案例视频入口"
+    },
+    {
+      "name": "教材图生视频工作室",
+      "entry": "index/assets/interactive-textbook/gitlab-pages-deploy/index.html",
+      "reference": "home/js/routes.mjs: textbook；index/app.js 教材案例"
+    },
+    {
+      "name": "平均数互动教学附属页",
+      "entry": "index/assets/interactive-textbook/average-lab/平均数错中求解互动教学H5.html",
+      "reference": "随教材项目现有目录一并保留的附属演示"
+    },
+    {
+      "name": "项目交付经历",
+      "entry": "index/assets/project-delivery/index.html",
+      "reference": "index/index.html 项目交付入口"
+    },
+    {
+      "name": "云南手帐",
+      "entry": "yunnan/index.html",
+      "reference": "home/js/routes.mjs: travel；home/index.html 云南手帐入口"
+    }
+  ],
+  "excluded": [
+    "主首页 home",
+    "Git 历史、工具缓存、node_modules、备份、预览截图及生成过程 output",
+    "未被现有项目页面引用的 assets/watch-word-reference 原始素材导入目录"
+  ],
+  "files": [
+    {
+      "path": "index/README.md",
+      "bytes": 3384,
+      "sha256": "863b800a7ecda88964a440d2b4be34f30f6ddfc683b9e8241ee89b44d308d50c"
+    },
+    {
+      "path": "index/app.js",
+      "bytes": 60824,
+      "sha256": "599f4f608a5a50e12912d9705056567a31530d3ad38b3d12a6031bc3b5341973"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/01_intro.mp3",
+      "bytes": 19152,
+      "sha256": "3dfc0e97c99e4b4a63074b7234b894760aa78d9fd550aa3f6a51cc08944b1be5"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/02_problem.mp3",
+      "bytes": 19008,
+      "sha256": "310253422b36ca00634c562140f9f70efec25103420394654d6326d875b2e3d8"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/03_conflict.mp3",
+      "bytes": 15120,
+      "sha256": "caddda4791ed7a23620776aa183cdf8095ad376c563ffde553b4a233c2ac5e95"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/04_total_difference.mp3",
+      "bytes": 29520,
+      "sha256": "2d60eeeec1b6767a9dd1ed2076c0b3c005ed87e5cc7db9afba02fea37b14fc05"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/05_culprit.mp3",
+      "bytes": 20160,
+      "sha256": "52c96977ba903936ad1b4897479761a66097d8732b2353f89d7b6f4ef992267c"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/06_average_difference.mp3",
+      "bytes": 23616,
+      "sha256": "60b3f16cc90734391e85d841b5edfed6b7b4504099c04880fae35044cccad044"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/07_spread.mp3",
+      "bytes": 25488,
+      "sha256": "0b0de86471a389da1e717a148227bd0aefbdc57edf1b121518977bb282a55a61"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/08_unknown.mp3",
+      "bytes": 19872,
+      "sha256": "9a80688d97f75fc515f1d99f7456ec40b6cb3b4857842a6ec7cf6b940587af92"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/09_beans.mp3",
+      "bytes": 23040,
+      "sha256": "54a275952e992f569f642d544805bef85d2aa4835b2ed837ac1be24a1f07ff6d"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/10_zero.mp3",
+      "bytes": 24048,
+      "sha256": "794e2f93db80cf481525ef7a39198b29d11836bb109db5155852f6980a79eeb5"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/11_method.mp3",
+      "bytes": 21312,
+      "sha256": "9b4cceaa2b5a2cce1668835089607eff747647488bde088e6ca34a1ba7fb53fc"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/12_trap.mp3",
+      "bytes": 19872,
+      "sha256": "0270c809f7801276d6b59caa4018ec3c0a8c335daa7ebacc67f69f41a6859d4c"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/13_check_people.mp3",
+      "bytes": 24768,
+      "sha256": "d77bcf8f11fc6e11946bba2dff0078af4d89a50c8245389704629ee5ed045d78"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/14_check_total.mp3",
+      "bytes": 21024,
+      "sha256": "cc504c070d067e161ebca1ccbcd82e34e66f01ecc4d5a867bb00ac2f5c66d80c"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/15_answer.mp3",
+      "bytes": 19440,
+      "sha256": "b8c6e447bf1a958f8b95ae9555005917829a433eb03f7df5092eae872cf05cff"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/audio/16_question.mp3",
+      "bytes": 25776,
+      "sha256": "15b3ccec857ef934ab94e62cb9ab1ecd3434f8f4cacafbef4a8081ee141ee58d"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/mascot/average-lab-mascot.png",
+      "bytes": 1296456,
+      "sha256": "fc601702428eff6d65a5257d75a0616169474e486aaddb574da7150f9a05a557"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/assets/mascot/student-avatar.png",
+      "bytes": 1443972,
+      "sha256": "2675e137b08a61198d3a2d8979f55d4eb73bdbe670c3e058e887b3c44da8dce1"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/平均数错中求解互动教学H5-分享说明.txt",
+      "bytes": 616,
+      "sha256": "8d7a55451dcfb4907fe2a828a513a8fd055a504ccb7b0a355ab30391ed6cf36a"
+    },
+    {
+      "path": "index/assets/interactive-textbook/average-lab/平均数错中求解互动教学H5.html",
+      "bytes": 58929,
+      "sha256": "e3711efa49bc731ba5998b14943ba900abcfef57e9cf11f4f2e92ba605c44f9a"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/.gitlab-ci.yml",
+      "bytes": 213,
+      "sha256": "7ae8f49f637d592fe8a6fca56f791d8e20d8e074880786f151faeb14a695207a"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/api/demo.json",
+      "bytes": 18770,
+      "sha256": "61a31eaa8998217abf41324c05c2f179446ec089e9a22eb0e139972afeee1eb2"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/api/health.json",
+      "bytes": 119,
+      "sha256": "7fd879d34563273a272db155028fc3b1f77601a30f8052cc545fb1333d50dbfd"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/api/principles.json",
+      "bytes": 11426,
+      "sha256": "48b3cfdb847a4e53d06b408aa9ce4434be200472407304ca77700129e144f899"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/api/script.json",
+      "bytes": 14500,
+      "sha256": "088ac65ded30f0610ef4b43338f9e665adaf384a281e1fd6facd9f1dff504235"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/images/p014_1.png",
+      "bytes": 2538023,
+      "sha256": "4c45d9a5b6dedcb0672f5c2ff8b9f29f3c41fa7ff6e05d939336e75a84b4bff1"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/images/p014_2.png",
+      "bytes": 2791627,
+      "sha256": "3444997cde6e07f4de2d1fdabf5467383afa249f29cd360f58f074a6f1d0b40f"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/images/p015_1.png",
+      "bytes": 2760272,
+      "sha256": "35395f58118f2305668b010f2d8fa6d732f05d8f93b603b64c27f7b48164e6d3"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/images/p015_2.png",
+      "bytes": 3715992,
+      "sha256": "00f24869e511343bc3717dbb8fa0ac1db9041597816ceec7b21a19be2f7e5463"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/original/p014.jpg",
+      "bytes": 793728,
+      "sha256": "8274450b5cba12f1fe130db5c3b92ce053bb959ebd6717e6c578d8d9dd02e35d"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/original/p015.jpg",
+      "bytes": 1510049,
+      "sha256": "bb0f3455b21a1bcb2e8fbff9b55fe2658f057a0705ae5d85a4fa14cffc335f77"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/hd/第一幕_60fps_out.mp4",
+      "bytes": 5813599,
+      "sha256": "0a004596283b88a352def670a1fa1eb42ed0cc2db5deca8e0d4311794c442dd3"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/hd/第三幕_60fps_out.mp4",
+      "bytes": 6733238,
+      "sha256": "bb7233f2c5f0f4ab9cffc081368f85c1d872fdf0bf1d14b51689fd6e52ffab2d"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/hd/第二幕_60fps_out.mp4",
+      "bytes": 5509286,
+      "sha256": "100995b8545c999014e26a1f0c80f81bd6cb531392a9ddfd5d203d4678724006"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/hd/第五幕_60fps_out.mp4",
+      "bytes": 5519650,
+      "sha256": "ae11f9cec8b7c30438be352d33e253a8d03e4b5b1508a742825bb882783cb2f8"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/hd/第四幕_60fps_out.mp4",
+      "bytes": 5841587,
+      "sha256": "53c31c0d428dba7847aea7e193fae2f3021b75ce0bef18ef625d08e4f0245bf7"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/raw/第一幕.mp4",
+      "bytes": 3191191,
+      "sha256": "c491d563d70a4d3359a010a2c0cd5bb628da44e51d1b4fa643ba34400f7ef57f"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/raw/第三幕.mp4",
+      "bytes": 3598548,
+      "sha256": "9d4f9e086b7c25bca2e7c15a10f8c1e30d8dc146c0ef5867dd8ddaef6a429200"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/raw/第二幕.mp4",
+      "bytes": 3052678,
+      "sha256": "19536ca1edb6a6a8d65eeb2955696a9d2df63bdb5047bddfdabe7d32b7a6fbab"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/raw/第五幕.mp4",
+      "bytes": 2806479,
+      "sha256": "66cd68768b31bd8edf96363bd2e6edebe4aa887c09f313ae0faf6e40be5e0c32"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/segments/raw/第四幕.mp4",
+      "bytes": 2600546,
+      "sha256": "7281d167a80365a3dfc5ffef7e81b8fba7c33c6c794a67625d33718e4cc75bb3"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/assets/video/final.mp4",
+      "bytes": 14529958,
+      "sha256": "968a94d851512e5080a00bb5a845a07537b5d2ed58d53a12b08d6aa32851b6dc"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/index.html",
+      "bytes": 19545,
+      "sha256": "58b035da974c1def27cb3c31385015d1b8a1ff5cd2b8cd6292ac04a89df26d94"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/static/app.js",
+      "bytes": 72083,
+      "sha256": "9025c2b22e6ad003891ab80458b45f632348d06a51691595397337bdb1a2261d"
+    },
+    {
+      "path": "index/assets/interactive-textbook/gitlab-pages-deploy/static/styles.css",
+      "bytes": 81016,
+      "sha256": "0c7e2e39e0a596c83dfce414e55213ada7a8c425565db76678bdb8243018fc44"
+    },
+    {
+      "path": "index/assets/lenis.min.js",
+      "bytes": 13020,
+      "sha256": "0bf174d39b9abc304a3d501ab6457587e756d07bd824f868a5324b5cf15125b0"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/app.js",
+      "bytes": 15243,
+      "sha256": "797833d4c06bc0c46ff84dc29706f055fa91654930ffa2a48534184f644cba33"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-archive-closing.jpg",
+      "bytes": 153008,
+      "sha256": "fa614a04535d3f43e6faded78638bcdc92ef7ba847e0c5a80b95879638ab67e8"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-archive-closing.png",
+      "bytes": 1935647,
+      "sha256": "394df7eaac55f5b218f56a78b22370d83029c36d5837bab65e45e999dc6059cb"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-archive-intro.jpg",
+      "bytes": 144527,
+      "sha256": "5ab627e34cd2ea696edc224b58a348a0a644cd0e1427c1b704eb6b83ed10cffc"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-archive-intro.png",
+      "bytes": 1935500,
+      "sha256": "722a5f67ad244aa9e145253bbdbb0a51341a5d27931f27a05a8d171e5bf1c528"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-geometry-desk.jpg",
+      "bytes": 149071,
+      "sha256": "4d9a54ef1816a10f25668634939c97fcc88aaa1a5d93256fa46276c0a01b184d"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-geometry-desk.png",
+      "bytes": 2204596,
+      "sha256": "3b6a1033fc76039331191b7e253cdb4d102fde77cbe0a1bf650d9ab6ff2514a7"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-interaction-table.jpg",
+      "bytes": 157746,
+      "sha256": "d778afaaec2049dc5a01aefcac97a662c23be9ceb5846bfa29d307d23900677c"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-interaction-table.png",
+      "bytes": 2140999,
+      "sha256": "b1fcc3ef20f1ab056d0d132c8c70c38aafa41a3285c7fc5d31a7e283c92cb701"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-teaching-objects.jpg",
+      "bytes": 162621,
+      "sha256": "ba8f13aa5a316f6f165af9252e85c6384ed72004f7e09030ca5ba51feb547d00"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/generated/math-teaching-objects.png",
+      "bytes": 1981063,
+      "sha256": "9ef4a44b5dc9f724118d5c3fe2b6980afebd0d3f8f5f76e21535bff8934eaf0b"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/videos/cryptogram-full-poster.jpg",
+      "bytes": 177119,
+      "sha256": "692d29851790e119e1e414219aa8733c8f317bd2890483b6e34420b94f005f25"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/videos/cryptogram_full_silent.mp4",
+      "bytes": 5905926,
+      "sha256": "66edf067d1bad74c9dfa72ba06f2d90ee58ba0dffef62178a4e78b4d9c6e10ab"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/videos/cryptogram_full_tts.mp4",
+      "bytes": 7617673,
+      "sha256": "6556b72d5bcdc31e9b259928cda4350fd9e2021812b6b7dddd72084746277774"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/assets/videos/cryptogram_full_tts_60fps.mp4",
+      "bytes": 69765769,
+      "sha256": "7d4a52551a8e65e9f5400946c064b83b5f521958e655393c774a262ca0cf414c"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/index.html",
+      "bytes": 23929,
+      "sha256": "eb677ae725396523629e4728064bfd37eef473e61fb7dad2dc00a8d182baad14"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/styles.css",
+      "bytes": 75314,
+      "sha256": "01d9657212abe34e74efed0b227e1a668ceacfcb2431170a777608d47173c52b"
+    },
+    {
+      "path": "index/assets/math-project/interactive-h5/tests/logic.test.mjs",
+      "bytes": 1627,
+      "sha256": "c8718f92d57766057966d51ecba06eaf37705de6e3988b68a808bbc30bdb8cdd"
+    },
+    {
+      "path": "index/assets/math-project/scenario-video/average-misread-geometric.mp4",
+      "bytes": 1432021,
+      "sha256": "268159c9faca2cf31076098be125826ffc8bb3f3a6a4f94e2a1728a38d18db1b"
+    },
+    {
+      "path": "index/assets/portfolio-mist-background.png",
+      "bytes": 2392517,
+      "sha256": "c40e5dd40b6f56de486c15f17a73bb2964b53a8b7eaed4313231943b20c4df2b"
+    },
+    {
+      "path": "index/assets/project-delivery/.impeccable/design.json",
+      "bytes": 7928,
+      "sha256": "b5635eb42217872c5c9b9689e35a2c37e274a011ec96e37ae8605c39cc51f77c"
+    },
+    {
+      "path": "index/assets/project-delivery/DESIGN.md",
+      "bytes": 6335,
+      "sha256": "e153dd2f0ce94b74f3ec3e1bb3da9d3ce2cea23ab558cb68bda8fd695b576edc"
+    },
+    {
+      "path": "index/assets/project-delivery/PRODUCT.md",
+      "bytes": 1071,
+      "sha256": "5d3f8de4c382a1b5f09da57382feee6591d5f6103fa3a9c727383e4532cbbed6"
+    },
+    {
+      "path": "index/assets/project-delivery/app.js",
+      "bytes": 8171,
+      "sha256": "cb66020be1a6ecf05c13ef2d222c429a47bb947c69c7982959c9049da0b056cd"
+    },
+    {
+      "path": "index/assets/project-delivery/index.html",
+      "bytes": 16067,
+      "sha256": "9c9e328d23c936b319bccb086095dcb2e038a77076bf626a491a90c96a2a8e32"
+    },
+    {
+      "path": "index/assets/project-delivery/model.js",
+      "bytes": 1234,
+      "sha256": "625dcb42ddbf353fbaaba5bcff5c2570803b2a91466974c593559226a059ba53"
+    },
+    {
+      "path": "index/assets/project-delivery/styles.css",
+      "bytes": 15368,
+      "sha256": "e711bcbb69e01e41cb87d6d03de389d6ea1c1620938a96e5bc68a0e86ade3a8e"
+    },
+    {
+      "path": "index/assets/project-math.png",
+      "bytes": 2140999,
+      "sha256": "b1fcc3ef20f1ab056d0d132c8c70c38aafa41a3285c7fc5d31a7e283c92cb701"
+    },
+    {
+      "path": "index/assets/project-scene.png",
+      "bytes": 2231955,
+      "sha256": "c546a692cfc3ad315118122b3a2b4fee1c51514d2c11c76a821aff96af6106c7"
+    },
+    {
+      "path": "index/assets/project-training.png",
+      "bytes": 2791613,
+      "sha256": "f276d91b082fb955b1e9cfce443d8135328b377ee46c3d30c9d156ae2e3a8534"
+    },
+    {
+      "path": "index/assets/project-watch.png",
+      "bytes": 2771446,
+      "sha256": "be211fc4059cf37790eb1b4c94558a75c741ee93f49c4bc78964cdc04216fed1"
+    },
+    {
+      "path": "index/assets/training-platform/ai-h5/assets/index-C0--vSOn.js",
+      "bytes": 3052416,
+      "sha256": "79c3e1c8ebdef2e2a9d3cec90091dad4c69f5b5f8dd890ef056ed77ed49fd11e"
+    },
+    {
+      "path": "index/assets/training-platform/ai-h5/assets/index-DL2L57Af.css",
+      "bytes": 108897,
+      "sha256": "81cb7ce7dfe8151dba16b1ab6ecb205a6f4612844b147e669c3c44ed76f6780b"
+    },
+    {
+      "path": "index/assets/training-platform/ai-h5/demo.html",
+      "bytes": 508,
+      "sha256": "d8f14a6afb944f5a95cb16dee45d2d6d45b997187a916863551f1574e5fc092f"
+    },
+    {
+      "path": "index/assets/training-platform/ai-h5/favicon.svg",
+      "bytes": 9522,
+      "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66"
+    },
+    {
+      "path": "index/assets/training-platform/ai-h5/icons.svg",
+      "bytes": 5031,
+      "sha256": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a"
+    },
+    {
+      "path": "index/assets/training-platform/ai-h5/index.html",
+      "bytes": 36464,
+      "sha256": "ccdbb14921acba10c9c34a2009eba73342fd11ea999007e5f9a70156ab6417b0"
+    },
+    {
+      "path": "index/assets/training-platform/platform-tour/.impeccable/design.json",
+      "bytes": 3529,
+      "sha256": "0920128aacacbbd666d3c1de7fae8e86c4139fcd2e457e49c4db5c0bd5f784f0"
+    },
+    {
+      "path": "index/assets/training-platform/platform-tour/DESIGN.md",
+      "bytes": 6252,
+      "sha256": "39070b18e1bf47490aa645dd037869b2a18929a52374c69abdca393633cc2fde"
+    },
+    {
+      "path": "index/assets/training-platform/platform-tour/PRODUCT.md",
+      "bytes": 1306,
+      "sha256": "8d04963a6c80aeb5c2f35dc9d2b5df8655c55520f136e10ba05a22871905749a"
+    },
+    {
+      "path": "index/assets/training-platform/platform-tour/index.html",
+      "bytes": 22788,
+      "sha256": "5c0618a69be5bed3bf27c1ef76455acccd17951888a07fe8f78bd30154528bd4"
+    },
+    {
+      "path": "index/assets/training-platform/platform-tour/tour-model.js",
+      "bytes": 4224,
+      "sha256": "c5d079693e408e1c4b0a7627dc9a283314ec3abb614b084929afd25bd2f8ccc0"
+    },
+    {
+      "path": "index/assets/training-platform/platform-tour/tour.css",
+      "bytes": 23337,
+      "sha256": "55f69a2d7beeec8c45c4d53cfc15d99ea54158c1de4ce22b7c37853df0a5e853"
+    },
+    {
+      "path": "index/assets/training-platform/platform-tour/tour.js",
+      "bytes": 13845,
+      "sha256": "200a17e8dd3c6eef4b4332b039beec142cd3fb6b36f3582206933eac9ace8a0d"
+    },
+    {
+      "path": "index/assets/training-platform/platform-tour/tour.test.cjs",
+      "bytes": 1638,
+      "sha256": "fa9a6ca81f08c97799bd902da4364e11684d7c0133171644d0868fe32576ebe3"
+    },
+    {
+      "path": "index/assets/training-platform/platform-tour/重做方案.md",
+      "bytes": 1812,
+      "sha256": "c953729a1a33ed3c9a794646909521fec61aec05b01da57a0a0e9bfb51aaf330"
+    },
+    {
+      "path": "index/assets/visuals/math/cover.png",
+      "bytes": 2679623,
+      "sha256": "74195e024240ac36cdd728e89b5926f597b5741d1950dfafec57b38513a539f9"
+    },
+    {
+      "path": "index/assets/visuals/math/detail.png",
+      "bytes": 2955897,
+      "sha256": "ec26ff9d92b562479ca74f36deae87ce11329c4255536fa8e1c4766f3f6ccdcc"
+    },
+    {
+      "path": "index/assets/visuals/textbook/cover.png",
+      "bytes": 2821153,
+      "sha256": "3c4d8f19d2d387411a19803fc551f8cd621e2aa787a6711b94dd1fe943fe7fde"
+    },
+    {
+      "path": "index/assets/visuals/textbook/detail.png",
+      "bytes": 3153110,
+      "sha256": "cc00a20faa4b257aba3d17c31ddb60b39914908da3b6bccb16d30a808cf9b098"
+    },
+    {
+      "path": "index/assets/visuals/training/cover.png",
+      "bytes": 3264647,
+      "sha256": "1171559977d889d060bce9422d951319b610158acc6e0e5fccf73fe8763b17f5"
+    },
+    {
+      "path": "index/assets/visuals/training/detail.png",
+      "bytes": 3638028,
+      "sha256": "ac04e526ef2d3aeba8da859cc596283a2386de57280b200ce2f43fde98d35184"
+    },
+    {
+      "path": "index/assets/visuals/watch/cover.png",
+      "bytes": 2066701,
+      "sha256": "a5a32359a7e940a96b0effb61666c6eb89c413a1c0071394ee02f6eeb803bceb"
+    },
+    {
+      "path": "index/assets/visuals/watch/detail.png",
+      "bytes": 1717139,
+      "sha256": "7b2191d0c37ea9a52e6990a7f63b210a19a0e90b46f4b9ed87cf7baac64170a6"
+    },
+    {
+      "path": "index/assets/visuals/watch/workflow-cover.png",
+      "bytes": 2349623,
+      "sha256": "f8856125f14c2b9262a6990d67befea4761afd1a8368d9f43cb680414ccce175"
+    },
+    {
+      "path": "index/assets/visuals/watch/workflow-detail.png",
+      "bytes": 2448785,
+      "sha256": "1ab6da9cf62e11a6c5eb1cd739369ae0d9df73708eeb8c350baf5bf504e06c55"
+    },
+    {
+      "path": "index/assets/visuals/watch/配图说明与提示词.md",
+      "bytes": 3942,
+      "sha256": "f13024a8796c35c5f682ff4e7d35ae3b6ce55e5fb6ef3cc219f7bf9c35d5bfb9"
+    },
+    {
+      "path": "index/assets/visuals/wenchuang/hero-closing.png",
+      "bytes": 2322917,
+      "sha256": "24694d3084cc111c1d88d2cf6edb9207fce2404efcc893d87ce4d3e218e188d4"
+    },
+    {
+      "path": "index/assets/visuals/wenchuang/hero-main.png",
+      "bytes": 2564530,
+      "sha256": "b627cb441dcc8c772afcb5895aeb9c6a8fbed8aef5bb0ad847d619f9320c25b8"
+    },
+    {
+      "path": "index/assets/visuals/wenchuang/hero-material.png",
+      "bytes": 2375699,
+      "sha256": "2c6f79b0e25e5ba1d98a091bcbd7b379322ddd5cfd3b708fa86e6f0e641a1a28"
+    },
+    {
+      "path": "index/assets/visuals/wenchuang/silver-current.svg",
+      "bytes": 10905,
+      "sha256": "5a2d4d544b4afcc62d65cb66d2df6dcee3ee94baa3cd872bad4efba2760a248f"
+    },
+    {
+      "path": "index/assets/watch-link/app.js",
+      "bytes": 11355,
+      "sha256": "3b2b62314a41289354f9e2b963d3f7781cd3fc602280cb35f221c19d443b2b9b"
+    },
+    {
+      "path": "index/assets/watch-link/index.html",
+      "bytes": 7131,
+      "sha256": "7f3ec18157c5e5054acb8760662b796bfcabf065648301f92451d0b4d4201f2a"
+    },
+    {
+      "path": "index/assets/watch-link/media/dolphin.mp4",
+      "bytes": 1746876,
+      "sha256": "444e384867943bc436a4bd8c6a04f98d1286ec203ee76bf443a986cad3c2a106"
+    },
+    {
+      "path": "index/assets/watch-link/media/over.mp4",
+      "bytes": 5773713,
+      "sha256": "fca56cd1a1ba6eb7b7b52d4ca4b39cb728ec83556d19f0848012a6c03f207fbf"
+    },
+    {
+      "path": "index/assets/watch-link/media/pain.mp3",
+      "bytes": 3762,
+      "sha256": "cc486e40f0fc8639db53b911a2fe2679f2c3fe3d4a0f37b02d2fdd67b157dc8a"
+    },
+    {
+      "path": "index/assets/watch-link/media/pain.mp4",
+      "bytes": 1169351,
+      "sha256": "69c8b999cf6bfeb618dd1f17e5941f98efdba97bace27d3d6107c7cbde157478"
+    },
+    {
+      "path": "index/assets/watch-link/media/pain.png",
+      "bytes": 2039147,
+      "sha256": "e525ebd00d71e7a3b71761226fb88f4e7624851055705e61dba4df2a94809ff3"
+    },
+    {
+      "path": "index/assets/watch-link/media/past.mp4",
+      "bytes": 5872579,
+      "sha256": "0971e890eb6ab66005024da80aa42b5e5d265bc28595acf3bb62ea266988e051"
+    },
+    {
+      "path": "index/assets/watch-link/media/sound.mp4",
+      "bytes": 1373322,
+      "sha256": "81706a793180d0113f026b6d5a2822d9ebae1ddb68ed0a97635fb1d6ab7fc529"
+    },
+    {
+      "path": "index/assets/watch-link/media/stills/dolphin.jpg",
+      "bytes": 47981,
+      "sha256": "15bc2e33656295d6d8f07be0ce389e71ad2a1515317339418bb55eaac572ae76"
+    },
+    {
+      "path": "index/assets/watch-link/media/stills/pain.jpg",
+      "bytes": 64395,
+      "sha256": "295da5a7bf7768c050569875879a73a284bedd5b4d969f4c16a082e725f6246e"
+    },
+    {
+      "path": "index/assets/watch-link/media/stills/sound.jpg",
+      "bytes": 74755,
+      "sha256": "5292434008aaf2e8dfc803815667140229ba4f3faaa6e405e47192e58b275923"
+    },
+    {
+      "path": "index/assets/watch-link/media/stills/wolf.jpg",
+      "bytes": 48902,
+      "sha256": "777d0fea53ba0ec17d22db525c03cf1320a8487bb801e28f3d8b6c17f866e8a1"
+    },
+    {
+      "path": "index/assets/watch-link/media/stills/woof.jpg",
+      "bytes": 173717,
+      "sha256": "73f5c91bbd17682b6cb802d2b3dc2321da1bebbd6814711e096d48e55da09e97"
+    },
+    {
+      "path": "index/assets/watch-link/media/stills/year.jpg",
+      "bytes": 111065,
+      "sha256": "ccae7f7a4e7a69b68f0e7455bf550a7bcfd3a7df0e8c1d3fdec450aeb598a768"
+    },
+    {
+      "path": "index/assets/watch-link/media/stills/zebra.jpg",
+      "bytes": 70831,
+      "sha256": "708200bc79215a3d7630225f97a487194d220eb61e91490755594437fc7971d2"
+    },
+    {
+      "path": "index/assets/watch-link/media/swing.png",
+      "bytes": 21532,
+      "sha256": "cbd7465e8253b97bd9a20e6028c549f176f3f1a11740c14089ff6aa437dabaeb"
+    },
+    {
+      "path": "index/assets/watch-link/media/watch-device.png",
+      "bytes": 996962,
+      "sha256": "76c6c3521fe482cf5554bf5a26e1971609a3faae3de98d96a297835f7ebd649f"
+    },
+    {
+      "path": "index/assets/watch-link/media/wolf.mp4",
+      "bytes": 1246129,
+      "sha256": "5584270f976038e02da9de91223f06f2ac3a2ad8d0d28b8793ac3a3528cdace8"
+    },
+    {
+      "path": "index/assets/watch-link/media/wonder.mp3",
+      "bytes": 4075,
+      "sha256": "04cf4b9fcd1dfa21958fce3bcde8642109364d1821351b85e8374ce82a43985b"
+    },
+    {
+      "path": "index/assets/watch-link/media/wonder.png",
+      "bytes": 445439,
+      "sha256": "c986f28f1587d86626ed060cd9390f7c1790313e9cd306526acf3b89c30d95e3"
+    },
+    {
+      "path": "index/assets/watch-link/media/woof.mp4",
+      "bytes": 2815377,
+      "sha256": "9b56182d1bd98e6f0b3c4cc69d78749cfe3a13b8684273a786c247eae7e74426"
+    },
+    {
+      "path": "index/assets/watch-link/media/year.mp4",
+      "bytes": 1948702,
+      "sha256": "1058f63f37f77572cd7e9219e056872fe86ed127f3b149cced451c47c617c1e3"
+    },
+    {
+      "path": "index/assets/watch-link/media/zebra.mp4",
+      "bytes": 1409263,
+      "sha256": "3d0ca0e9e822b6617cfda99499c2f0b24d5ad4d04df7ce6013c282d273653ee4"
+    },
+    {
+      "path": "index/assets/watch-link/styles.css",
+      "bytes": 32679,
+      "sha256": "c264d1d9bd291130e5b3d340d49919478a7134b24d24cd76f1db302c17b3c7ec"
+    },
+    {
+      "path": "index/global-motion.js",
+      "bytes": 8305,
+      "sha256": "5cda39217b595d15977096a07d3c7328c6bcf4eb8673f7eeeb83a188dfb208d7"
+    },
+    {
+      "path": "index/index.html",
+      "bytes": 11436,
+      "sha256": "fae973cfbe465035d79d4c08fb054fdc28ee885840f22fface62123e48c0bd21"
+    },
+    {
+      "path": "index/styles.css",
+      "bytes": 67366,
+      "sha256": "dea1418ad6edca2abe7bc725455484b12537ccf8fbcca982e9bf5b8848721371"
+    },
+    {
+      "path": "index/water-gl.js",
+      "bytes": 36295,
+      "sha256": "2b50909773b457a6b5ed4d31d96b81cde31137aa11a803f42c0381fd3af14699"
+    },
+    {
+      "path": "index/water.js",
+      "bytes": 9974,
+      "sha256": "e9f492c8a74809bccf482f417b4d5c6be638277a6ad32404f042c1d6e0b9d4a9"
+    },
+    {
+      "path": "yunnan/PRODUCT.md",
+      "bytes": 1191,
+      "sha256": "7f494b39cf854796e3009a2c46dea04b948cbdb8c65c18c590f13518e9abeebc"
+    },
+    {
+      "path": "yunnan/assets/audio/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "yunnan/assets/cruise/caustic.png",
+      "bytes": 835312,
+      "sha256": "48cd4655f96dd8d66c6959749a8b6930a8ff2910938b7dfbb7b5f52dca3436c4"
+    },
+    {
+      "path": "yunnan/assets/cruise/foam.png",
+      "bytes": 4669,
+      "sha256": "acaa1883dd94fcc7a263521850c76b7354cedf4a954eb5d96d2f846df60700c4"
+    },
+    {
+      "path": "yunnan/assets/cruise/grass.png",
+      "bytes": 223046,
+      "sha256": "0596ddf5a5cff11ef564c391a6f2f3c93b88b6f08bd2c59a587782d6be428461"
+    },
+    {
+      "path": "yunnan/assets/cruise/rock.png",
+      "bytes": 104707,
+      "sha256": "35375661d265c8e1e2b0c4bf092ba795661a7cc6ef9b34c5e307ca7114017460"
+    },
+    {
+      "path": "yunnan/assets/cruise/roof.png",
+      "bytes": 15988,
+      "sha256": "9c5b70bcb094fd2cc85d83c0099049ac439b5e04262ae33c053317f42afc154e"
+    },
+    {
+      "path": "yunnan/assets/cruise/sand.png",
+      "bytes": 120481,
+      "sha256": "5d5fa82b517aad85d2ea5df738f65a8196722036a04fdffec6ec2a10a8824a5d"
+    },
+    {
+      "path": "yunnan/assets/cruise/wall.png",
+      "bytes": 32434,
+      "sha256": "12044615326ddf947e75500c9429f1c6a3cb92ed10949ff5dad418d71652122b"
+    },
+    {
+      "path": "yunnan/assets/cruise/wood.png",
+      "bytes": 66519,
+      "sha256": "9691d05b6689316c67cda4a82cb6dfd756a8008565034781b79d38d70698386f"
+    },
+    {
+      "path": "yunnan/assets/fonts/MaShanZheng-Regular.ttf",
+      "bytes": 5857936,
+      "sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb"
+    },
+    {
+      "path": "yunnan/assets/fonts/OFL-MaShanZheng.txt",
+      "bytes": 4397,
+      "sha256": "d7bdb1cee215b689e23c2f95672a6084c790542170648267a55114103d756a08"
+    },
+    {
+      "path": "yunnan/assets/fonts/travel-hand.woff",
+      "bytes": 264668,
+      "sha256": "c205bb649da3c69935d2fdb2c72f5d19d3e860017e530aab712d97fb01783e91"
+    },
+    {
+      "path": "yunnan/assets/illustrations/deckled-paper.png",
+      "bytes": 2201450,
+      "sha256": "8095962abff1128f704ac2c5c524493bf36e6c6fabff182b4f165af988cdeb30"
+    },
+    {
+      "path": "yunnan/assets/illustrations/decorations.png",
+      "bytes": 2112703,
+      "sha256": "ec2e67a879bb759f8f8a53b57f8fc3f1e155567bba655b65d17ae31ba94a696a"
+    },
+    {
+      "path": "yunnan/assets/illustrations/forest.png",
+      "bytes": 2820646,
+      "sha256": "a177bf0c32c9dfb2b454655d9a78cd701aa77ee9821b0ccc0888d8c0aa94c718"
+    },
+    {
+      "path": "yunnan/assets/illustrations/hero-landscape.png",
+      "bytes": 2757916,
+      "sha256": "de38e8a8e772cb2512a816989aab16d657d739b33f1d9e3beb6144a008d2274e"
+    },
+    {
+      "path": "yunnan/assets/illustrations/objects.png",
+      "bytes": 2138340,
+      "sha256": "2b30961093edeb01833842c807d3bf205aa1d2406802e2707da4291d9aeb8aac"
+    },
+    {
+      "path": "yunnan/assets/illustrations/record-player-clean.png",
+      "bytes": 2385133,
+      "sha256": "11d3b9d175d3e59f22d6c78e7808385fabfeeff505e8e5a3aef06d7102ed1ef4"
+    },
+    {
+      "path": "yunnan/assets/illustrations/record-player-journal.png",
+      "bytes": 520743,
+      "sha256": "5a721ba357684cbb476d7c3f552e6fc0fd40b54107c64d4a056248e2773fd834"
+    },
+    {
+      "path": "yunnan/assets/illustrations/record-player.png",
+      "bytes": 2232581,
+      "sha256": "39fda8110c67c399301932a579b56cc60d47cecbedc704754b5e019e6e6d9559"
+    },
+    {
+      "path": "yunnan/assets/illustrations/story-details.png",
+      "bytes": 2412407,
+      "sha256": "a3ca87e26d6ac38514754c50ab6ad3ee44d7645cd63447348ad613e0c6a658a4"
+    },
+    {
+      "path": "yunnan/assets/illustrations/underwater.png",
+      "bytes": 2465667,
+      "sha256": "74d6315112748af72a4037c039d0231a3ea51532e273440b77879518d1ff8cd5"
+    },
+    {
+      "path": "yunnan/assets/illustrations/vinyl-disc.png",
+      "bytes": 1974271,
+      "sha256": "0cab92cc0a39f636a346b3f6960cd07c75a9c2dcc247f85ec00fa1db08a3995b"
+    },
+    {
+      "path": "yunnan/assets/illustrations/wood-painted.png",
+      "bytes": 2578867,
+      "sha256": "662323fdd51d5b65eb467e9e54a7145791db259791e45ffad1a83a99860f46ae"
+    },
+    {
+      "path": "yunnan/assets/photos/TempDragFile_20260919_084746.jpg",
+      "bytes": 576464,
+      "sha256": "47dac926511542c540cb30e9066c962fa1485324d0d1750b06e304ddd0b16441"
+    },
+    {
+      "path": "yunnan/assets/photos/TempDragFile_20260919_084756.jpg",
+      "bytes": 749916,
+      "sha256": "85db82f204965c1da398cd0cc5b35a0b0b8f84addc42505e8c3d7adc2312a743"
+    },
+    {
+      "path": "yunnan/assets/photos/TempDragFile_20260919_084824.jpg",
+      "bytes": 475602,
+      "sha256": "bd45be18a84f0abb7fb66be72f961f09f58b510dbbc93fbcf5ac45eda8dd8fb2"
+    },
+    {
+      "path": "yunnan/assets/photos/TempDragFile_20260919_084855.jpg",
+      "bytes": 481693,
+      "sha256": "431e862c19ea7587a89c64718eb354526a11dec1600577a9bb905ba3b0c70681"
+    },
+    {
+      "path": "yunnan/assets/photos/TempDragFile_20260919_084914.jpg",
+      "bytes": 280756,
+      "sha256": "a48ccf7bbc4fc57960bf636c6e47b20d8411c6e80542844482d667a121296a5d"
+    },
+    {
+      "path": "yunnan/assets/photos/TempDragFile_20260919_084924.jpg",
+      "bytes": 49034,
+      "sha256": "093f9cba47fb7c50e9c4b7a9c00a220479e157ac7b37798156aa51353dd73de2"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/dali-cableway.png",
+      "bytes": 2928611,
+      "sha256": "c2fc1afad7ea2c4c86390978f5b34db84d76c4ce33b3a8dd128b833bd2eb3127"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/dali-cableway.webp",
+      "bytes": 428026,
+      "sha256": "37f3fad575b970497aeff8f45f2c6b6265ef2be33276905ab3e0a453297957c9"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/dali-rainbow.png",
+      "bytes": 2903457,
+      "sha256": "0f5c2b14ef90f7e3be6e733af223933e3bf4f58a083254d3a7fee0605d95c45e"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/dali-rainbow.webp",
+      "bytes": 448944,
+      "sha256": "13a6a57a5b435f792aad126c53819b952e53cb126f529a372ad74087b7b391b6"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/dali-sunset.png",
+      "bytes": 2982117,
+      "sha256": "a99b5b70f71df8ba3890b03f38055973395a077fc75432fceada118bfe4ea001"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/dali-sunset.webp",
+      "bytes": 483270,
+      "sha256": "157c054573085472d311a809fb91c02017584427eb8a873ff0e718e956ab6c3a"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/puer-cows.png",
+      "bytes": 3156788,
+      "sha256": "924fe285b0e6e995f723a41fe40ab40a429fc376d20fa115ff40b8370a0c6cfd"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/puer-cows.webp",
+      "bytes": 542298,
+      "sha256": "db89c848d1fd19f4ad0967b91aa59fdccf07d1c00f207bbf60a6a7f7612dc81f"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/puer-feast.png",
+      "bytes": 3144876,
+      "sha256": "283fb746484345f12de606eab05c34a08b798e9f263e7b81a97d3372f5f732a7"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/puer-feast.webp",
+      "bytes": 500940,
+      "sha256": "08ac484f914ee8c741a4517a3953f80a823f65ba7e5249b133dcfb31930c341f"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/puer-lunch.png",
+      "bytes": 2912741,
+      "sha256": "388c4e43c4d682a3c2b091fa5fa69261b42b108ace7b4a2309a9a19ef8038ae1"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/puer-lunch.webp",
+      "bytes": 400700,
+      "sha256": "d882a70da2bd7665d9b1d0cd7cf760e69a4bc5f6d217636b0fce17817fd3430f"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/puer-tree.png",
+      "bytes": 3187047,
+      "sha256": "53e447dd5ccaebcf0de7446664bc04a23d55a2f96c723608a9332c32445e6cb8"
+    },
+    {
+      "path": "yunnan/assets/photos/painted/puer-tree.webp",
+      "bytes": 521240,
+      "sha256": "cfbb5a5737c4e0b165d48b7373ad13e12cfc2f74babdeb753611dd593dd5ad3d"
+    },
+    {
+      "path": "yunnan/assets/photos/photo-01.png",
+      "bytes": 230652,
+      "sha256": "033a5758d14c9bdd6b7bf8003be23f0f69121e71c9b0990973ae4edc20e7fe3c"
+    },
+    {
+      "path": "yunnan/assets/photos/photo-02.png",
+      "bytes": 174048,
+      "sha256": "537a063ebf1fd3360f599a8617dfe1b40b3da2dae5345bc537625e67c78a948d"
+    },
+    {
+      "path": "yunnan/assets/photos/photo-04.png",
+      "bytes": 227457,
+      "sha256": "f8493729ceb31b714c80d49ea793531e7dc76ff90e0d3822f02fa64cea5dd6c2"
+    },
+    {
+      "path": "yunnan/assets/photos/photo-05.png",
+      "bytes": 134721,
+      "sha256": "376503fcdf93c9040c08de6d8579f6d5de08f208a464ceb26830b33a282a6f7b"
+    },
+    {
+      "path": "yunnan/assets/photos/photo-07.png",
+      "bytes": 349994,
+      "sha256": "3608cd3c4faf303ca935b0da7c1b482919a13cd1d4a72e1bdd01b19070b5a6a0"
+    },
+    {
+      "path": "yunnan/assets/photos/source/clear-water.jpg",
+      "bytes": 749916,
+      "sha256": "85db82f204965c1da398cd0cc5b35a0b0b8f84addc42505e8c3d7adc2312a743"
+    },
+    {
+      "path": "yunnan/assets/photos/source/dali-rainbow.webp",
+      "bytes": 134686,
+      "sha256": "85fc003553a1c6bc89d89567547d6f6268af5fb6775daac1b6fff25626d80f19"
+    },
+    {
+      "path": "yunnan/assets/photos/source/dali-snow-lake.jpg",
+      "bytes": 576464,
+      "sha256": "47dac926511542c540cb30e9066c962fa1485324d0d1750b06e304ddd0b16441"
+    },
+    {
+      "path": "yunnan/assets/photos/source/fruit-table.jpg",
+      "bytes": 475602,
+      "sha256": "bd45be18a84f0abb7fb66be72f961f09f58b510dbbc93fbcf5ac45eda8dd8fb2"
+    },
+    {
+      "path": "yunnan/assets/photos/source/puer-feast.webp",
+      "bytes": 425866,
+      "sha256": "16c7005cbed5d05dfeb351f3f2fde777f87ece19a7859a97f79c660095c48893"
+    },
+    {
+      "path": "yunnan/assets/photos/source/puer-tree.webp",
+      "bytes": 725786,
+      "sha256": "e9a825baace52a48fbaabf20f97c35da33f0b86a98b95a52ae8f3c152ede75ee"
+    },
+    {
+      "path": "yunnan/assets/photos/source/snow-roof.jpg",
+      "bytes": 481693,
+      "sha256": "431e862c19ea7587a89c64718eb354526a11dec1600577a9bb905ba3b0c70681"
+    },
+    {
+      "path": "yunnan/assets/photos/zine/zine-clear-water.png",
+      "bytes": 553435,
+      "sha256": "8ae92c1a3332ca18d0b837fe5b750e81a96749efbd23e2d41dd35a0122e04835"
+    },
+    {
+      "path": "yunnan/assets/photos/zine/zine-dali-snow-lake.png",
+      "bytes": 436750,
+      "sha256": "63b3d7026da05bee81bc8e7aa68e1f8717ee2c4e9d82d04bd54bbd1b2b56ae8b"
+    },
+    {
+      "path": "yunnan/assets/photos/zine/zine-fruit-table.png",
+      "bytes": 555969,
+      "sha256": "6445ec5246246bb21d252845c4b7cfd3fc15e593c3cd6bf7ee9f15c0c78eed86"
+    },
+    {
+      "path": "yunnan/assets/photos/zine/zine-photo-01.png",
+      "bytes": 540094,
+      "sha256": "5b68da46cbd220392717daf66d8b323acf785d86be78f3d1980717b28fc94e89"
+    },
+    {
+      "path": "yunnan/assets/photos/zine/zine-photo-02.png",
+      "bytes": 299758,
+      "sha256": "0ee66ad467782497e6f64d31457e3de24d70d9bfea6886bf8ed57b45369db201"
+    },
+    {
+      "path": "yunnan/assets/photos/zine/zine-photo-05.png",
+      "bytes": 527890,
+      "sha256": "d230bf888a1caa000558f8b913ac42ae467a9a8c2dded7623bae6cccf15dbf9b"
+    },
+    {
+      "path": "yunnan/assets/photos/zine/zine-photo-07.png",
+      "bytes": 655817,
+      "sha256": "6ca6a1ab937318215a4a4b437c933357685d9a22fdff40614efb5808a08b6442"
+    },
+    {
+      "path": "yunnan/assets/photos/zine/zine-snow-roof.png",
+      "bytes": 455207,
+      "sha256": "0fa5c1a279e95490a0c030d2bae09e01496212d35e172be5773080b1582305ef"
+    },
+    {
+      "path": "yunnan/assets/ref-atoll-1.jpg",
+      "bytes": 49488,
+      "sha256": "4baf6ac203862f7d5144b803a329b6729663975c16b80db6f72c07bba4c03408"
+    },
+    {
+      "path": "yunnan/assets/ref-atoll-10.jpg",
+      "bytes": 86914,
+      "sha256": "a5a23ead37a2c1e778237c7c9039782a6003f473e3f3e69e437bbc0826a8188a"
+    },
+    {
+      "path": "yunnan/assets/ref-atoll-13.jpg",
+      "bytes": 103038,
+      "sha256": "4abd7cfdbe910bf354482b245a2fb2f397307db0d3c39ced6d88a8e1ff56f0e3"
+    },
+    {
+      "path": "yunnan/assets/ref-atoll-4.jpg",
+      "bytes": 100858,
+      "sha256": "28647e27cf1a6213fa9820e7cc8a56da67714eaf075fc9f6adbe4444fc20d9b6"
+    },
+    {
+      "path": "yunnan/assets/ref-atoll-7.jpg",
+      "bytes": 84554,
+      "sha256": "81d598e26fee4606a9a442a02fdb09d030aeaf212c03ed510bd9351f893985b0"
+    },
+    {
+      "path": "yunnan/assets/ref-boat-frame.jpg",
+      "bytes": 83689,
+      "sha256": "2e5029b3555b662d86562ab3ee9d5991398209273cbdb5febeb9d356c4026cd1"
+    },
+    {
+      "path": "yunnan/assets/ref-boat-frame2.jpg",
+      "bytes": 103664,
+      "sha256": "3c6d1d30b45c5392f676972e211d7b16f633308cd28f427d60094a2fa3793403"
+    },
+    {
+      "path": "yunnan/assets/ref-ink-1.jpg",
+      "bytes": 15587,
+      "sha256": "84782439e37f800e6e667a7f0f6f3f028e3d04f046630a6772b616c3bdfe8558"
+    },
+    {
+      "path": "yunnan/assets/ref-ink-2.jpg",
+      "bytes": 9942,
+      "sha256": "c847d22a5d6a5b5ae5e8928400aee72c2a04239ae5e9f9448aa5aaf9e9a74375"
+    },
+    {
+      "path": "yunnan/assets/ref-ink-end.jpg",
+      "bytes": 35455,
+      "sha256": "559dca37676ba5dbb2fbd08f9d0ab22fa8ce8395fb66c61a8c88e1d9df7ea9e6"
+    },
+    {
+      "path": "yunnan/assets/ref-ink-mid.jpg",
+      "bytes": 7053,
+      "sha256": "858c21c1bd58fc824c841b1f28b7ecf60d728a009b68afba644ad85ce7da29a9"
+    },
+    {
+      "path": "yunnan/assets/refs/atoll-01.jpg",
+      "bytes": 61697,
+      "sha256": "67d8456feb8423382710986891a0889e2fa8e72bbae59934c03755921d3dea5e"
+    },
+    {
+      "path": "yunnan/assets/refs/atoll-02.jpg",
+      "bytes": 95130,
+      "sha256": "d3d859efaaeb148a024adbaa77cf84b3f77c1dca47b4eaca1b1c0c32288a0f9f"
+    },
+    {
+      "path": "yunnan/assets/refs/atoll-03.jpg",
+      "bytes": 95308,
+      "sha256": "82e8ba1c090e7eff5592120d0da2e810ae43436de5e8c66d37d47fffdb49ae61"
+    },
+    {
+      "path": "yunnan/css/boat-cruise.css",
+      "bytes": 4617,
+      "sha256": "cf6901787560c19dd5de3d15dc9e17694660933cdc127e7d336cb11b23b0a014"
+    },
+    {
+      "path": "yunnan/css/city-pins.css",
+      "bytes": 4058,
+      "sha256": "65980e838f12086fe4f912661ba55c60585c6d6100309f646c584a1df253630e"
+    },
+    {
+      "path": "yunnan/css/desk-studio.css",
+      "bytes": 7581,
+      "sha256": "d1d7a2db9088d26d8b6ce0f2b25a9e72dc4667bc29705c87a61ce09ddae9d4fc"
+    },
+    {
+      "path": "yunnan/css/exhibit.css",
+      "bytes": 14658,
+      "sha256": "9c4aa0897255cc93a92a698381fc49872d8bb25ff90213019abe2308057cc117"
+    },
+    {
+      "path": "yunnan/css/gallery-flow.css",
+      "bytes": 1881,
+      "sha256": "e14378b8eb65d081a03c5dc639db369f289870b2674e82d7cb562dfb8478ed83"
+    },
+    {
+      "path": "yunnan/css/htn-fidelity.css",
+      "bytes": 9325,
+      "sha256": "08ed1e2060d9dd607f21621f79395ad2323b010f5d7ecd9f361d0590d6038a73"
+    },
+    {
+      "path": "yunnan/css/ink-reveal.css",
+      "bytes": 4118,
+      "sha256": "89c1a55b85d20ef18a5d2a968e6db0e7154baa85c09ad1f3d05c510f77989f64"
+    },
+    {
+      "path": "yunnan/css/journal.css",
+      "bytes": 31241,
+      "sha256": "2a834ab93364b9afead5a4dbece24948ccfe6a85d5e162ae881827aaa76ab04f"
+    },
+    {
+      "path": "yunnan/css/main.css",
+      "bytes": 25145,
+      "sha256": "d7cc3bed38b251d223a0a55c47d0528d21893b62873c3de7a708734bfd784a2e"
+    },
+    {
+      "path": "yunnan/css/narrative.css",
+      "bytes": 24903,
+      "sha256": "5d1ebd416df4a0cefaa016af01d944376650bfc7364a5527dae4d3724eabc562"
+    },
+    {
+      "path": "yunnan/css/painted-assets.css",
+      "bytes": 3525,
+      "sha256": "bbce0056681af09067811f6a775042c3c82c3ec573e1ac3f6515f08bb5a978d6"
+    },
+    {
+      "path": "yunnan/css/photo-experience.css",
+      "bytes": 8006,
+      "sha256": "cdf376c474c49690fbc2ef8eec24dd091484c544d42450dd33572c0f6de79f00"
+    },
+    {
+      "path": "yunnan/css/photo-placeholders.css",
+      "bytes": 1184,
+      "sha256": "af5aea0511cda810447c0dfb3d1dfeceb1887438829c21562885a1c63d80cf8a"
+    },
+    {
+      "path": "yunnan/css/polish.css",
+      "bytes": 1810,
+      "sha256": "2082d10c843ef65355c609b69204e4e6ffc419468b4015d1d5af5217bd5570b7"
+    },
+    {
+      "path": "yunnan/css/scroll-fx.css",
+      "bytes": 10802,
+      "sha256": "b5b7c93bb3ee4c28f5935ba1d93f9950a61405f763702ebf516d10adc53bf519"
+    },
+    {
+      "path": "yunnan/css/scroll-interact.css",
+      "bytes": 5233,
+      "sha256": "1121055cc43cfe2641f56f5a806d18b39af1a0442ac2ce33f48b38f10d34402a"
+    },
+    {
+      "path": "yunnan/css/tide.css",
+      "bytes": 3264,
+      "sha256": "3c36fec0b039adcf3cb44bdba52cf9a7d997ffa8cfde541cbb224dae80026f57"
+    },
+    {
+      "path": "yunnan/css/turntable.css",
+      "bytes": 7785,
+      "sha256": "e83d115f3a2959675cc81c966016bbace53bbd5325fb1e46d362b66781e0b80e"
+    },
+    {
+      "path": "yunnan/css/ui-polish.css",
+      "bytes": 7420,
+      "sha256": "3bce637177e57064469cbb1c5433c1a8f93926e0b8f7b90fcdc8abbd2bf556ac"
+    },
+    {
+      "path": "yunnan/css/viewer-zoom.css",
+      "bytes": 3063,
+      "sha256": "5cb8ce891e656e16bd7a1768179b0e00b4f0711472669b26543bcc036e94a2f9"
+    },
+    {
+      "path": "yunnan/docs/artwork-2026-09-09.md",
+      "bytes": 999,
+      "sha256": "6ede164b192a549eca7d059e02313c756086df51377653deb5e2e182b045b300"
+    },
+    {
+      "path": "yunnan/docs/index-before-journal-2026-09-16.html",
+      "bytes": 2941,
+      "sha256": "c579eb7155eccd10a2e126bbde6d7b596db4986a6bb41a6fdb7d6828fbc7b469"
+    },
+    {
+      "path": "yunnan/docs/index-before.html",
+      "bytes": 1800,
+      "sha256": "c8afe5907ed1e3bc6d226fe1e6aacce4ba0c799dfe0e1ce19a10008daa7d6c76"
+    },
+    {
+      "path": "yunnan/docs/journal-direction-2026-09-16.md",
+      "bytes": 2179,
+      "sha256": "1bdbb8b7c2fd35a4c4ef97924abdf51b1b38c3a01c303c92a95f4d9ef8d6c362"
+    },
+    {
+      "path": "yunnan/docs/photo-artwork-2026-09-15.md",
+      "bytes": 6205,
+      "sha256": "7d918c9fd9392bb57fc4a0184923ae972e00fcdebc560c71384d93c817a6fcd5"
+    },
+    {
+      "path": "yunnan/docs/photo-camera-plan-2026-09-15.md",
+      "bytes": 2351,
+      "sha256": "3e61a397a4f75905944dc3a5355d5188094597eb88f5435fdc58ffcb2930318a"
+    },
+    {
+      "path": "yunnan/docs/photo-camera-verification-2026-09-15.md",
+      "bytes": 1895,
+      "sha256": "8ad5b21beb2a64f40a19a72bd2f6b80b2b9fafee0ef51dd90c43792678b59b92"
+    },
+    {
+      "path": "yunnan/docs/puer-artwork-2026-09-16.md",
+      "bytes": 6076,
+      "sha256": "9d3070e978e56a18cfe0281080d81130d034da484755e823a7158921dd082dc3"
+    },
+    {
+      "path": "yunnan/docs/redesign.md",
+      "bytes": 1441,
+      "sha256": "024382a5bef5cfc38737210b8684ec037142fbd08802cac6ae9e62a88f2e6262"
+    },
+    {
+      "path": "yunnan/docs/superpowers/plans/2026-09-19-boat-cruise-hero.md",
+      "bytes": 1492,
+      "sha256": "a76d46fa48e9514e8eb6be52e07652f672bc2295847020c5380e01f284cf669d"
+    },
+    {
+      "path": "yunnan/docs/superpowers/specs/2026-09-19-boat-cruise-hero-design.md",
+      "bytes": 2099,
+      "sha256": "f50790c7491564d81a82aedba1b2940bc84a0804e74fe3d5514288aa435ab5ce"
+    },
+    {
+      "path": "yunnan/index.html",
+      "bytes": 2133,
+      "sha256": "b0c8252007b3914a226d48cc3fa79af7539943581b5e5b4e0c486300f937bcf2"
+    },
+    {
+      "path": "yunnan/js/boat-cruise.js",
+      "bytes": 21544,
+      "sha256": "2946b88c54b88b4df6ec98e2e67be9b2c8d7eaaf0e53de1512d1eba6804ddc9d"
+    },
+    {
+      "path": "yunnan/js/camera.js",
+      "bytes": 3573,
+      "sha256": "baefe85f8661688e80df05be6cb0a048d2688c969c8ae20a4505ea40caa88ffd"
+    },
+    {
+      "path": "yunnan/js/content.js",
+      "bytes": 8703,
+      "sha256": "4957bc7634306f4cb53872a1a5c9fcc8d85a49ee3dc74beae3803b5afa3df380"
+    },
+    {
+      "path": "yunnan/js/desk-studio.js",
+      "bytes": 45128,
+      "sha256": "87176379f57d43f79e90ec83c0e618dcf90faab740c5bdb8ba236082e0d561a2"
+    },
+    {
+      "path": "yunnan/js/instant-camera.js",
+      "bytes": 9054,
+      "sha256": "a934a8905ac8757503e6a3de39b47b06bb59ac26fadcf8818f9d2548f4613fc1"
+    },
+    {
+      "path": "yunnan/js/journal.js",
+      "bytes": 36487,
+      "sha256": "0f8e9bdd7b0a786526b205744cfbd28efedb57b07e5e6578a446cc83e698f012"
+    },
+    {
+      "path": "yunnan/js/journey-state.js",
+      "bytes": 229,
+      "sha256": "4f045804db52ad6c739c65db8e5bd4d918cc131058fec3a6784f778d34c87ee0"
+    },
+    {
+      "path": "yunnan/js/main.js",
+      "bytes": 11846,
+      "sha256": "668bd04d587c4d6dc2bb202589b16767e965cfaa4542fd78027831f725756b0f"
+    },
+    {
+      "path": "yunnan/js/map.js",
+      "bytes": 2460,
+      "sha256": "8bf8e69b8f87c497cee518c7832d3f78ebd7540d484dcc8252204a1bd2fe3620"
+    },
+    {
+      "path": "yunnan/js/narrative.js",
+      "bytes": 37307,
+      "sha256": "e5989d2a44886ddd582b7e6f1d0cf32f1eb66d140b49de1b49a0468b5a7b2eee"
+    },
+    {
+      "path": "yunnan/js/painted-assets.js",
+      "bytes": 952,
+      "sha256": "ea6541d2b7cba8d9037347d5ec2bf7cb19684b32df9478cebb929fcac5c6c378"
+    },
+    {
+      "path": "yunnan/js/studio-tex.js",
+      "bytes": 11406,
+      "sha256": "cfe6edc4a6a3357b593f64304822262eb185f330d05c2c4613eda4ba6a291ac4"
+    },
+    {
+      "path": "yunnan/js/turntable.js",
+      "bytes": 6389,
+      "sha256": "81dd5e07213ddb2190f24917dacd5853f8e17f948ff72c964eea004a521f9f4a"
+    },
+    {
+      "path": "yunnan/js/vinyl.js",
+      "bytes": 3190,
+      "sha256": "3a60273c383b1e5d9473b5b68888b37ef38cf4bf1c36ab45444ce2ea141231ba"
+    },
+    {
+      "path": "yunnan/scripts/gen-cruise-textures.py",
+      "bytes": 4583,
+      "sha256": "ba9fdb23371eb372598ba21c2a6e50c33b4c9e0b9a48eb9e0b7672fd2185b03a"
+    },
+    {
+      "path": "yunnan/tests/camera-browser.test.mjs",
+      "bytes": 7311,
+      "sha256": "927342c518a96d59e5acbff15ddb461ad85835f3e9490c4321b7d267dfd7e460"
+    },
+    {
+      "path": "yunnan/tests/content-shape.test.mjs",
+      "bytes": 3581,
+      "sha256": "88d1030c4cb20dce3e13445c70ab31465398133d86f7abb4ac2f767dae383d0f"
+    },
+    {
+      "path": "yunnan/tests/journal-browser.test.mjs",
+      "bytes": 1853,
+      "sha256": "f19fa606f89ba8631f6f8da952c3f4d1ebebca1b4404c3286a8e1910e2bfb7c4"
+    },
+    {
+      "path": "yunnan/tests/journey.test.mjs",
+      "bytes": 664,
+      "sha256": "666af99bd02890d2ac7c7f282f9fa4d891672ec22f8dafa21c18efa1e908aa2e"
+    }
+  ]
+}
